@@ -805,18 +805,18 @@ public partial class Oyun : Node2D
 				m.Donen = true;
 				break;
 			case "ates":
-				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(1f, 0.55f, 0.15f), Scale = Vector2.One * 0.9f, Material = Efekt.Toplama });
+				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(1f, 0.45f, 0.1f, 0.9f), Scale = Vector2.One * 0.75f, Material = Efekt.Toplama });
 				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(1f, 1f, 0.8f), Scale = Vector2.One * 0.4f, Material = Efekt.Toplama });
-				m.Iz = Efekt.Ates(m.Dugum, Vector2.Zero, 0.9f, 30);
+				m.Iz = Efekt.Ates(m.Dugum, Vector2.Zero, 0.75f, 20);
 				break;
 			case "meteor":
-				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(1f, 0.45f, 0.1f), Scale = Vector2.One * 2.2f, Material = Efekt.Toplama });
+				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(1f, 0.4f, 0.08f, 0.85f), Scale = Vector2.One * 1.7f, Material = Efekt.Toplama });
 				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(1f, 1f, 0.75f), Scale = Vector2.One * 1.0f, Material = Efekt.Toplama });
-				m.Iz = Efekt.Yayici(m.Dugum, Vector2.Zero, Efekt.AtesRenk, 60, 0.8f, 20f, 90f, 1.0f, 2.2f, false, true, -60f, 40f, 16f);
+				m.Iz = Efekt.Yayici(m.Dugum, Vector2.Zero, Efekt.AtesRenk, 34, 0.6f, 20f, 80f, 0.55f, 1.1f, false, true, -60f, 40f, 12f);
 				break;
 			case "mor":
 				m.Dugum.AddChild(new Sprite2D { Texture = Efekt.Parilti, Modulate = new Color(0.75f, 0.3f, 1f), Scale = Vector2.One * 0.8f, Material = Efekt.Toplama });
-				m.Iz = Efekt.Yayici(m.Dugum, Vector2.Zero, Efekt.MorRenk, 26, 0.45f, 10f, 40f, 0.3f, 0.7f, false, true, 0f, 180f, 4f);
+				m.Iz = Efekt.Yayici(m.Dugum, Vector2.Zero, Efekt.MorRenk, 18, 0.4f, 10f, 40f, 0.25f, 0.5f, false, true, 0f, 180f, 4f);
 				break;
 		}
 		_dunya.AddChild(m.Dugum);
@@ -980,13 +980,13 @@ public partial class Oyun : Node2D
 
 		_beceriKutu = new HBoxContainer { Alignment = BoxContainer.AlignmentMode.End };
 		_beceriKutu.AnchorLeft = 0f; _beceriKutu.AnchorRight = 1f; _beceriKutu.AnchorTop = _beceriKutu.AnchorBottom = 1f;
-		_beceriKutu.OffsetLeft = 300; _beceriKutu.OffsetRight = -14; _beceriKutu.OffsetTop = -86; _beceriKutu.OffsetBottom = -10;
+		_beceriKutu.OffsetLeft = 300; _beceriKutu.OffsetRight = -14; _beceriKutu.OffsetTop = -70; _beceriKutu.OffsetBottom = -6;
 		_beceriKutu.AddThemeConstantOverride("separation", 10);
 		kok.AddChild(_beceriKutu);
 		foreach (var k in new[] { "okcu", "buyucu", "barbar", "sovalye" }.Select(t => _kahraman[t]))
 		{
 			var kh = k;
-			kh.Buton = new Button { CustomMinimumSize = new Vector2(170, 72), FocusMode = Control.FocusModeEnum.None };
+			kh.Buton = new Button { CustomMinimumSize = new Vector2(170, 62), FocusMode = Control.FocusModeEnum.None };
 			kh.Buton.AddThemeFontSizeOverride("font_size", 19);
 			kh.Buton.Pressed += () => BeceriKullan(kh);
 			_beceriKutu.AddChild(kh.Buton);

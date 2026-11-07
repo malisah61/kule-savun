@@ -32,9 +32,24 @@ jobs:
           ls /root/.config/godot/ || true
           mkdir -p build/android
           godot --headless --editor --quit > /dev/null 2>&1 || true
-          godot --headless --export-debug "Android" build/android/KuleSavunma.apk 2>&1 | tail -80
+          godot --headless --export-debug "Android" build/android/KuleSavunma.apk > build/disa_aktar.txt 2>&1 || true
+          tail -80 build/disa_aktar.txt
           ls -la build/android
           test -f build/android/KuleSavunma.apk
+
+      - name: Hata kaydını depoya yaz
+        if: failure()
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898732+github-actions[bot]@users.noreply.github.com"
+          mkdir -p onizleme
+          { dotnet --info 2>&1 | head -20; ls -R /root/.local/share/godot/export_templates 2>&1 | head; cat build/disa_aktar.txt 2>&1 | tail -150; } > onizleme/android.txt
+          git add onizleme/android.txt
+          git commit -m "Android derleme kaydı" || true
+          git pull --rebase -q || true
+          git push || true
 
       - name: APK'yı yükle
         uses: actions/upload-artifact@v4

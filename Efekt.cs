@@ -66,14 +66,14 @@ public static class Efekt
 
 	public static readonly Color[] AtesRenk =
 	{
-		new Color(1f, 0.95f, 0.6f, 1f), new Color(1f, 0.6f, 0.1f, 0.95f),
-		new Color(0.9f, 0.2f, 0.05f, 0.7f), new Color(0.25f, 0.1f, 0.08f, 0f)
+		new Color(1f, 0.9f, 0.55f, 0.6f), new Color(1f, 0.5f, 0.08f, 0.5f),
+		new Color(0.85f, 0.18f, 0.04f, 0.32f), new Color(0.25f, 0.1f, 0.08f, 0f)
 	};
 
 	public static readonly Color[] MorRenk =
 	{
-		new Color(1f, 0.85f, 1f, 1f), new Color(0.75f, 0.3f, 1f, 0.9f),
-		new Color(0.35f, 0.05f, 0.6f, 0.6f), new Color(0.1f, 0f, 0.2f, 0f)
+		new Color(0.95f, 0.75f, 1f, 0.6f), new Color(0.7f, 0.25f, 1f, 0.5f),
+		new Color(0.35f, 0.05f, 0.6f, 0.3f), new Color(0.1f, 0f, 0.2f, 0f)
 	};
 
 	public static readonly Color[] BuzRenk =
@@ -134,7 +134,7 @@ public static class Efekt
 	/// <summary>Sürekli yanan ateş (meşale, yanan düşman, ateş topu izi).</summary>
 	public static CpuParticles2D Ates(Node ebeveyn, Vector2 konum, float boy = 1f, int adet = 24)
 	{
-		var p = Yayici(ebeveyn, konum, AtesRenk, adet, 0.55f, 25f * boy, 70f * boy, 0.35f * boy, 0.7f * boy,
+		var p = Yayici(ebeveyn, konum, AtesRenk, adet, 0.5f, 25f * boy, 70f * boy, 0.28f * boy, 0.55f * boy,
 			false, true, -90f * boy, 25f, 6f * boy);
 		return p;
 	}
@@ -157,13 +157,13 @@ public static class Efekt
 	/// <summary>Patlama: alev topu + kıvılcım + duman + parlama.</summary>
 	public static void Patlama(Node ebeveyn, Vector2 konum, float boy = 1f)
 	{
-		Yayici(ebeveyn, konum, AtesRenk, (int)(40 * boy), 0.7f, 120f * boy, 320f * boy, 0.8f * boy, 1.8f * boy,
+		Yayici(ebeveyn, konum, AtesRenk, (int)(34 * boy), 0.7f, 120f * boy, 300f * boy, 0.5f * boy, 1.1f * boy,
 			true, true, -60f, 180f, 10f * boy);
 		Yayici(ebeveyn, konum, new[] { new Color(1, 1, 0.8f, 1), new Color(1, 0.7f, 0.2f, 1), new Color(1, 0.3f, 0, 0) },
 			(int)(24 * boy), 0.6f, 250f * boy, 520f * boy, 0.12f, 0.25f, true, true, 500f);
-		Yayici(ebeveyn, konum + new Vector2(0, -10), new[] { new Color(0.3f, 0.27f, 0.25f, 0.7f), new Color(0.2f, 0.2f, 0.2f, 0f) },
-			(int)(14 * boy), 1.3f, 30f * boy, 90f * boy, 1.2f * boy, 2.4f * boy, true, false, -50f, 180f, 18f * boy);
-		Parlama(ebeveyn, konum, new Color(1f, 0.7f, 0.3f), 3.5f * boy, 0.35f);
+		Yayici(ebeveyn, konum + new Vector2(0, -10), new[] { new Color(0.35f, 0.32f, 0.3f, 0.45f), new Color(0.25f, 0.25f, 0.25f, 0f) },
+			(int)(10 * boy), 1.2f, 30f * boy, 90f * boy, 0.6f * boy, 1.3f * boy, true, false, -50f, 180f, 16f * boy);
+		Parlama(ebeveyn, konum, new Color(1f, 0.6f, 0.25f, 0.7f), 2.6f * boy, 0.35f);
 	}
 
 	public static void Parlama(Node ebeveyn, Vector2 konum, Color renk, float boy, float sure)

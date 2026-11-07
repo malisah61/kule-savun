@@ -1,11 +1,9 @@
   Determining projects to restore...
-  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 512 ms).
-/home/runner/work/kule-savun/kule-savun/Efekt.cs(154,17): error CS1503: Argument 2: cannot convert from 'double' to 'float' [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 625 ms).
+  KuleSavun -> /home/runner/work/kule-savun/kule-savun/.godot/mono/temp/bin/Debug/KuleSavun.dll
 
-Build FAILED.
-
-/home/runner/work/kule-savun/kule-savun/Efekt.cs(154,17): error CS1503: Argument 2: cannot convert from 'double' to 'float' [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+Build succeeded.
     0 Warning(s)
-    1 Error(s)
+    0 Error(s)
 
-Time Elapsed 00:00:09.42
+Time Elapsed 00:00:08.40

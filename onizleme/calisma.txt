@@ -8,5 +8,3 @@ ONIZLEME kaydedildi: onizleme/3_meteor.png
 ONIZLEME kaydedildi: onizleme/4_deprem.png
 ONIZLEME kaydedildi: onizleme/5_savas_sonra.png
 ONIZLEME bitti
-WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
-     at: cleanup (core/object/object.cpp:2284)

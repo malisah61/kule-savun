@@ -19,40 +19,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Android ayarlarını hazırla
-        run: |
-          export HOME=/root
-          SDK="${ANDROID_HOME:-/usr/lib/android-sdk}"
-          echo "Android SDK: $SDK"
-          keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android \
-            -keystore /root/ci-debug.keystore -storepass android \
-            -dname "CN=Android Debug,O=Android,C=US" -validity 9999
-          mkdir -p /root/.config/godot
-          for f in /root/.config/godot/editor_settings-4.tres /root/.config/godot/editor_settings-4.3.tres; do
-            if [ ! -f "$f" ]; then printf '[gd_resource type="EditorSettings" format=3]\n\n[resource]\n' > "$f"; fi
-            sed -i '/^export\/android\/\(android_sdk_path\|debug_keystore\|debug_keystore_user\|debug_keystore_pass\)/d' "$f"
-            {
-              echo "export/android/android_sdk_path = \"$SDK\""
-              echo 'export/android/debug_keystore = "/root/ci-debug.keystore"'
-              echo 'export/android/debug_keystore_user = "androiddebugkey"'
-              echo 'export/android/debug_keystore_pass = "android"'
-            } >> "$f"
-          done
-          ls -R /root/.local/share/godot/export_templates/ | head -20
-
       - name: Derle
+        shell: bash
         env:
-          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /root/ci-debug.keystore
+          GODOT_ANDROID_KEYSTORE_DEBUG_PATH: /root/debug.keystore
           GODOT_ANDROID_KEYSTORE_DEBUG_USER: androiddebugkey
           GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
         run: |
           export HOME=/root
-          export ANDROID_HOME="${ANDROID_HOME:-/usr/lib/android-sdk}"
+          dotnet --version || true
+          ls /root/.local/share/godot/export_templates/ || true
+          ls /root/.config/godot/ || true
           mkdir -p build/android
-          dotnet --info | head -5 || true
-          godot --headless --editor --quit || true
-          godot --headless --build-solutions --quit 2>&1 | tail -40 || true
-          godot --headless --export-debug "Android" build/android/KuleSavunma.apk 2>&1 | tail -60
+          godot --headless --editor --quit > /dev/null 2>&1 || true
+          godot --headless --export-debug "Android" build/android/KuleSavunma.apk 2>&1 | tail -80
           ls -la build/android
           test -f build/android/KuleSavunma.apk
 

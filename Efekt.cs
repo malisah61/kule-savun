@@ -151,7 +151,7 @@ public static class Efekt
 			p.Reparent(oyun);
 			p.GlobalPosition = dunya;
 		}
-		KendiniSil(p, p.Lifetime + 0.2f);
+		KendiniSil(p, (float)p.Lifetime + 0.2f);
 	}
 
 	/// <summary>Patlama: alev topu + kıvılcım + duman + parlama.</summary>

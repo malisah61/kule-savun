@@ -5,10 +5,9 @@ OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Usi
 ONIZLEME kaydedildi: onizleme/1_menu.png
 ONIZLEME kaydedildi: onizleme/2_harita.png
 ONIZLEME kaydedildi: onizleme/3_savas.png
+ONIZLEME kaydedildi: onizleme/3b_analiz.png
 ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png
 ONIZLEME kaydedildi: onizleme/6_boss.png
 ONIZLEME bölüm=12 dalga=1/7 can=20 düşman=1 kule=17 doku_kule=0 doku_dusman=0
 ONIZLEME bitti
-WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
-     at: cleanup (core/object/object.cpp:2284)

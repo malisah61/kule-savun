@@ -26,21 +26,37 @@ public partial class TdHarita : Node2D
 		Sol = sol; Sag = sag;
 		var rng = new RandomNumberGenerator { Seed = tohum };
 		var noktalar = new List<Vector2>();
-		int donus = rng.RandiRange(3, 5);
+		// 0: dik dönemeçli (köşeleri yuvarlatılmış) · 1: yılan gibi kıvrılan · 2: çapraz zikzak
+		int stil = rng.RandiRange(0, 2);
 		float y = rng.RandfRange(190, 560);
 		noktalar.Add(new Vector2(sol - 60, y));
-		for (int i = 1; i <= donus; i++)
+		if (stil == 0)
 		{
-			float x = sol + (sag - sol) * i / (donus + 1f) + rng.RandfRange(-40, 40);
-			noktalar.Add(new Vector2(x, y));
-			float yeniY;
-			int deneme = 0;
-			do { yeniY = rng.RandfRange(165, i == donus ? 560 : 640); deneme++; }
-			while (Mathf.Abs(yeniY - y) < 160 && deneme < 30);
-			y = yeniY;
-			noktalar.Add(new Vector2(x, y));
+			int donus = rng.RandiRange(3, 5);
+			for (int i = 1; i <= donus; i++)
+			{
+				float x = sol + (sag - sol) * i / (donus + 1f) + rng.RandfRange(-40, 40);
+				noktalar.Add(new Vector2(x, y));
+				y = YeniY(rng, y, i == donus);
+				noktalar.Add(new Vector2(x, y));
+			}
+		}
+		else
+		{
+			int n = rng.RandiRange(4, 7);
+			noktalar.Add(new Vector2(sol + 30, y));
+			for (int i = 1; i <= n; i++)
+			{
+				float x = sol + (sag - sol) * i / (n + 1f) + rng.RandfRange(-30, 30);
+				y = YeniY(rng, y, i == n);
+				noktalar.Add(new Vector2(x, y));
+			}
+			noktalar.Add(new Vector2(sag - 30, y));
 		}
 		noktalar.Add(new Vector2(sag + 60, y));
+		// Chaikin köşe kesme: dönemeçleri yuvarlatır
+		int tekrar = stil == 0 ? 3 : stil == 1 ? 4 : 1;
+		for (int k = 0; k < tekrar; k++) noktalar = Yumusat(noktalar);
 		Yol = noktalar.ToArray();
 
 		Birikim.Clear();
@@ -70,6 +86,26 @@ public partial class TdHarita : Node2D
 			if (!yakin) Yerler.Add(p);
 			if (Yerler.Count >= 20) break;
 		}
+	}
+
+	static float YeniY(RandomNumberGenerator rng, float y, bool son)
+	{
+		float yeni; int deneme = 0;
+		do { yeni = rng.RandfRange(165, son ? 560 : 640); deneme++; }
+		while (Mathf.Abs(yeni - y) < 150 && deneme < 30);
+		return yeni;
+	}
+
+	static List<Vector2> Yumusat(List<Vector2> p)
+	{
+		var y = new List<Vector2> { p[0] };
+		for (int i = 0; i < p.Count - 1; i++)
+		{
+			y.Add(p[i].Lerp(p[i + 1], 0.25f));
+			y.Add(p[i].Lerp(p[i + 1], 0.75f));
+		}
+		y.Add(p[^1]);
+		return y;
 	}
 
 	public static Vector2 Konum(float m, out Vector2 yon)
@@ -149,8 +185,8 @@ public partial class TdHarita : Node2D
 			DrawLine(Yol[i - 1], Yol[i], toprak, YolGenislik);
 			DrawCircle(Yol[i - 1], YolGenislik / 2, toprak);
 		}
-		for (int i = 1; i < Yol.Length; i++)
-			DrawDashedLine(Yol[i - 1], Yol[i], new Color(0.24f, 0.18f, 0.13f), 3, 14);
+		for (float m = 0; m < Uzunluk; m += 26)
+			DrawLine(Konum(m, out _), Konum(m + 13, out _), new Color(0.24f, 0.18f, 0.13f), 3);
 		foreach (var (p, tur) in _susler)
 		{
 			switch (tur)

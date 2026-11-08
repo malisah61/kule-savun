@@ -19,7 +19,7 @@ public static class Ilerleme
 {
 	const string Dosya = "user://td_kayit.json";
 	public const int PuanPerSeviye = 2;
-	public const int MaxSeviye = 60;
+	public const int MaxSeviye = 999;
 
 	public static int EnUstBolum = 1;
 	public static int Xp, Para, HarcananPuan;
@@ -29,12 +29,15 @@ public static class Ilerleme
 	/// <summary>n. seviyeden n+1'e geçmek için gereken XP.</summary>
 	public static int SeviyeXp(int n) => 60 + 30 * (n - 1) + 4 * (n - 1) * (n - 1);
 
+	static int _onbXp = -1, _onbSv = 1;
 	public static int Seviye
 	{
 		get
 		{
+			if (_onbXp == Xp) return _onbSv;
 			int sv = 1, kalan = Xp;
 			while (sv < MaxSeviye && kalan >= SeviyeXp(sv)) { kalan -= SeviyeXp(sv); sv++; }
+			_onbXp = Xp; _onbSv = sv;
 			return sv;
 		}
 	}
@@ -61,9 +64,12 @@ public static class Ilerleme
 		("Ustalık", 0.04f, 0, 0.02f, 0, 0),
 	};
 
+	static readonly Dictionary<string, List<KaliciDugum>> _dugumOnb = new();
 	public static List<KaliciDugum> Dugumler(KuleTanim t)
 	{
+		if (_dugumOnb.TryGetValue(t.Id, out var hazir)) return hazir;
 		var l = new List<KaliciDugum>();
+		_dugumOnb[t.Id] = l;
 		for (int i = 0; i < Desen.Length; i++)
 		{
 			var d = Desen[i];

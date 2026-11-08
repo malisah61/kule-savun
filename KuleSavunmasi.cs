@@ -100,6 +100,7 @@ public partial class KuleSavunmasi : Node2D
 	GridContainer _agacDugumler;
 	Label _agacBaslik, _agacBilgi, _agacUst;
 	KuleTanim _agacSecili;
+	HBoxContainer _devamKutu;
 
 	readonly Dictionary<string, AudioStreamWav> _sesler = new();
 	readonly List<AudioStreamPlayer> _oynaticilar = new();
@@ -263,9 +264,7 @@ public partial class KuleSavunmasi : Node2D
 		}
 		if (_dalga == _dalgaSayisi)
 		{
-			var boss = TdVeri.Dusmanlar.FirstOrDefault(d => d.Boss && d.Level == _bolum)
-				?? (_bolum % 5 == 0 ? TdVeri.Dusmanlar.Where(d => d.Boss && d.Level < _bolum).OrderBy(_ => _rng.Randf()).FirstOrDefault() : null);
-			if (boss != null) _dogacak.Enqueue(boss);
+			foreach (var boss in BolumBosslari(_bolum)) _dogacak.Enqueue(boss);
 		}
 		// her dalgada düşmanlar daha sık gelir
 		_dogmaAralik = Mathf.Max(0.22f, (0.95f - _bolum * 0.012f) * (1f - 0.06f * (_dalga - 1)) / Mathf.Sqrt(_uyum));
@@ -273,6 +272,19 @@ public partial class KuleSavunmasi : Node2D
 		Ses("boru");
 		Mesaj($"Dalga {_dalga}/{_dalgaSayisi}", new Color(1f, 0.55f, 0.4f), 1.5f);
 		ArayuzGuncelle();
+	}
+
+	/// <summary>Çift bölümlerde boss; içerik bitince bosslar sırayla döner, her 10 bölümde iki boss.</summary>
+	List<DusmanTanim> BolumBosslari(int bolum)
+	{
+		var l = new List<DusmanTanim>();
+		var tum = TdVeri.Dusmanlar.Where(d => d.Boss).OrderBy(d => d.Level).ToList();
+		if (tum.Count == 0) return l;
+		var tam = tum.FirstOrDefault(d => d.Level == bolum);
+		if (tam != null) l.Add(tam);
+		else if (bolum % 2 == 0 && bolum > tum[^1].Level) l.Add(tum[(bolum / 2) % tum.Count]);
+		if (bolum > tum[^1].Level && bolum % 10 == 0) l.Add(tum[(bolum / 2 + 7) % tum.Count]);
+		return l;
 	}
 
 	float Agirlik(DusmanTanim d) =>
@@ -889,13 +901,12 @@ public partial class KuleSavunmasi : Node2D
 		Engine.TimeScale = 1;
 		int onceki = Ilerleme.EnUstBolum;
 		Kazan(40 + 10 * _bolum, 25 + 6 * _bolum);
-		if (_bolum + 1 > Ilerleme.EnUstBolum) Ilerleme.EnUstBolum = Math.Min(TdVeri.LevelSayisi, _bolum + 1);
+		if (_bolum + 1 > Ilerleme.EnUstBolum) Ilerleme.EnUstBolum = _bolum + 1;
 		Ilerleme.Kaydet();
 		var yeniDus = TdVeri.Dusmanlar.Count(d => d.Level > onceki && d.Level <= Ilerleme.EnUstBolum);
 		string metin = $"Kazanılan: +{_bolumXp} XP   +{_bolumPara} para\nOyuncu seviyesi {Ilerleme.Seviye}   ·   Yetenek puanı {Ilerleme.Puan}";
 		if (yeniDus > 0) metin += $"\n\nSıradaki bölümde yeni düşmanlar: {yeniDus}";
-		if (_bolum >= TdVeri.LevelSayisi) metin += "\n\nTüm bölümleri bitirdin!";
-		SonucGoster("ZAFER!", metin, _bolum < TdVeri.LevelSayisi ? $"Bölüm {_bolum + 1} ▶" : "Menü", true);
+		SonucGoster("ZAFER!", metin, $"Bölüm {_bolum + 1} ▶", true);
 		Ses("altin");
 	}
 
@@ -938,16 +949,23 @@ public partial class KuleSavunmasi : Node2D
 		return l;
 	}
 
+	static StyleBoxFlat _sNormal, _sHover, _sBasili, _sKapali, _sSecili;
 	static Button Dugme(string metin, int boyut = 22)
 	{
+		_sNormal ??= Kutu(new Color(0.18f, 0.12f, 0.24f), 8, new Color(0.4f, 0.3f, 0.5f));
+		_sHover ??= Kutu(new Color(0.26f, 0.17f, 0.34f), 8, new Color(0.55f, 0.4f, 0.65f));
+		_sBasili ??= Kutu(new Color(0.12f, 0.3f, 0.15f), 8, new Color(0.4f, 0.9f, 0.4f));
+		_sKapali ??= Kutu(new Color(0.12f, 0.11f, 0.13f), 8, new Color(0.22f, 0.2f, 0.24f));
 		var b = new Button { Text = metin, FocusMode = Control.FocusModeEnum.None };
 		b.AddThemeFontSizeOverride("font_size", boyut);
-		b.AddThemeStyleboxOverride("normal", Kutu(new Color(0.18f, 0.12f, 0.24f), 8, new Color(0.4f, 0.3f, 0.5f)));
-		b.AddThemeStyleboxOverride("hover", Kutu(new Color(0.26f, 0.17f, 0.34f), 8, new Color(0.55f, 0.4f, 0.65f)));
-		b.AddThemeStyleboxOverride("pressed", Kutu(new Color(0.12f, 0.3f, 0.15f), 8, new Color(0.4f, 0.9f, 0.4f)));
-		b.AddThemeStyleboxOverride("disabled", Kutu(new Color(0.12f, 0.11f, 0.13f), 8, new Color(0.22f, 0.2f, 0.24f)));
+		b.AddThemeStyleboxOverride("normal", _sNormal);
+		b.AddThemeStyleboxOverride("hover", _sHover);
+		b.AddThemeStyleboxOverride("pressed", _sBasili);
+		b.AddThemeStyleboxOverride("disabled", _sKapali);
 		return b;
 	}
+
+	static void MetinAyarla(Button b, string m) { if (b.Text != m) b.Text = m; }
 
 	void ArayuzKur()
 	{
@@ -1069,8 +1087,7 @@ public partial class KuleSavunmasi : Node2D
 		_sonucDevam.Pressed += () =>
 		{
 			bool kazandi = _sonucDevam.GetMeta("kazandi").AsBool();
-			if (kazandi && _bolum < TdVeri.LevelSayisi) BolumBaslat(_bolum + 1);
-			else if (kazandi) MenuyuGoster();
+			if (kazandi) BolumBaslat(_bolum + 1);
 			else BolumBaslat(_bolum);
 		};
 		var sm = Dugme("Menü", 26);
@@ -1089,7 +1106,7 @@ public partial class KuleSavunmasi : Node2D
 		mk.AddThemeConstantOverride("separation", 14);
 		var baslik = Yazi("KULE SAVUNMASI", 56, new Color(0.55f, 1f, 0.45f));
 		baslik.HorizontalAlignment = HorizontalAlignment.Center;
-		var alt = Yazi("Mezarlık yolunu koru · 30 kule · 200 düşman · 40 bölüm", 20, new Color(0.75f, 0.7f, 0.9f));
+		var alt = Yazi($"Mezarlık yolunu koru · {TdVeri.Kuleler.Count} kule · {TdVeri.Dusmanlar.Count} düşman · sonsuz bölüm", 20, new Color(0.75f, 0.7f, 0.9f));
 		alt.HorizontalAlignment = HorizontalAlignment.Center;
 		_menuOzet = Yazi("", 18, new Color(1f, 0.85f, 0.4f));
 		_menuOzet.HorizontalAlignment = HorizontalAlignment.Center;
@@ -1101,9 +1118,11 @@ public partial class KuleSavunmasi : Node2D
 		var agacButon = Dugme("Yetenek Ağacı  (kalıcı yükseltmeler)", 24);
 		agacButon.CustomMinimumSize = new Vector2(460, 58);
 		agacButon.Pressed += () => AgacEkraniniAc(_agacSecili ?? TdVeri.Kuleler[0]);
-		var agacOrta = new CenterContainer();
-		agacOrta.AddChild(agacButon);
-		mk.AddChild(baslik); mk.AddChild(alt); mk.AddChild(_menuOzet); mk.AddChild(agacOrta); mk.AddChild(orta);
+		var ustDugmeler = new HBoxContainer { Alignment = BoxContainer.AlignmentMode.Center };
+		ustDugmeler.AddThemeConstantOverride("separation", 16);
+		_devamKutu = new HBoxContainer();
+		ustDugmeler.AddChild(_devamKutu); ustDugmeler.AddChild(agacButon);
+		mk.AddChild(baslik); mk.AddChild(alt); mk.AddChild(_menuOzet); mk.AddChild(ustDugmeler); mk.AddChild(orta);
 		_menu.AddChild(mk);
 		_ui.AddChild(_menu);
 		AgacEkraniKur();
@@ -1162,7 +1181,7 @@ public partial class KuleSavunmasi : Node2D
 			var b = Dugme(acik ? $"{k.Ad}   {kd}/10" : $"🔒 {k.Ad}  (Sv {k.Level})", 16);
 			b.Alignment = HorizontalAlignment.Left;
 			b.CustomMinimumSize = new Vector2(310, 40);
-			if (k == t) b.AddThemeStyleboxOverride("normal", Kutu(new Color(0.3f, 0.2f, 0.12f), 8, new Color(1f, 0.8f, 0.35f)));
+			if (k == t) b.AddThemeStyleboxOverride("normal", _sSecili ??= Kutu(new Color(0.3f, 0.2f, 0.12f), 8, new Color(1f, 0.8f, 0.35f)));
 			if (acik) b.AddThemeColorOverride("font_color", kd >= 10 ? new Color(0.5f, 1f, 0.55f) : TdVeri.HasarRenk[k.HasarTuru].Lightened(0.3f));
 			var kk = k;
 			b.Pressed += () => AgacEkraniniAc(kk);
@@ -1206,10 +1225,17 @@ public partial class KuleSavunmasi : Node2D
 		_dalgaButon.Visible = false;
 		_sonucPanel.Visible = false;
 		foreach (var c in _bolumIzgara.GetChildren()) c.QueueFree();
-		for (int i = 1; i <= TdVeri.LevelSayisi; i++)
+		int en = Ilerleme.EnUstBolum;
+		int bas = Math.Max(1, en - 24);
+		var devam = Dugme($"▶  Devam: Bölüm {en}", 24);
+		devam.CustomMinimumSize = new Vector2(96, 60);
+		devam.Pressed += () => BolumBaslat(en);
+		_devamKutu.GetChildren().ToList().ForEach(c => c.QueueFree());
+		_devamKutu.AddChild(devam);
+		for (int i = bas; i < bas + 30; i++)
 		{
 			int b = i;
-			bool boss = TdVeri.Dusmanlar.Any(d => d.Boss && d.Level == i);
+			bool boss = BolumBosslari(i).Count > 0;
 			var dg = Dugme(i <= Ilerleme.EnUstBolum ? (boss ? $"{i}☠" : $"{i}") : "🔒", 22);
 			dg.CustomMinimumSize = new Vector2(96, 60);
 			dg.Disabled = i > Ilerleme.EnUstBolum;
@@ -1249,26 +1275,41 @@ public partial class KuleSavunmasi : Node2D
 		_insaPanel.Visible = true;
 	}
 
+	readonly Dictionary<KuleTanim, Button> _insaButon = new();
+	readonly Dictionary<KuleTanim, bool> _insaAcikti = new();
+
 	void InsaListesiYaz()
 	{
-		foreach (var c in _insaListe.GetChildren()) c.QueueFree();
 		foreach (var t in TdVeri.Kuleler)
 		{
+			if (!_insaButon.TryGetValue(t, out var b))
+			{
+				b = Dugme("", 16);
+				b.Alignment = HorizontalAlignment.Left;
+				b.CustomMinimumSize = new Vector2(350, 0);
+				var tt = t;
+				b.Pressed += () => { if (_seciliYer >= 0) KuleKur(_seciliYer, tt); };
+				_insaListe.AddChild(b);
+				_insaButon[t] = b;
+			}
 			bool acik = Ilerleme.KuleAcik(t);
 			int bedel = Ilerleme.Maliyet(t);
 			int kd = Ilerleme.KuleKademe(t.Id);
+			if (!_insaAcikti.TryGetValue(t, out var once) || once != acik)
+			{
+				_insaAcikti[t] = acik;
+				if (acik)
+				{
+					b.AddThemeColorOverride("font_color", TdVeri.HasarRenk[t.HasarTuru].Lightened(0.3f));
+					if (t.Doku != null) { b.Icon = t.Doku; b.ExpandIcon = false; b.AddThemeConstantOverride("icon_max_width", 44); }
+				}
+			}
 			string satir1 = acik ? $"{t.Ad}{(kd > 0 ? $" +{kd}" : "")}   ◎{bedel}" : $"🔒 {t.Ad}  (Oyuncu Sv {t.Level})";
 			string satir2 = $"{TdVeri.HasarTr[t.HasarTuru]} · {ModAd(t.Mod)}";
 			if (acik && t.Etkili.Length > 0) satir2 += $"\nEtkili: {string.Join(", ", t.Etkili)}";
-			var b = Dugme(satir1 + "\n" + satir2, 16);
-			b.Alignment = HorizontalAlignment.Left;
-			b.CustomMinimumSize = new Vector2(350, 0);
-			b.Disabled = !acik || _altin < bedel;
-			if (acik) b.AddThemeColorOverride("font_color", TdVeri.HasarRenk[t.HasarTuru].Lightened(0.3f));
-			if (t.Doku != null && acik) { b.Icon = t.Doku; b.ExpandIcon = false; b.AddThemeConstantOverride("icon_max_width", 44); }
-			var tt = t;
-			b.Pressed += () => { if (_seciliYer >= 0) KuleKur(_seciliYer, tt); };
-			_insaListe.AddChild(b);
+			MetinAyarla(b, satir1 + "\n" + satir2);
+			bool kapali = !acik || _altin < bedel;
+			if (b.Disabled != kapali) b.Disabled = kapali;
 		}
 	}
 
@@ -1305,8 +1346,9 @@ public partial class KuleSavunmasi : Node2D
 				bool sirada = k.Dal[dal] == kd;
 				bool kilitli = sirada && !YetenekAgaci.Alinabilir(k.Dal, dal);
 				string kod = $"{(alindi ? "✓ " : kilitli || !sirada ? "· " : "")}{n.Ad}";
-				b.Text = alindi ? $"{kod}\n{n.Aciklama}" : kilitli ? $"{kod}\nKapalı (diğer dal)" : $"{kod}  ◎{n.Bedel}\n{n.Aciklama}";
-				b.Disabled = alindi || !sirada || kilitli || _altin < n.Bedel;
+				MetinAyarla(b, alindi ? $"{kod}\n{n.Aciklama}" : kilitli ? $"{kod}\nKapalı (diğer dal)" : $"{kod}  ◎{n.Bedel}\n{n.Aciklama}");
+				bool kap = alindi || !sirada || kilitli || _altin < n.Bedel;
+				if (b.Disabled != kap) b.Disabled = kap;
 				b.AddThemeColorOverride("font_disabled_color", alindi ? new Color(0.5f, 1f, 0.55f) : new Color(0.5f, 0.48f, 0.55f));
 				b.AddThemeColorOverride("font_color", kd == 2 ? new Color(1f, 0.85f, 0.4f) : new Color(0.92f, 0.9f, 0.97f));
 			}
@@ -1367,7 +1409,7 @@ public partial class KuleSavunmasi : Node2D
 		await Bekle(0.4f);
 		await Kare(klasor + "/5_insa.png");
 		PanelleriKapat();
-		var boss = TdVeri.Dusmanlar.FirstOrDefault(d => d.Boss && d.Level == _bolum);
+		var boss = BolumBosslari(_bolum).FirstOrDefault();
 		if (boss != null && _ekran == Ekran.Oyun) { DusmanDogur(boss); _dusmanlar[^1].Mesafe = 700; }
 		Engine.TimeScale = 1;
 		await Bekle(2.5f);

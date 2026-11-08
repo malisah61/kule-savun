@@ -10,7 +10,5 @@ ONIZLEME kaydedildi: onizleme/3b_analiz.png
 ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png
 ONIZLEME kaydedildi: onizleme/6_boss.png
-ONIZLEME bölüm=12 dalga=1/7 can=20 düşman=1 kule=17 doku_kule=0 doku_dusman=0
+ONIZLEME bölüm=12 dalga=1/7 can=20 düşman=1 kule=17 doku_kule=30 doku_dusman=200
 ONIZLEME bitti
-WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
-     at: cleanup (core/object/object.cpp:2284)

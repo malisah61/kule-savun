@@ -1,9 +1,43 @@
   Determining projects to restore...
-  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 502 ms).
-  KuleSavun -> /home/runner/work/kule-savun/kule-savun/.godot/mono/temp/bin/Debug/KuleSavun.dll
+  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 696 ms).
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(278,14): error CS1039: Unterminated string literal [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(278,15): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,24): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,46): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,52): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,72): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,88): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,95): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,95): error CS1010: Newline in constant [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,97): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(281,25): error CS1039: Unterminated string literal [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(281,26): error CS1026: ) expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(281,26): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,5): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,12): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,13): error CS1010: Newline in constant [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,100): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
 
-Build succeeded.
+Build FAILED.
+
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(278,14): error CS1039: Unterminated string literal [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(278,15): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,24): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,46): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,52): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,72): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,88): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,95): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,95): error CS1010: Newline in constant [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(279,97): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(281,25): error CS1039: Unterminated string literal [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(281,26): error CS1026: ) expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(281,26): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,5): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,12): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,13): error CS1010: Newline in constant [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+/home/runner/work/kule-savun/kule-savun/KuleSavunmasi.cs(282,100): error CS1002: ; expected [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
     0 Warning(s)
-    0 Error(s)
+    17 Error(s)
 
-Time Elapsed 00:00:05.21
+Time Elapsed 00:00:05.99

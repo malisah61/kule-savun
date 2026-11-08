@@ -1,0 +1,4 @@
+iskelet_okcu|16-bit pixel art game sprite, skeleton archer holding a bow, tattered hood, glowing green eyes, dark fantasy horror, full body, side view facing right, single character centered, flat solid magenta background, no shadow, no text
+zombi|16-bit pixel art game sprite, rotting green-skinned zombie in torn ragged clothes, arms stretched forward, dark fantasy horror, full body, side view facing right, single character centered, flat solid magenta background, no shadow, no text
+vampir|16-bit pixel art game sprite, pale vampire lord with long black and red cape, fangs, glowing red eyes, dark fantasy horror, full body, side view facing right, single character centered, flat solid magenta background, no shadow, no text
+kurt_adam|16-bit pixel art game sprite, hulking werewolf with dark grey fur, sharp claws, glowing yellow eyes, dark fantasy horror, full body, side view facing right, single character centered, flat solid magenta background, no shadow, no text

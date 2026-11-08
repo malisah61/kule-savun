@@ -1,0 +1,22 @@
+name: Pollinations karakter uret
+on:
+  push:
+    branches: [spritecook-indir]
+    paths: ['pollinations/prompts.txt', 'pollinations/uret.py', '.github/workflows/pollinations.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  uret:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 pollinations/uret.py
+      - name: Depoya kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add pollinations/cikti
+          git diff --cached --quiet || git commit -m "Pollinations karakterleri"
+          git push

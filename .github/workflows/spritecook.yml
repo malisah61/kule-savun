@@ -2,6 +2,7 @@ name: SpriteCook indir
 on:
   push:
     branches: [spritecook-indir]
+    paths: ['.github/workflows/spritecook.yml']
   workflow_dispatch:
 permissions:
   contents: write

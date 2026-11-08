@@ -14,5 +14,3 @@ ONIZLEME kaydedildi: onizleme/7_genis_ekran.png
 ONIZLEME ekran=(1600, 720) yer=20
 ONIZLEME bölüm=3 dalga=0/5 can=20 düşman=0 kule=0 doku_kule=30 doku_dusman=200
 ONIZLEME bitti
-WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
-     at: cleanup (core/object/object.cpp:2284)

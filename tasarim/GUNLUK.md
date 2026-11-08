@@ -1,5 +1,31 @@
 # Gece Günlüğü
 
+## 2026-11-08 (ikinci parti)
+**Eklenen düşmanlar (10):**
+| Ad | Zırh | Seviye | Özel |
+|---|---|---|---|
+| Kafes Taşıyıcı | Ölümsüz | 7 | – |
+| Böcek Rahip | Böcek | 12 | – |
+| Kök Dişli | Bataklık | 19 | yavaş |
+| Ayna Şövalye | Zırhlı | 28 | kalkan |
+| Kan Kuğusu | Uçan | 35 | uçan |
+| Saat Hortlağı | Hayalet | 45 | hızlı |
+| Tuz Golemi | Taş | 45 | yavaş |
+| Demirci İblis | Şeytan | 45 | kalkan |
+| Buzul Mamutu | Buz | 46 | yavaş |
+| Gölge Terzi | Kültist | 46 | hızlı |
+
+**Boss:** Yüz Maske Kahini (Kültist, bölüm 44)
+
+**Kule:** Ruh Zinciri — Gölge, zincir, menzil 160, atış 0.8/sn, hasar 32, maliyet 320, oyuncu Sv 31
+
+**Kalite kontrol:**
+- Kafes Taşıyıcı: ilk görsel karakter değil, içi beyaz boşluklu dolap/kafesti → prompt netleştirildi, yeniden üretildi (iskelet gardiyan).
+- Böcek Rahip: ilk görsel beyaz cüppeli sıradan rahipti, koltuk altında delikler → yeniden üretildi (koyu, böcekli cüppe).
+- Gölge Terzi: ilk görsel terziye benzemiyordu (sopalı ninja) → yeniden üretildi.
+- Yüz Maske Kahini: ilk görselde omuzlarda iki ayrı yeşil yaratık vardı → yeniden üretildi (tek, mor cüppeli kâhin).
+- Çıkarılan yok. Not: ad "Kâhini" yerine "Kahini" yazıldı ki dosya adı ASCII olsun.
+
 ## 2026-11-08
 **Eklenen düşmanlar (10):**
 | Ad | Zırh | Seviye | Özel |

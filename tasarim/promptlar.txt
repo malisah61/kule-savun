@@ -1,0 +1,230 @@
+kule_okcu|pixel art, wooden archer watchtower with arrow slits, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_tas_atar|pixel art, medieval catapult tower with a stone basket, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_ates_kazani|pixel art, stone tower with a burning fire cauldron on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_buz_kristali|pixel art, tower with a floating blue ice crystal, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_kutsal_can|pixel art, white chapel bell tower with golden glow, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_zehir_kazani|pixel art, tower with a bubbling green poison cauldron, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_tatar_yayi|pixel art, ballista crossbow tower with heavy bolts, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_yildirim|pixel art, tesla coil wizard tower crackling with lightning, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_golge_obel|pixel art, black obsidian obelisk with purple shadow runes, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_havan|pixel art, iron mortar cannon fortification, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_sahin_yuvasi|pixel art, falconer tower with hawk nests and banners, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_ejder_agzi|pixel art, stone dragon head statue tower breathing fire, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_don_kuyusu|pixel art, frozen well tower emitting cold mist, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_ilahi_isik|pixel art, angel statue tower shooting a holy light beam, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_orumcek_agi|pixel art, spider web tower with a giant spider on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_firtina|pixel art, storm totem pole with dark clouds and lightning, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_kemik_topu|pixel art, cannon made of bones and skulls, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_ruh_feneri|pixel art, ghostly lantern tower with trapped souls, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_keskin_nisan|pixel art, tall sniper tower with a long crossbow, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_lav_kuyusu|pixel art, volcanic tower pouring lava, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_buzul_topu|pixel art, ice cannon tower firing frost balls, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_aziz_heykeli|pixel art, statue of a praying saint with a halo, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_veba_kulesi|pixel art, plague doctor tower releasing toxic fog, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_sihir_kulesi|pixel art, arcane mage tower with floating runes, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_kara_delik|pixel art, void portal tower swirling with darkness, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_mancinik|pixel art, giant trebuchet fortress, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_anka|pixel art, phoenix nest tower with burning feathers, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_kader_carki|pixel art, clockwork tower with a spinning golden wheel, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_melek_kilici|pixel art, giant glowing holy sword stuck in a stone pedestal, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_kiyamet|pixel art, apocalypse tower with a burning eye on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+d_curuk_zombi|pixel art, rotting green zombie in torn rags, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_koylu_zombi|pixel art, zombie peasant with a pitchfork, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_piyade|pixel art, skeleton soldier with a rusty sword, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_iskelet_okcu|pixel art, skeleton archer with a bow, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kafatasi_firlatan|pixel art, skeleton throwing skulls, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mezar_kazici|pixel art, undead gravedigger with a shovel, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mumya|pixel art, bandaged mummy, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_kalkan|pixel art, skeleton with a large wooden shield, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zombi_kasap|pixel art, fat zombie butcher with a cleaver, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_gul|pixel art, pale ghoul crawling with long claws, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_sovalye|pixel art, skeleton knight in black armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_lanetli_rahip|pixel art, undead priest in a torn robe, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_les_yiyici|pixel art, hunched corpse eater ghoul, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_dev|pixel art, giant skeleton made of many bones, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_iskelet_atli|pixel art, skeleton riding a skeletal horse, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zombi_dev|pixel art, huge stitched zombie brute, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mumya_kral|pixel art, mummy pharaoh with a golden mask, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_ejder|pixel art, small skeletal dragon walking, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kafasiz_asker|pixel art, headless undead soldier holding his head, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_veba_zombisi|pixel art, plague zombie with boils, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_gezgin_ruh|pixel art, pale wandering ghost, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_feryatci|pixel art, banshee screaming ghost woman, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_fener_hayaleti|pixel art, ghost carrying a lantern, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zincirli_ruh|pixel art, ghost wrapped in chains, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_golge_cocuk|pixel art, creepy ghost child, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hortlak|pixel art, hooded wraith with glowing eyes, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bogulmus_ruh|pixel art, drowned ghost dripping water, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hayalet_sovalye|pixel art, ghost knight with a spectral sword, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kotu_ruh|pixel art, red angry poltergeist spirit, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ruh_toplayici|pixel art, ghost reaper with a scythe, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ayna_hayaleti|pixel art, ghost emerging from a broken mirror, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hayalet_gelin|pixel art, ghost bride in a torn veil, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_fisilti|pixel art, shadowy whispering specter, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hayalet_kaptan|pixel art, ghost pirate captain, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ruh_firtinasi|pixel art, swirling storm of ghost faces, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hortlak_lordu|pixel art, wraith lord with a crown, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kukla_ruh|pixel art, haunted porcelain doll ghost, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mum_hayaleti|pixel art, ghost made of melting candle wax, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_kurt|pixel art, black wolf with red eyes, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kurt_adam|pixel art, hulking werewolf, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_dev_fare|pixel art, giant plague rat, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kuduz_kopek|pixel art, rabid hound, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_yaban_domuzu|pixel art, demonic wild boar with tusks, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ayi_canavari|pixel art, undead bear monster, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hirlayan|pixel art, goblin-like gremlin creature, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_magara_trolu|pixel art, cave troll with a club, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_boynuzlu_canavar|pixel art, horned beast walking on two legs, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kertenkele_adam|pixel art, lizardman warrior, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_dev_orumcek|pixel art, giant black spider, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kurt_suru_lideri|pixel art, giant alpha wolf with scars, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_yeti|pixel art, white furred yeti, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemirici|pixel art, ratman with daggers, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_chupakabra|pixel art, chupacabra creature with spines, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mantikor|pixel art, manticore with scorpion tail, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_panter|pixel art, shadow panther, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_wendigo|pixel art, wendigo with antlers and skull face, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_muhafiz|pixel art, dark guard in heavy armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_pasli_sovalye|pixel art, rusty armored knight, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kalkan_tasiyici|pixel art, soldier with a tower shield, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zirhli_gulyabani|pixel art, armored ghoul brute, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_paladin|pixel art, dark paladin with a mace, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_demir_bekci|pixel art, iron sentinel armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bos_zirh|pixel art, living empty suit of armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ork_savasci|pixel art, orc warrior in spiked armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ork_sef|pixel art, orc chieftain with a big axe, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_olum_sovalyesi|pixel art, death knight with a glowing sword, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cellat|pixel art, executioner with a giant axe and hood, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_gladyator|pixel art, undead gladiator, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_lord|pixel art, dark lord in spiked black armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zirhli_kurt|pixel art, wolf in iron armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kusatma_devi|pixel art, giant ogre with a siege hammer, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_demir_golem|pixel art, iron golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_imp|pixel art, small red imp, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ates_iblisi|pixel art, fire demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_boynuzlu_seytan|pixel art, horned devil with a trident, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cehennem_kopegi|pixel art, hellhound with flaming mane, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_sukkubus|pixel art, winged succubus demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_lav_iblisi|pixel art, lava demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemirgen_iblis|pixel art, demonic rat imp, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zincirli_iblis|pixel art, demon wrapped in chains, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_iblisi|pixel art, blood demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cok_gozlu|pixel art, demon with many eyes, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kul_iblisi|pixel art, ash demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_iskenceci|pixel art, demon torturer with hooks, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_keci|pixel art, goat headed demon baphomet style, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cehennem_sovalyesi|pixel art, hell knight with burning armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kirmizi_dev|pixel art, giant red demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_balrog|pixel art, huge fire demon with a whip, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_yarasa|pixel art, giant vampire bat, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_genc_vampir|pixel art, young pale vampire, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_kontes|pixel art, vampire countess in a red dress, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_emici|pixel art, feral vampire creature, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_asilzade|pixel art, vampire noble with a cane, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_strigoi|pixel art, hunched strigoi vampire, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_gece_avcisi|pixel art, vampire hunter turned vampire, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_rahibesi|pixel art, vampire blood priestess, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_muhafiz|pixel art, vampire guard with a halberd, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_nosferatu|pixel art, bald nosferatu vampire with long fingers, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_gelin|pixel art, vampire bride, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_lordu|pixel art, vampire lord with a long cape, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_usak|pixel art, hunchback vampire servant, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_sovalyesi|pixel art, vampire knight in crimson armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_dev_sinek|pixel art, giant fly, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_les_bocegi|pixel art, carrion beetle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kirkayak|pixel art, giant centipede, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_akrep|pixel art, giant scorpion, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kanli_sivrisinek|pixel art, giant blood mosquito, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_suru_karincasi|pixel art, giant soldier ant, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_larva|pixel art, giant maggot larva, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_peygamber_devesi|pixel art, giant praying mantis, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kene|pixel art, giant tick, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bocek_kralice|pixel art, insect queen, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zirhli_bocek|pixel art, armored beetle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_yumurta_tasiyici|pixel art, bug carrying eggs, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ates_bocegi|pixel art, glowing fire beetle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ag_orucu|pixel art, web spinning spider, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kurt_bocegi|pixel art, giant worm, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_esek_arisi|pixel art, giant hornet, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_tas_gargoyl|pixel art, stone gargoyle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kaya_golem|pixel art, rock golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mezar_tasi_canlisi|pixel art, living tombstone monster, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_heykel_bekci|pixel art, animated stone statue guardian, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kristal_golem|pixel art, crystal golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kum_golemi|pixel art, sand golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_obsidyen_dev|pixel art, obsidian giant, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_golem|pixel art, bone golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_et_golemi|pixel art, flesh golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_dev_gargoyl|pixel art, huge gargoyle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_toprak_elementali|pixel art, earth elemental, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_anit_dev|pixel art, colossal stone titan, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_zombisi|pixel art, frozen zombie, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kar_hortlagi|pixel art, snow wraith, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_kurdu|pixel art, ice wolf, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_don_devi|pixel art, frost giant, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_elementali|pixel art, ice elemental, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_cadisi|pixel art, ice witch, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_donmus_sovalye|pixel art, frozen knight, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_orumcegi|pixel art, ice spider, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buzul_trol|pixel art, glacier troll, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kis_lordu|pixel art, winter lord with an ice crown, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_gulu|pixel art, frost ghoul, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kar_adam|pixel art, evil snowman monster, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_golemi|pixel art, ice golem, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kar_leopari|pixel art, snow leopard beast, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bataklik_zombisi|pixel art, swamp zombie covered in moss, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kurbaga_adam|pixel art, frog man warrior, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_balcik|pixel art, green slime blob, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bataklik_cadisi|pixel art, swamp hag witch, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_suluk|pixel art, giant leech, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_yosun_canavari|pixel art, moss monster, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_timsah_adam|pixel art, crocodile man, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_curuk_ent|pixel art, rotten tree monster, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mantar_adam|pixel art, fungus mushroom man, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hidra|pixel art, small swamp hydra, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_zehirli_balcik|pixel art, toxic purple slime, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bataklik_krali|pixel art, swamp king monster with a crown of roots, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kultist|pixel art, hooded cultist with a dagger, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_rahip|pixel art, dark priest, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_buyucusu|pixel art, necromancer, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cadi|pixel art, old witch with a broom, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kurban_tasiyici|pixel art, cultist carrying a candle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_maskeli_tarikatci|pixel art, masked cultist, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_lanet_okuyucu|pixel art, curse caster with a book, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_olum_buyucusu|pixel art, death wizard with a skull staff, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cadi_kazani_ustasi|pixel art, witch with a cauldron, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_buyucusu|pixel art, blood mage, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_tarikat_lideri|pixel art, cult leader with a goat mask, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_lic|pixel art, lich with a glowing crown, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_yarasa_surusu|pixel art, swarm of bats, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kuzgun|pixel art, giant raven, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_harpi|pixel art, harpy, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ucan_kafatasi|pixel art, flaming flying skull, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ucan_goz|pixel art, floating demonic eyeball, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_akbaba_canavar|pixel art, undead vulture, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kanatli_iblis|pixel art, winged demon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_wyvern|pixel art, wyvern, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_gece_kanadi|pixel art, shadow wing creature, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_kartal|pixel art, skeletal eagle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hayalet_kus|pixel art, ghost bird, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_tas_kanat|pixel art, flying stone gargoyle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_kral|pixel art, huge boss monster, giant skeleton king on a bone throne, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ay_kurt|pixel art, huge boss monster, giant werewolf howling, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_hayalet_kralice|pixel art, huge boss monster, ghost queen with a spectral crown, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_komutan|pixel art, huge boss monster, dark armored warlord, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bocek_ana|pixel art, huge boss monster, giant insect broodmother, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bataklik_hidrasi|pixel art, huge boss monster, three headed swamp hydra, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_basrahip|pixel art, huge boss monster, dark high priest with tentacles, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_tas_titan|pixel art, huge boss monster, colossal stone titan, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vampir_lordu|pixel art, huge boss monster, vampire lord with long white hair and red cape, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buz_ejderi|pixel art, huge boss monster, ice dragon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_cehennem_lordu|pixel art, huge boss monster, demon lord with huge horns, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_ejder|pixel art, huge boss monster, black dragon, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_lic_kral|pixel art, huge boss monster, lich king with a frozen crown, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kimera|pixel art, huge boss monster, chimera beast, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_olum_melegi|pixel art, huge boss monster, angel of death with black wings, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kara_sovalye_lordu|pixel art, huge boss monster, black knight lord on a horse, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_iblis_prensi|pixel art, huge boss monster, demon prince with flaming sword, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_golem_kral|pixel art, huge boss monster, golem king, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_eski_tanri|pixel art, huge boss monster, eldritch old god with tentacles, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kiyamet_canavari|pixel art, huge boss monster, apocalypse beast, dark fantasy horror game enemy, full body, side view, simple plain white background

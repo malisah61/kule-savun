@@ -941,8 +941,10 @@ public partial class KuleSavunmasi : Node2D
 
 		_mesaj = Yazi("", 34, Colors.White);
 		_mesaj.HorizontalAlignment = HorizontalAlignment.Center;
-		_mesaj.Position = new Vector2(240, 270);
-		_mesaj.Size = new Vector2(800, 140);
+		_mesaj.Position = new Vector2(140, 250);
+		_mesaj.Size = new Vector2(1000, 180);
+		_mesaj.AutowrapMode = TextServer.AutowrapMode.WordSmart;
+		_mesaj.AddThemeFontSizeOverride("font_size", 30);
 		_mesaj.MouseFilter = Control.MouseFilterEnum.Ignore;
 		_mesaj.Visible = false;
 		_ui.AddChild(_mesaj);

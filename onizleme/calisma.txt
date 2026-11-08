@@ -10,5 +10,7 @@ ONIZLEME kaydedildi: onizleme/3b_analiz.png
 ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png
 ONIZLEME kaydedildi: onizleme/6_boss.png
-ONIZLEME bölüm=12 dalga=1/7 can=20 düşman=1 kule=17 doku_kule=30 doku_dusman=200
+ONIZLEME kaydedildi: onizleme/7_genis_ekran.png
+ONIZLEME ekran=(1280, 720) yer=20
+ONIZLEME bölüm=3 dalga=0/5 can=20 düşman=0 kule=0 doku_kule=30 doku_dusman=200
 ONIZLEME bitti

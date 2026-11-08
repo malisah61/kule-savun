@@ -1372,6 +1372,13 @@ public partial class KuleSavunmasi : Node2D
 		Engine.TimeScale = 1;
 		await Bekle(2.5f);
 		await Kare(klasor + "/6_boss.png");
+		// geniş telefon ekranı (20:9) denemesi
+		DisplayServer.WindowSetSize(new Vector2I(1600, 720));
+		await Bekle(0.6f);
+		BolumBaslat(3);
+		await Bekle(1.2f);
+		await Kare(klasor + "/7_genis_ekran.png");
+		GD.Print($"ONIZLEME ekran={GetViewportRect().Size} yer={_yerler.Count}");
 		GD.Print($"ONIZLEME bölüm={_bolum} dalga={_dalga}/{_dalgaSayisi} can={_can} düşman={_dusmanlar.Count} kule={_kuleler.Count} doku_kule={TdVeri.Kuleler.Count(k => k.Doku != null)} doku_dusman={TdVeri.Dusmanlar.Count(d => d.Doku != null)}");
 		GD.Print("ONIZLEME bitti");
 		GetTree().Quit();

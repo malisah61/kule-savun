@@ -177,9 +177,9 @@ public partial class TdHarita : Node2D
 			}
 		}
 		// çıkış kapısı
-		var c = Cikis + new Vector2(0, 40);
-		DrawRect(new Rect2(c.X - 12, c.Y - 50, 52, 100), new Color(0.2f, 0.16f, 0.12f));
-		DrawRect(new Rect2(c.X - 4, c.Y - 38, 44, 88), new Color(0.07f, 0.05f, 0.05f));
+		var kapi = Cikis + new Vector2(0, 40);
+		DrawRect(new Rect2(kapi.X - 12, kapi.Y - 50, 52, 100), new Color(0.2f, 0.16f, 0.12f));
+		DrawRect(new Rect2(kapi.X - 4, kapi.Y - 38, 44, 88), new Color(0.07f, 0.05f, 0.05f));
 	}
 }
 

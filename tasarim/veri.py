@@ -60,6 +60,10 @@ KULELER = [
  ("kiyamet",     "Kıyamet Kulesi",     "Golge",   "alan",    200,0.4, 110, 500,40, "apocalypse tower with a burning eye on top"),
 ]
 assert len(KULELER) == 30
+EKLER = json.load(open("tasarim/ekler.json", encoding="utf-8")) if os.path.exists("tasarim/ekler.json") else {"kuleler": [], "dusmanlar": []}
+for k in EKLER.get("kuleler", []):
+    assert k["hasarTuru"] in HASAR and k["mod"] in {"tek","alan","zincir","yavas","zehir","delici","ucan_avci","aura","yakici","sersem"}, k
+    KULELER.append((k["id"], k["ad"], k["hasarTuru"], k["mod"], k["menzil"], k["atisHizi"], k["hasar"], k["maliyet"], k["level"], k["prompt"]))
 
 # ---------------- 200 düşman ----------------
 # aile: (zırh, varsayılan özellikler, [(ad, prompt), ...])
@@ -206,6 +210,10 @@ for d in normal:
     d["level"] = min(LEVEL_SAYISI, b + round(d["guc"] * (LEVEL_SAYISI - 4 - b)))
 bosslar = [d for d in dusmanlar if "boss" in d["ozel"]]
 for i, d in enumerate(bosslar): d["level"] = 2 * (i + 1)
+for e in EKLER.get("dusmanlar", []):
+    assert e["zirh"] in ZIRH, e
+    dusmanlar.append({"ad": e["ad"], "zirh": e["zirh"], "ozel": list(e.get("ozel", [])), "prompt": e["prompt"],
+                      "guc": float(e.get("guc", 0.5)), "level": int(e["level"])})
 
 ad_say = {}
 for d in dusmanlar:
@@ -249,6 +257,10 @@ with open("tasarim/promptlar.txt", "w", encoding="utf-8") as f:
     for d in dusmanlar:
         extra = "huge boss monster, " if "boss" in d["ozel"] else ""
         f.write(f"d_{d['id']}|pixel art, {extra}{d['prompt']}, dark fantasy horror game enemy, full body, side view, simple plain white background\n")
+boylar = {}
+for k in kuleler: boylar["kule_" + k["id"]] = 100
+for d in dusmanlar: boylar["d_" + d["id"]] = 120 if "boss" in d["ozel"] else (70 if "kalabalik" in d["ozel"] else 84)
+json.dump(boylar, open("tasarim/boylar.json", "w"), indent=0)
 print(len(kuleler), "kule,", len(dusmanlar), "düşman")
 from collections import Counter
 print(Counter(d["level"] for d in dusmanlar if "boss" not in d["ozel"]).most_common(5))

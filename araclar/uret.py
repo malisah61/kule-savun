@@ -2,7 +2,11 @@ import os, sys, time, torch
 from diffusers import DiffusionPipeline, LCMScheduler
 parca, toplam = int(sys.argv[1]), int(sys.argv[2])
 satirlar = [l.strip().split("|", 1) for l in open("tasarim/promptlar.txt", encoding="utf-8") if "|" in l]
-benim = [(i, a, p) for i, (a, p) in enumerate(satirlar) if i % toplam == parca]
+# sadece henüz sprite'ı olmayanlar çizilir (gece eklenenler)
+eksik = [(i, a, p) for i, (a, p) in enumerate(satirlar) if not os.path.exists(f"sprite/{a}.png")]
+benim = [x for j, x in enumerate(eksik) if j % toplam == parca]
+if not benim:
+    print("bu parçaya düşen yeni görsel yok"); sys.exit(0)
 torch.set_num_threads(os.cpu_count())
 t0 = time.time()
 pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", variant="fp16", torch_dtype=torch.float32)

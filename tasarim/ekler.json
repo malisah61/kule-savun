@@ -135,7 +135,7 @@
   {
    "ad": "Kafes Taşıyıcı",
    "zirh": "Olumsuz",
-   "prompt": "undead jailer carrying a rusty iron cage on his back",
+   "prompt": "hunched undead skeleton jailer in rags walking, a small rusty iron birdcage strapped to his back",
    "level": 7,
    "ozel": [],
    "guc": 0.25
@@ -143,7 +143,7 @@
   {
    "ad": "Böcek Rahip",
    "zirh": "Bocek",
-   "prompt": "hooded priest whose robe is made of crawling black beetles",
+   "prompt": "dark hooded priest in a black robe covered with crawling brown beetles",
    "level": 12,
    "ozel": [],
    "guc": 0.4
@@ -221,7 +221,7 @@
   {
    "ad": "Gölge Terzi",
    "zirh": "Kultist",
-   "prompt": "tall masked cultist tailor holding giant shears and spools of black thread",
+   "prompt": "tall pale masked cultist tailor in a long black coat holding huge iron scissors",
    "level": 46,
    "ozel": [
     "hizli"
@@ -231,7 +231,7 @@
   {
    "ad": "Yüz Maske Kahini",
    "zirh": "Kultist",
-   "prompt": "colossal towering prophet in dark robes, giant majestic figure surrounded by a hundred floating porcelain masks",
+   "prompt": "colossal towering hooded prophet in dark purple robes, single giant majestic figure wearing a white porcelain mask, many small masks hanging from his robe",
    "level": 44,
    "ozel": [
     "boss"

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-/// <summary>assets/td/veri.json: 30 kule, 200 düşman, hasar türleri ve zırh çarpanları.</summary>
+/// <summary>assets/td/veri.json: kuleler, düşmanlar, hasar türleri ve zırh çarpanları.</summary>
 public class KuleTanim
 {
 	public string Id, Ad, HasarTuru, Mod;

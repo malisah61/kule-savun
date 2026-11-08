@@ -2,6 +2,10 @@ name: Derleme Kontrolü ve Önizleme
 
 on:
   workflow_dispatch:
+    inputs:
+      cozunurluk:
+        description: "Ekran çözünürlüğü (ör. 1600x720 = 20:9 telefon)"
+        default: "1280x720"
   push:
     branches: [main]
     paths:
@@ -43,7 +47,7 @@ jobs:
 
       - name: Ekran görüntüleri
         run: |
-          timeout 150 xvfb-run -a -s "-screen 0 1280x720x24" godot --path . --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 -- --onizleme=onizleme 2>&1 | grep -vE "^\s*$" | tee onizleme/calisma.txt | tail -40
+          timeout 150 R="${{ inputs.cozunurluk || '1280x720' }}"; xvfb-run -a -s "-screen 0 ${R}x24" godot --path . --rendering-driver opengl3 --audio-driver Dummy --resolution $R -- --onizleme=onizleme 2>&1 | grep -vE "^\s*$" | tee onizleme/calisma.txt | tail -40
           ls -la onizleme
 
       - name: Depoya kaydet

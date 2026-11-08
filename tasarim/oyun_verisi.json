@@ -736,6 +736,26 @@
     "Vampir",
     "Kültist"
    ]
+  },
+  {
+   "id": "buz_mizragi",
+   "ad": "Buz Mızrağı",
+   "hasarTuru": "Buz",
+   "mod": "delici",
+   "menzil": 190,
+   "atisHizi": 0.6,
+   "hasar": 36,
+   "maliyet": 300,
+   "level": 25,
+   "prompt": "tower of jagged blue ice spikes with a giant frost spear launcher on top",
+   "etkili": [
+    "Şeytan",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Taş",
+    "Buz"
+   ]
   }
  ],
  "dusmanlar": [
@@ -5106,6 +5126,250 @@
    "guclu": [
     "Ateş",
     "Gölge"
+   ]
+  },
+  {
+   "ad": "Lanetli Korkuluk",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "haunted scarecrow with a burlap sack face holding a rusty sickle",
+   "guc": 0.2,
+   "level": 6,
+   "id": "lanetli_korkuluk",
+   "can": 58,
+   "hiz": 42,
+   "odul": 9,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kafatası Yengeci",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "giant hermit crab living inside a human skull shell",
+   "guc": 0.35,
+   "level": 9,
+   "id": "kafatasi_yengeci",
+   "can": 129,
+   "hiz": 42,
+   "odul": 12,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Fener Balığı Adam",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "swamp anglerfish man with a glowing lure on his head and sharp teeth",
+   "guc": 0.45,
+   "level": 17,
+   "id": "fener_baligi_adam",
+   "can": 345,
+   "hiz": 42,
+   "odul": 19,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kuklacı",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "gaunt hooded puppeteer cultist with long fingers trailing strings",
+   "guc": 0.55,
+   "level": 24,
+   "id": "kuklaci",
+   "can": 1030,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Çan Kafalı",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "armored brute wearing a rusty church bell as a helmet",
+   "guc": 0.65,
+   "level": 33,
+   "id": "can_kafali",
+   "can": 5361,
+   "hiz": 42,
+   "odul": 34,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Yüzsüz",
+   "zirh": "Hayalet",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "faceless ghost in a long black coat with a smooth blank face",
+   "guc": 0.8,
+   "level": 41,
+   "id": "yuzsuz",
+   "can": 14543,
+   "hiz": 48,
+   "odul": 41,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Diken Geyik",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "black stag beast with glowing antlers made of thorns",
+   "guc": 0.8,
+   "level": 41,
+   "id": "diken_geyik",
+   "can": 14543,
+   "hiz": 62,
+   "odul": 41,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Lav Kaplumbağası",
+   "zirh": "Seytan",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "giant turtle with a volcanic shell oozing lava",
+   "guc": 0.9,
+   "level": 42,
+   "id": "lav_kaplumbagasi",
+   "can": 28257,
+   "hiz": 28,
+   "odul": 42,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kırağı Güvesi",
+   "zirh": "Buz",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "giant frost moth with icy crystal wings",
+   "guc": 0.85,
+   "level": 43,
+   "id": "kiragi_guvesi",
+   "can": 16022,
+   "hiz": 55,
+   "odul": 43,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Sis Kontu",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire count in a long coat dissolving into red mist",
+   "guc": 0.95,
+   "level": 44,
+   "id": "sis_kontu",
+   "can": 24296,
+   "hiz": 42,
+   "odul": 44,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mezar Leviatanı",
+   "zirh": "Bataklik",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "colossal towering grave leviathan, giant majestic swamp sea serpent with a ribcage back and rotting fins",
+   "guc": 1.0,
+   "level": 42,
+   "id": "mezar_leviatani",
+   "can": 258318,
+   "hiz": 26,
+   "odul": 231,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
    ]
   }
  ]

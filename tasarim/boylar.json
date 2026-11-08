@@ -29,6 +29,7 @@
 "kule_kader_carki": 100,
 "kule_melek_kilici": 100,
 "kule_kiyamet": 100,
+"kule_buz_mizragi": 100,
 "d_curuk_zombi": 84,
 "d_koylu_zombi": 84,
 "d_kemik_piyade": 84,
@@ -228,5 +229,16 @@
 "d_iblis_prensi": 120,
 "d_golem_kral": 120,
 "d_eski_tanri": 120,
-"d_kiyamet_canavari": 120
+"d_kiyamet_canavari": 120,
+"d_lanetli_korkuluk": 84,
+"d_kafatasi_yengeci": 84,
+"d_fener_baligi_adam": 84,
+"d_kuklaci": 84,
+"d_can_kafali": 84,
+"d_yuzsuz": 84,
+"d_diken_geyik": 84,
+"d_lav_kaplumbagasi": 84,
+"d_kiragi_guvesi": 84,
+"d_sis_kontu": 84,
+"d_mezar_leviatani": 120
 }

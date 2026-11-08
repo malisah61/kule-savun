@@ -1,1 +1,19 @@
-{"kuleler": [], "dusmanlar": []}
+{
+ "kuleler": [
+  {"id": "buz_mizragi", "ad": "Buz Mızrağı", "hasarTuru": "Buz", "mod": "delici", "menzil": 190, "atisHizi": 0.6, "hasar": 36, "maliyet": 300, "level": 25,
+   "prompt": "tower of jagged blue ice spikes with a giant frost spear launcher on top"}
+ ],
+ "dusmanlar": [
+  {"ad": "Lanetli Korkuluk", "zirh": "Olumsuz", "prompt": "haunted scarecrow with a burlap sack face holding a rusty sickle", "level": 6, "ozel": [], "guc": 0.2},
+  {"ad": "Kafatası Yengeci", "zirh": "Bocek", "prompt": "giant hermit crab living inside a human skull shell", "level": 9, "ozel": ["kalkan"], "guc": 0.35},
+  {"ad": "Fener Balığı Adam", "zirh": "Bataklik", "prompt": "swamp anglerfish man with a glowing lure on his head and sharp teeth", "level": 17, "ozel": ["iyilesir"], "guc": 0.45},
+  {"ad": "Kuklacı", "zirh": "Kultist", "prompt": "gaunt hooded puppeteer cultist with long fingers trailing strings", "level": 24, "ozel": [], "guc": 0.55},
+  {"ad": "Çan Kafalı", "zirh": "Zirhli", "prompt": "armored brute wearing a rusty church bell as a helmet", "level": 33, "ozel": ["kalkan"], "guc": 0.65},
+  {"ad": "Yüzsüz", "zirh": "Hayalet", "prompt": "faceless ghost in a long black coat with a smooth blank face", "level": 41, "ozel": ["hizli"], "guc": 0.8},
+  {"ad": "Diken Geyik", "zirh": "Canavar", "prompt": "black stag beast with glowing antlers made of thorns", "level": 41, "ozel": ["hizli"], "guc": 0.8},
+  {"ad": "Lav Kaplumbağası", "zirh": "Seytan", "prompt": "giant turtle with a volcanic shell oozing lava", "level": 42, "ozel": ["yavas"], "guc": 0.9},
+  {"ad": "Kırağı Güvesi", "zirh": "Buz", "prompt": "giant frost moth with icy crystal wings", "level": 43, "ozel": ["ucan"], "guc": 0.85},
+  {"ad": "Sis Kontu", "zirh": "Vampir", "prompt": "vampire count in a long coat dissolving into red mist", "level": 44, "ozel": ["iyilesir"], "guc": 0.95},
+  {"ad": "Mezar Leviatanı", "zirh": "Bataklik", "prompt": "colossal towering grave leviathan, giant majestic swamp sea serpent with a ribcage back and rotting fins", "level": 42, "ozel": ["boss"], "guc": 1.0}
+ ]
+}

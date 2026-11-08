@@ -5,6 +5,7 @@ Karanlık fantastik, yol + kule savunma oyunu. Mezarlık yolundan gelen 200 fark
 **APK:** https://github.com/malisah61/kule-savun/releases/download/son-surum/KuleSavunma.apk
 
 ## Oynanış
+- Her bölümde uzun, ekranı kat kat dolaşan rastgele bir yol (şerit, sütun ya da dalgalı) ve dolu bir mezarlık haritası.
 - Yolun yanındaki boş yerlere dokun → kule kur. Kuleye dokun → menzil, bilgi, bölüm içi yetenek ağacı (Güç / Ustalık), sat.
 - **▶ Dalga** ile dalgayı başlat. Yolu bitiren düşman savunmanın canını azaltır (boss 10 can).
 - 40 bölüm; çift bölümlerde boss. Her dalgada düşman sayısı, geliş hızı ve canı artar.
@@ -22,6 +23,9 @@ Karanlık fantastik, yol + kule savunma oyunu. Mezarlık yolundan gelen 200 fark
 - `YetenekAgaci.cs` — bölüm içi Güç/Ustalık ağacı · `Ilerleme.cs` — XP, seviye, para, kalıcı ağaç, kayıt
 - `TdHarita.cs` — kodla çizilen mezarlık haritası ve yol · `Efekt.cs` — parçacıklar ve sesler
 - `assets/td/` — 30 kule + 200 düşman sprite'ı ve `veri.json`
+
+## Müzik
+`assets/ses/menu.ogg` (ürpertici ortam) ve `assets/ses/savas.ogg` (gerilim) `araclar/besteci.py` ile kodla bestelendi; telifsiz. Oyunda ♪ düğmesiyle açılıp kapanır.
 
 ## Görseller
 Sprite'lar `sanat-uretimi` dalındaki iş akışıyla GitHub Actions'ta üretildi: Stable Diffusion XL + LCM LoRA + pixel-art-xl LoRA (CPU), ardından `araclar/temizle3.py` ile arka plan temizleme. Tasarım verisi: `tasarim/veri.py`.

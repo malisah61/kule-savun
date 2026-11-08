@@ -8,3 +8,4 @@
 - Kule/düşman verisi `assets/td/veri.json` (kaynağı `sanat-uretimi` dalında `tasarim/veri.py`); sprite'lar `assets/td/kule_<id>.png`, `d_<id>.png`.
 - Yeni görsel: `sanat-uretimi` dalında `tasarim/promptlar.txt`'e satır ekle → `sanat.yml` bulutta üretir (CPU, görsel başına ~6-12 dk), `sprite/` klasörüne yazar.
 - Kayıt: `user://td_kayit.json` (enUst, xp, para, harcananPuan, kademe).
+- Müzik: `araclar/besteci.py assets/ses` (numpy + ffmpeg) menu.ogg ve savas.ogg üretir.

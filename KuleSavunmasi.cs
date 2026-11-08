@@ -10,16 +10,22 @@ public partial class KuleSavunmasi : Node2D
 	class Kule
 	{
 		public KuleTanim T;
-		public int Sv = 1, Harcanan;
+		public int Harcanan;
+		public int[] Dal = new int[2];
+		public List<YetenekDugum>[] Agac;
+		public readonly HashSet<string> Ozel = new();
+		public float HasarC = 1, MenzilC = 1, HizC = 1, ZirhDelme;
 		public Vector2 P;
 		public Node2D Kok;
 		public Sprite2D Spr;
 		public Label Yildiz;
 		public float Bekleme;
-		public float Hasar => T.Hasar * (1f + 0.55f * (Sv - 1));
-		public float Menzil => T.Menzil * (1f + 0.07f * (Sv - 1));
-		public float Hiz => T.AtisHizi * (1f + 0.08f * (Sv - 1));
-		public int YukseltBedel => (int)(T.Maliyet * (0.6f + 0.4f * Sv));
+		public float Hasar => T.Hasar * HasarC;
+		public float Menzil => T.Menzil * MenzilC;
+		public float Hiz => T.AtisHizi * HizC;
+		public int Kademe => Dal[0] + Dal[1];
+		public bool Var(string o) => Ozel.Contains(o);
+		public float Dps => Hasar * Hiz * (T.Mod is "alan" or "zincir" or "aura" or "delici" ? 2.2f : 1f) * (Var("kritik") ? 1.5f : 1f) * (Var("cift") ? 2f : 1f) * (Var("suru") ? 3f : 1f);
 	}
 
 	class Dus
@@ -29,7 +35,8 @@ public partial class KuleSavunmasi : Node2D
 		public Sprite2D Spr;
 		public ColorRect CanArka, CanOn;
 		public float Can, CanMax, Hiz, Mesafe, Faz, Boy, Odul;
-		public float Yavas, YavasSure, ZehirDps, ZehirSure, YanmaDps, YanmaSure, Sersem;
+		public float Yavas, YavasSure, ZehirDps, ZehirSure, YanmaDps, YanmaSure, Sersem, KirilganSure;
+		public bool Salgin, KulPatlar;
 		public string ZehirTur = "Zehir", YanmaTur = "Ates";
 		public CpuParticles2D Ates;
 		public bool Olu;
@@ -62,6 +69,12 @@ public partial class KuleSavunmasi : Node2D
 	int _seciliYer = -1;
 	Kule _seciliKule;
 	int _hizKat = 1;
+	// uyarlanabilir zorluk: her dalga sonunda savunma analiz edilir
+	float _uyum = 1f;
+	int _kacanBuDalga, _olumSayisi;
+	float _olumMesafeToplam;
+	readonly Dictionary<string, float> _karsiAgirlik = new();
+	Label _tehditYazi;
 
 	Node2D _dunya;
 	TdHarita _harita;
@@ -75,7 +88,8 @@ public partial class KuleSavunmasi : Node2D
 	Button _dalgaButon, _hizButon;
 	VBoxContainer _insaListe;
 	Label _kuleBaslik, _kuleBilgi;
-	Button _yukseltButon, _satButon;
+	Button _satButon;
+	readonly Button[,] _agacButon = new Button[2, 3];
 	GridContainer _bolumIzgara;
 	Label _sonucBaslik, _sonucMetin;
 	Button _sonucDevam;
@@ -148,6 +162,8 @@ public partial class KuleSavunmasi : Node2D
 		_can = 20;
 		_altin = 160 + bolum * 25;
 		_dalgaSuruyor = false;
+		_uyum = 1f;
+		_karsiAgirlik.Clear();
 		_ekran = Ekran.Oyun;
 		_menu.Visible = false;
 		_sonucPanel.Visible = false;
@@ -175,8 +191,11 @@ public partial class KuleSavunmasi : Node2D
 		_dalga++;
 		_dalgaSuruyor = true;
 		_dalgaButon.Visible = false;
+		_kacanBuDalga = 0; _olumSayisi = 0; _olumMesafeToplam = 0;
+		KarsiSecimHesapla();
 		var havuz = TdVeri.Dusmanlar.Where(d => !d.Boss && d.Level <= _bolum).ToList();
-		int adet = 5 + _bolum / 2 + _dalga * 2;
+		// her dalga daha kalabalık; savunma güçlüyse daha da kalabalık
+		int adet = Mathf.RoundToInt((5 + _bolum * 0.5f + _dalga * 2.5f) * Mathf.Lerp(1f, _uyum, 0.5f));
 		for (int i = 0; i < adet; i++)
 		{
 			// yeni açılan düşmanlar daha sık gelir
@@ -193,19 +212,81 @@ public partial class KuleSavunmasi : Node2D
 				?? (_bolum % 5 == 0 ? TdVeri.Dusmanlar.Where(d => d.Boss && d.Level < _bolum).OrderBy(_ => _rng.Randf()).FirstOrDefault() : null);
 			if (boss != null) _dogacak.Enqueue(boss);
 		}
-		_dogmaAralik = Mathf.Max(0.32f, 0.95f - _bolum * 0.013f);
+		// her dalgada düşmanlar daha sık gelir
+		_dogmaAralik = Mathf.Max(0.22f, (0.95f - _bolum * 0.012f) * (1f - 0.06f * (_dalga - 1)) / Mathf.Sqrt(_uyum));
 		_dogmaSayac = 0.3f;
 		Ses("boru");
 		Mesaj($"Dalga {_dalga}/{_dalgaSayisi}", new Color(1f, 0.55f, 0.4f), 1.5f);
 		ArayuzGuncelle();
 	}
 
-	float Agirlik(DusmanTanim d) => 1f + (d.Level >= _bolum - 2 ? 3f : 0f);
+	float Agirlik(DusmanTanim d) =>
+		(1f + (d.Level >= _bolum - 2 ? 3f : 0f)) * (_karsiAgirlik.TryGetValue(d.Zirh, out var k) ? k : 1f);
+
+	/// <summary>Kulelerin hasar türü dağılımına bakar; bu karışıma dirençli zırhlar daha sık seçilir.</summary>
+	void KarsiSecimHesapla()
+	{
+		_karsiAgirlik.Clear();
+		var pay = new Dictionary<string, float>();
+		float top = 0;
+		foreach (var k in _kuleler) { pay[k.T.HasarTuru] = pay.GetValueOrDefault(k.T.HasarTuru) + k.Dps; top += k.Dps; }
+		if (top <= 0) return;
+		foreach (var z in TdVeri.Carpan.Keys)
+		{
+			float etki = 0;
+			foreach (var (h, v) in pay) etki += v / top * TdVeri.HasarCarpani(z, h);
+			// etki 1'den düşükse (savunma bu zırha karşı zayıfsa) o zırh daha sık gelir
+			_karsiAgirlik[z] = Mathf.Clamp(1f + 1.2f * (1f - etki) * Mathf.Clamp(_uyum - 0.6f, 0.2f, 1.2f), 0.5f, 2.5f);
+		}
+	}
+
+	float DalgaCanCarpani => 1f + 0.1f * (_dalga - 1);
+
+	/// <summary>
+	/// Dalga sonu analizi: düşmanlar yolun neresinde ölüyor, kaç tanesi kaçtı, kulelerin toplam gücü ne?
+	/// Savunma rahatsa düşmanlar güçlenir/çoğalır/hızlanır; zorlanıyorsa biraz geri çekilir.
+	/// </summary>
+	void DalgaAnalizi()
+	{
+		float onceki = _uyum;
+		float ort = _olumSayisi > 0 ? _olumMesafeToplam / _olumSayisi : 1f;
+		if (_kacanBuDalga > 0) _uyum *= Mathf.Max(0.75f, 0.92f - 0.03f * Math.Min(_kacanBuDalga, 5));
+		else if (ort < 0.3f) _uyum *= 1.15f;
+		else if (ort < 0.5f) _uyum *= 1.07f;
+		else if (ort > 0.75f) _uyum *= 0.97f;
+		// kulelere yapılan yatırım: saniyede verilebilecek hasar / bir sonraki dalganın gerektirdiği hasar
+		float guc = _kuleler.Sum(k => k.Dps);
+		int sonrakiAdet = Mathf.RoundToInt(5 + _bolum * 0.5f + (_dalga + 1) * 2.5f);
+		float gereken = TdVeri.TemelCan(_bolum) * (1f + 0.1f * _dalga) * _uyum * sonrakiAdet
+			/ (sonrakiAdet * _dogmaAralik + TdHarita.Uzunluk / 46f);
+		float oran = gereken > 0 ? guc / gereken : 1f;
+		if (_kacanBuDalga == 0 && oran > 2.5f) _uyum *= 1.06f;
+		_uyum = Mathf.Clamp(_uyum, 0.7f, 3f);
+		KarsiSecimHesapla();
+
+		string durum = _kacanBuDalga > 0 ? $"{_kacanBuDalga} düşman sızdı"
+			: ort < 0.3f ? "düşmanlar yolun başında eriyor"
+			: ort < 0.5f ? "savunma rahat" : "savunma zorlanıyor";
+		string yon = _uyum > onceki + 0.005f ? $"Düşmanlar güçlendi (x{_uyum:0.00})"
+			: _uyum < onceki - 0.005f ? $"Düşmanlar geri çekildi (x{_uyum:0.00})" : $"Tehdit sabit (x{_uyum:0.00})";
+		string karsi = "";
+		if (_kuleler.Count > 0)
+		{
+			var baskin = _kuleler.GroupBy(k => k.T.HasarTuru).OrderByDescending(g => g.Sum(k => k.Dps)).First().Key;
+			var (zirh, agirlik) = _karsiAgirlik.OrderByDescending(kv => kv.Value).Select(kv => (kv.Key, kv.Value)).FirstOrDefault();
+			if (zirh != null && agirlik > 1.15f)
+				karsi = $"
+{TdVeri.HasarTr[baskin]} ağırlıklı savunmana karşı {TdVeri.ZirhTr[zirh]} düşmanlar öne çıkıyor";
+		}
+		Mesaj($"Analiz: {durum}
+{yon}{karsi}", _uyum >= onceki ? new Color(1f, 0.6f, 0.45f) : new Color(0.6f, 0.95f, 0.65f), 3.2f);
+		ArayuzGuncelle();
+	}
 
 	void DusmanDogur(DusmanTanim t)
 	{
 		var d = new Dus { T = t };
-		float can = TdVeri.TemelCan(_bolum) * (0.8f + 0.6f * t.Guc);
+		float can = TdVeri.TemelCan(_bolum) * (0.8f + 0.6f * t.Guc) * DalgaCanCarpani * _uyum;
 		float hiz = 46f;
 		if (t.Ozel.Contains("hizli")) { hiz = 70f; can *= 0.8f; }
 		if (t.Ozel.Contains("yavas")) { hiz = 30f; can *= 1.8f; }
@@ -283,6 +364,7 @@ public partial class KuleSavunmasi : Node2D
 		{
 			_dalgaSuruyor = false;
 			if (_dalga >= _dalgaSayisi) { BolumKazanildi(); return; }
+			DalgaAnalizi();
 			int bonus = 20 + _bolum * 3;
 			_altin += bonus;
 			Efekt.Yazi(_dunya, new Vector2(640, 110), $"+{bonus} altın", new Color(1f, 0.85f, 0.3f), 30);
@@ -307,6 +389,7 @@ public partial class KuleSavunmasi : Node2D
 			}
 			if (d.T.Ozel.Contains("iyilesir")) d.Can = Mathf.Min(d.CanMax, d.Can + d.CanMax * 0.015f * dt);
 			if (d.YavasSure > 0) d.YavasSure -= dt; else d.Yavas = 0;
+			if (d.KirilganSure > 0) d.KirilganSure -= dt;
 			float hiz = d.Hiz * (1f - d.Yavas);
 			if (d.Sersem > 0) { d.Sersem -= dt; hiz = 0; }
 			d.Mesafe += hiz * dt;
@@ -331,6 +414,7 @@ public partial class KuleSavunmasi : Node2D
 			{
 				int kayip = d.T.Boss ? 10 : 1;
 				_can -= kayip;
+				_kacanBuDalga += kayip;
 				Ses("kale");
 				Efekt.Yazi(_dunya, new Vector2(1220, 450), $"-{kayip} ♥", new Color(1f, 0.3f, 0.3f), 30);
 				DusmaniSil(d, false);
@@ -344,8 +428,13 @@ public partial class KuleSavunmasi : Node2D
 	{
 		if (d.Olu) return;
 		float c = TdVeri.HasarCarpani(d.T.Zirh, tur);
+		if (k != null && c < 1f) c = Mathf.Lerp(c, 1f, k.ZirhDelme);
 		float h = miktar * c;
-		if (d.T.Ozel.Contains("kalkan") && tur == "Fiziksel") h *= 0.7f;
+		if (d.T.Ozel.Contains("kalkan") && tur == "Fiziksel" && (k == null || k.ZirhDelme <= 0)) h *= 0.7f;
+		if (d.KirilganSure > 0) h *= 1.3f;
+		if (k != null && k.Var("yakici_isin") && d.T.Boss) h *= 2f;
+		bool kritik = vurusEfekti && k != null && k.Var("kritik") && _rng.Randf() < 0.25f;
+		if (kritik) { h *= 3f; Efekt.Yazi(_dunya, d.Merkez + new Vector2(0, -14), "KRİTİK", new Color(1f, 0.4f, 0.2f), 18); }
 		d.Can -= h;
 		if (vurusEfekti)
 		{
@@ -358,14 +447,29 @@ public partial class KuleSavunmasi : Node2D
 				tw.TweenProperty(d.Spr, "modulate", Colors.White, 0.12f);
 			}
 		}
-		if (d.Can <= 0) Oldur(d);
+		if (d.Can <= 0) Oldur(d, k);
 	}
 
-	void Oldur(Dus d)
+	void Oldur(Dus d, Kule katil = null)
 	{
 		if (d.Olu) return;
-		_altin += Mathf.Max(1, Mathf.RoundToInt(d.Odul));
+		_altin += Mathf.Max(1, Mathf.RoundToInt(d.Odul * (katil != null && katil.Var("ruh_hasadi") ? 1.6f : 1f)));
+		_olumSayisi++;
+		_olumMesafeToplam += Mathf.Clamp(d.Mesafe / TdHarita.Uzunluk, 0, 1);
 		var m = d.Merkez;
+		// Salgın: zehir çevreye yayılır · Kül Patlaması: yanan düşman patlar
+		if (d.Salgin && d.ZehirSure > 0)
+		{
+			Efekt.Yayici(_dunya, m, new[] { new Color(0.5f, 1f, 0.3f, 0.8f), new Color(0.2f, 0.5f, 0.1f, 0f) }, 18, 0.7f, 40, 110, 0.5f, 1f, true, false, 0f);
+			foreach (var e in _dusmanlar.Where(e => e != d && !e.Olu && e.Kok.Position.DistanceTo(d.Kok.Position) < 75))
+			{ Zehirle(e, d.ZehirDps, 4f, d.ZehirTur); e.Salgin = true; }
+		}
+		if (d.KulPatlar && d.YanmaSure > 0)
+		{
+			Efekt.Patlama(_dunya, m, 0.6f);
+			foreach (var e in _dusmanlar.Where(e => e != d && !e.Olu && e.Kok.Position.DistanceTo(d.Kok.Position) < 60).ToList())
+				HasarVer(e, d.YanmaDps * 2.5f, d.YanmaTur, true);
+		}
 		switch (d.T.Zirh)
 		{
 			case "Hayalet": case "Kultist": case "Golge": Efekt.MorPatlama(_dunya, m, d.T.Boss ? 2f : 0.7f); break;
@@ -410,7 +514,7 @@ public partial class KuleSavunmasi : Node2D
 				foreach (var d in icinde)
 				{
 					HasarVer(d, k.Hasar, k.T.HasarTuru, false, k);
-					if (!d.Olu && k.T.HasarTuru == "Buz" && TdVeri.HasarCarpani(d.T.Zirh, "Buz") > 0) { d.Yavas = Mathf.Max(d.Yavas, 0.35f); d.YavasSure = 1.2f; }
+					if (!d.Olu && (k.T.HasarTuru == "Buz" || k.Var("genis_aura"))) Yavaslat(d, k.T.HasarTuru == "Buz" ? 0.35f : 0.25f, 1.2f);
 				}
 				KuleTepki(k);
 				continue;
@@ -424,7 +528,13 @@ public partial class KuleSavunmasi : Node2D
 			{
 				case "zincir": Zincir(k, hedef, cikis); break;
 				case "delici": Isin(k, hedef, cikis); break;
-				default: MermiAt(k, hedef, cikis); break;
+				default:
+					MermiAt(k, hedef, cikis);
+					int ek = k.Var("cift") ? 1 : k.Var("suru") ? 2 : 0;
+					foreach (var d2 in _dusmanlar.Where(d => d != hedef && !d.Olu && d.Kok.Position.DistanceTo(k.P) <= k.Menzil
+						&& !(k.T.HasarTuru == "Kusatma" && d.T.Ucan)).OrderByDescending(d => d.Mesafe).Take(ek).ToList())
+						MermiAt(k, d2, cikis);
+					break;
 			}
 		}
 	}
@@ -502,7 +612,7 @@ public partial class KuleSavunmasi : Node2D
 		switch (k.T.Mod)
 		{
 			case "alan":
-				float yaricap = 48f + k.Sv * 4;
+				float yaricap = (48f + k.Kademe * 4) * (k.Var("buyuk_alan") ? 1.6f : 1f);
 				if (tur == "Ates" || tur == "Kusatma") Efekt.Patlama(_dunya, nokta, 0.5f);
 				else if (tur == "Golge") Efekt.MorPatlama(_dunya, nokta, 0.7f);
 				else Efekt.Parlama(_dunya, nokta, new Color(renk, 0.8f), yaricap / 14f, 0.35f);
@@ -512,18 +622,21 @@ public partial class KuleSavunmasi : Node2D
 						HasarVer(d, k.Hasar, tur, d == hedef, k);
 						if (!d.Olu && tur == "Buz") Yavaslat(d, 0.35f, 1.5f);
 						if (!d.Olu && tur == "Zehir") Zehirle(d, k.Hasar * 0.4f, 3f, tur);
+						if (!d.Olu && k.Var("sarsinti")) d.Sersem = Mathf.Max(d.Sersem, d.T.Boss ? 0.1f : 0.35f);
 					}
 				return;
 			case "yakici":
-				Efekt.Patlama(_dunya, nokta, 0.3f);
+				bool cehennem = k.Var("cehennem");
+				Efekt.Patlama(_dunya, nokta, cehennem ? 0.5f : 0.3f);
 				foreach (var d in _dusmanlar.ToList())
-					if (d.Kok.Position.DistanceTo(nokta) <= 40)
+					if (d.Kok.Position.DistanceTo(nokta) <= (cehennem ? 62 : 40))
 					{
 						HasarVer(d, k.Hasar, tur, d == hedef, k);
 						if (!d.Olu && TdVeri.HasarCarpani(d.T.Zirh, tur) > 0)
 						{
-							d.YanmaDps = Mathf.Max(d.YanmaDps * (d.YanmaSure > 0 ? 1 : 0), k.Hasar * 0.7f);
+							d.YanmaDps = Mathf.Max(d.YanmaDps * (d.YanmaSure > 0 ? 1 : 0), k.Hasar * (cehennem ? 1.4f : 0.7f));
 							d.YanmaSure = 3f; d.YanmaTur = tur;
+							if (k.Var("kul")) d.KulPatlar = true;
 							d.Ates ??= Efekt.Ates(_dunya, d.Merkez, 0.4f, 10);
 						}
 					}
@@ -531,14 +644,24 @@ public partial class KuleSavunmasi : Node2D
 		}
 		if (hedef == null || hedef.Olu) return;
 		Efekt.Kivilcim(_dunya, nokta, renk);
-		float carp = k.T.Mod == "ucan_avci" && hedef.T.Ucan ? 2f : 1f;
+		float carp = k.T.Mod == "ucan_avci" && hedef.T.Ucan ? (k.Var("avci") ? 3f : 2f) : 1f;
 		HasarVer(hedef, k.Hasar * carp, tur, true, k);
 		if (hedef.Olu) return;
 		switch (k.T.Mod)
 		{
-			case "yavas": Yavaslat(hedef, tur == "Buz" ? 0.45f : 0.5f, 2f); if (tur == "Zehir") Zehirle(hedef, k.Hasar * 0.6f, 3f, tur); break;
-			case "zehir": Zehirle(hedef, k.Hasar * 0.9f, 4f, tur); break;
-			case "sersem": hedef.Sersem = hedef.T.Boss ? 0.15f : 0.55f; Efekt.Parlama(_dunya, hedef.Merkez, new Color(0.7f, 0.4f, 1f, 0.7f), 1.4f, 0.3f); break;
+			case "yavas":
+				Yavaslat(hedef, k.Var("donduran") ? 0.7f : tur == "Buz" ? 0.45f : 0.5f, 2f);
+				if (k.Var("kirilgan")) hedef.KirilganSure = 2f;
+				if (tur == "Zehir") Zehirle(hedef, k.Hasar * 0.6f, 3f, tur);
+				break;
+			case "zehir":
+				Zehirle(hedef, k.Hasar * 0.9f * (k.Var("olumcul") ? 2f : 1f), 4f, tur);
+				if (k.Var("salgin")) hedef.Salgin = true;
+				break;
+			case "sersem":
+				hedef.Sersem = (hedef.T.Boss ? 0.15f : 0.55f) * (k.Var("uzun_sersem") ? 2f : 1f);
+				Efekt.Parlama(_dunya, hedef.Merkez, new Color(0.7f, 0.4f, 1f, 0.7f), 1.4f, 0.3f);
+				break;
 		}
 	}
 
@@ -559,7 +682,7 @@ public partial class KuleSavunmasi : Node2D
 	{
 		var vurulan = new List<Dus> { ilk };
 		var son = ilk;
-		for (int i = 0; i < 3 + k.Sv / 2; i++)
+		for (int i = 0; i < 3 + k.Kademe / 2 + (k.Var("ag") ? 4 : 0); i++)
 		{
 			var sonraki = _dusmanlar.Where(d => !d.Olu && !vurulan.Contains(d) && d.Kok.Position.DistanceTo(son.Kok.Position) < 95)
 				.OrderBy(d => d.Kok.Position.DistanceTo(son.Kok.Position)).FirstOrDefault();
@@ -570,7 +693,7 @@ public partial class KuleSavunmasi : Node2D
 		noktalar.AddRange(vurulan.Select(d => d.Merkez));
 		Simsek(noktalar, TdVeri.HasarRenk[k.T.HasarTuru]);
 		float h = k.Hasar;
-		foreach (var d in vurulan) { HasarVer(d, h, k.T.HasarTuru, true, k); h *= 0.75f; }
+		foreach (var d in vurulan) { HasarVer(d, h, k.T.HasarTuru, true, k); if (!k.Var("asiri_yuk")) h *= 0.75f; }
 	}
 
 	void Simsek(List<Vector2> noktalar, Color renk)
@@ -597,7 +720,8 @@ public partial class KuleSavunmasi : Node2D
 		var yon = (hedef.Merkez - cikis).Normalized();
 		var bitis = cikis + yon * k.Menzil * 1.1f;
 		var renk = TdVeri.HasarRenk[k.T.HasarTuru];
-		var l = new Line2D { Points = new[] { cikis, bitis }, Width = 7, DefaultColor = renk, ZIndex = 25, Material = Efekt.Toplama };
+		bool genis = k.Var("genis_isin");
+		var l = new Line2D { Points = new[] { cikis, bitis }, Width = genis ? 14 : 7, DefaultColor = renk, ZIndex = 25, Material = Efekt.Toplama };
 		AddChild(l);
 		var tw = l.CreateTween().SetParallel(true);
 		tw.TweenProperty(l, "width", 1f, 0.22f);
@@ -607,7 +731,7 @@ public partial class KuleSavunmasi : Node2D
 		{
 			var c = d.Merkez;
 			float t = Mathf.Clamp((c - cikis).Dot(bitis - cikis) / (bitis - cikis).LengthSquared(), 0, 1);
-			if (c.DistanceTo(cikis + (bitis - cikis) * t) < 18) HasarVer(d, k.Hasar, k.T.HasarTuru, true, k);
+			if (c.DistanceTo(cikis + (bitis - cikis) * t) < (genis ? 34 : 18)) HasarVer(d, k.Hasar, k.T.HasarTuru, true, k);
 		}
 	}
 
@@ -616,7 +740,7 @@ public partial class KuleSavunmasi : Node2D
 	{
 		if (_altin < t.Maliyet || _kuleler.Any(k => k.P == _yerler[yer])) return;
 		_altin -= t.Maliyet;
-		var k = new Kule { T = t, P = _yerler[yer], Harcanan = t.Maliyet };
+		var k = new Kule { T = t, P = _yerler[yer], Harcanan = t.Maliyet, Agac = YetenekAgaci.Olustur(t) };
 		k.Kok = new Node2D { Position = k.P };
 		var golge = new Sprite2D { Texture = Efekt.Yumusak, Modulate = new Color(0, 0, 0, 0.5f), Scale = new Vector2(1.0f, 0.32f), Position = new Vector2(0, 4) };
 		k.Kok.AddChild(golge);
@@ -645,14 +769,29 @@ public partial class KuleSavunmasi : Node2D
 		ArayuzGuncelle();
 	}
 
-	void YildizGuncelle(Kule k) => k.Yildiz.Text = new string('★', k.Sv);
-
-	void Yukselt(Kule k)
+	void YildizGuncelle(Kule k)
 	{
-		if (k.Sv >= 5 || _altin < k.YukseltBedel) return;
-		_altin -= k.YukseltBedel;
-		k.Harcanan += k.YukseltBedel;
-		k.Sv++;
+		k.Yildiz.Text = new string('★', k.Kademe);
+		k.Yildiz.AddThemeColorOverride("font_color", k.Dal[0] >= k.Dal[1] ? new Color(1f, 0.7f, 0.3f) : new Color(0.55f, 0.85f, 1f));
+	}
+
+	/// <summary>Yetenek ağacında bir dalın sonraki kademesini alır.</summary>
+	void DalAl(Kule k, int dal)
+	{
+		if (!YetenekAgaci.Alinabilir(k.Dal, dal)) return;
+		var n = k.Agac[dal][k.Dal[dal]];
+		if (_altin < n.Bedel) return;
+		_altin -= n.Bedel;
+		k.Harcanan += n.Bedel;
+		k.Dal[dal]++;
+		k.HasarC += n.Hasar; k.MenzilC += n.Menzil; k.HizC += n.Hiz;
+		k.ZirhDelme = Mathf.Max(k.ZirhDelme, n.ZirhDelme);
+		if (n.Ozel != null)
+		{
+			k.Ozel.Add(n.Ozel);
+			if (n.Ozel is "yogun_aura") k.HasarC += 0.75f;
+			Mesaj($"{k.T.Ad}: {n.Ad}!\n{n.Aciklama}", new Color(1f, 0.85f, 0.35f), 2.2f);
+		}
 		YildizGuncelle(k);
 		Efekt.Parlama(_dunya, k.P + new Vector2(0, -30), new Color(1f, 0.85f, 0.3f, 0.8f), 3f, 0.4f);
 		Ses("altin");
@@ -780,7 +919,8 @@ public partial class KuleSavunmasi : Node2D
 		_dalgaYazi = Yazi("", 22, new Color(1f, 0.6f, 0.45f));
 		_canYazi = Yazi("", 22, new Color(1f, 0.4f, 0.45f));
 		_altinYazi = Yazi("", 22, new Color(1f, 0.85f, 0.3f));
-		foreach (var l in new[] { _bolumYazi, _dalgaYazi, _canYazi, _altinYazi }) satir.AddChild(l);
+		_tehditYazi = Yazi("", 20, new Color(0.95f, 0.5f, 0.9f));
+		foreach (var l in new[] { _bolumYazi, _dalgaYazi, _canYazi, _altinYazi, _tehditYazi }) satir.AddChild(l);
 		satir.AddChild(new Control { SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
 		_hizButon = Dugme("Hız x1", 18);
 		_hizButon.Pressed += () =>
@@ -824,7 +964,7 @@ public partial class KuleSavunmasi : Node2D
 		_ui.AddChild(_insaPanel);
 
 		// seçili kule paneli
-		_kulePanel = new PanelContainer { Position = new Vector2(880, 66), Size = new Vector2(390, 320) };
+		_kulePanel = new PanelContainer { Position = new Vector2(860, 66), Size = new Vector2(410, 560) };
 		_kulePanel.AddThemeStyleboxOverride("panel", Kutu(new Color(0.07f, 0.05f, 0.1f, 0.95f), 12, new Color(0.35f, 0.25f, 0.45f)));
 		var kk = new VBoxContainer();
 		kk.AddThemeConstantOverride("separation", 8);
@@ -832,14 +972,34 @@ public partial class KuleSavunmasi : Node2D
 		_kuleBilgi = Yazi("", 17, new Color(0.88f, 0.86f, 0.95f));
 		_kuleBilgi.AutowrapMode = TextServer.AutowrapMode.WordSmart;
 		_kuleBilgi.CustomMinimumSize = new Vector2(360, 0);
-		var butonlar = new HBoxContainer();
-		_yukseltButon = Dugme("Yükselt", 20);
-		_yukseltButon.Pressed += () => { if (_seciliKule != null) Yukselt(_seciliKule); };
-		_satButon = Dugme("Sat", 20);
+		// yetenek ağacı: iki sütun (Güç / Ustalık), her biri 3 kademe
+		var agac = new HBoxContainer();
+		agac.AddThemeConstantOverride("separation", 8);
+		for (int dal = 0; dal < 2; dal++)
+		{
+			var sutun = new VBoxContainer { SizeFlagsHorizontal = Control.SizeFlags.ExpandFill };
+			sutun.AddThemeConstantOverride("separation", 6);
+			var dalBaslik = Yazi(YetenekAgaci.DalAd[dal], 18, dal == 0 ? new Color(1f, 0.65f, 0.3f) : new Color(0.55f, 0.85f, 1f));
+			dalBaslik.HorizontalAlignment = HorizontalAlignment.Center;
+			sutun.AddChild(dalBaslik);
+			for (int kd = 0; kd < 3; kd++)
+			{
+				var b = Dugme("", 14);
+				b.CustomMinimumSize = new Vector2(188, 74);
+				b.AutowrapMode = TextServer.AutowrapMode.WordSmart;
+				int d0 = dal;
+				b.Pressed += () => { if (_seciliKule != null) DalAl(_seciliKule, d0); };
+				_agacButon[dal, kd] = b;
+				sutun.AddChild(b);
+			}
+			agac.AddChild(sutun);
+		}
+		var kural = Yazi("Bir dal 3. kademeye çıkabilir, diğeri en fazla 1'de kalır.", 13, new Color(0.65f, 0.6f, 0.75f));
+		kural.AutowrapMode = TextServer.AutowrapMode.WordSmart;
+		kural.CustomMinimumSize = new Vector2(380, 0);
+		_satButon = Dugme("Sat", 18);
 		_satButon.Pressed += () => { if (_seciliKule != null) Sat(_seciliKule); };
-		_yukseltButon.SizeFlagsHorizontal = Control.SizeFlags.ExpandFill;
-		butonlar.AddChild(_yukseltButon); butonlar.AddChild(_satButon);
-		kk.AddChild(_kuleBaslik); kk.AddChild(_kuleBilgi); kk.AddChild(butonlar);
+		kk.AddChild(_kuleBaslik); kk.AddChild(_kuleBilgi); kk.AddChild(agac); kk.AddChild(kural); kk.AddChild(_satButon);
 		_kulePanel.AddChild(kk);
 		_kulePanel.Visible = false;
 		_ui.AddChild(_kulePanel);
@@ -927,6 +1087,7 @@ public partial class KuleSavunmasi : Node2D
 		_dalgaYazi.Text = $"Dalga {_dalga}/{_dalgaSayisi}";
 		_canYazi.Text = $"♥ {_can}";
 		_altinYazi.Text = $"◎ {_altin}";
+		_tehditYazi.Text = $"Tehdit x{_uyum:0.00}";
 		if (_kulePanel.Visible && _seciliKule != null) KuleBilgiYaz(_seciliKule);
 		if (_insaPanel.Visible) InsaListesiYaz();
 	}
@@ -979,21 +1140,34 @@ public partial class KuleSavunmasi : Node2D
 	{
 		PanelleriKapat();
 		_seciliKule = k;
-		_kulePanel.Position = new Vector2(k.P.X > 640 ? 10 : 880, 66);
+		_kulePanel.Position = new Vector2(k.P.X > 640 ? 10 : 860, 66);
 		KuleBilgiYaz(k);
 		_kulePanel.Visible = true;
 	}
 
 	void KuleBilgiYaz(Kule k)
 	{
-		_kuleBaslik.Text = $"{k.T.Ad}  {new string('★', k.Sv)}";
+		_kuleBaslik.Text = $"{k.T.Ad}  {new string('★', k.Kademe)}";
 		var t = k.T;
 		string bilgi = $"Hasar: {k.Hasar:0} {TdVeri.HasarTr[t.HasarTuru]}  ·  {ModAd(t.Mod)}\nMenzil: {k.Menzil:0}   Atış/sn: {k.Hiz:0.0}";
 		if (t.Etkili.Length > 0) bilgi += $"\nEtkili: {string.Join(", ", t.Etkili)}";
 		if (t.Etkisiz.Length > 0) bilgi += $"\nZayıf kaldığı: {string.Join(", ", t.Etkisiz)}";
+		if (k.ZirhDelme > 0) bilgi += "  ·  zırh delici";
 		_kuleBilgi.Text = bilgi;
-		_yukseltButon.Text = k.Sv >= 5 ? "En üst seviye" : $"Yükselt ◎{k.YukseltBedel}";
-		_yukseltButon.Disabled = k.Sv >= 5 || _altin < k.YukseltBedel;
+		for (int dal = 0; dal < 2; dal++)
+			for (int kd = 0; kd < 3; kd++)
+			{
+				var n = k.Agac[dal][kd];
+				var b = _agacButon[dal, kd];
+				bool alindi = k.Dal[dal] > kd;
+				bool sirada = k.Dal[dal] == kd;
+				bool kilitli = sirada && !YetenekAgaci.Alinabilir(k.Dal, dal);
+				string kod = $"{(alindi ? "✓ " : kilitli || !sirada ? "· " : "")}{n.Ad}";
+				b.Text = alindi ? $"{kod}\n{n.Aciklama}" : kilitli ? $"{kod}\nKapalı (diğer dal)" : $"{kod}  ◎{n.Bedel}\n{n.Aciklama}";
+				b.Disabled = alindi || !sirada || kilitli || _altin < n.Bedel;
+				b.AddThemeColorOverride("font_disabled_color", alindi ? new Color(0.5f, 1f, 0.55f) : new Color(0.5f, 0.48f, 0.55f));
+				b.AddThemeColorOverride("font_color", kd == 2 ? new Color(1f, 0.85f, 0.4f) : new Color(0.92f, 0.9f, 0.97f));
+			}
 		_satButon.Text = $"Sat +{(int)(k.Harcanan * 0.6f)}";
 	}
 
@@ -1020,7 +1194,7 @@ public partial class KuleSavunmasi : Node2D
 		{
 			KuleKur(i, acik[(i * 5) % acik.Count]);
 			var k = _kuleler[^1];
-			for (int s = 0; s < i % 4; s++) Yukselt(k);
+			for (int s = 0; s < i % 5; s++) DalAl(k, s < 3 ? i % 2 : 1 - i % 2);
 		}
 		PanelleriKapat();
 		await Bekle(1f);

@@ -5132,7 +5132,7 @@
    "ad": "Lanetli Korkuluk",
    "zirh": "Olumsuz",
    "ozel": [],
-   "prompt": "haunted scarecrow with a burlap sack face holding a rusty sickle",
+   "prompt": "creepy straw scarecrow monster with a burlap sack head, stitched mouth, straw sticking out of sleeves, holding a sickle",
    "guc": 0.2,
    "level": 6,
    "id": "lanetli_korkuluk",
@@ -5155,7 +5155,7 @@
    "ozel": [
     "kalkan"
    ],
-   "prompt": "giant hermit crab living inside a human skull shell",
+   "prompt": "giant crab carrying a big bone-white human skull on its back as a shell, red crab legs and claws",
    "guc": 0.35,
    "level": 9,
    "id": "kafatasi_yengeci",
@@ -5356,7 +5356,7 @@
    "ozel": [
     "boss"
    ],
-   "prompt": "colossal towering grave leviathan, giant majestic swamp sea serpent with a ribcage back and rotting fins",
+   "prompt": "colossal majestic sea serpent leviathan boss rising, long scaly dark green body, exposed ribcage bones along its back, glowing eyes, huge jaws",
    "guc": 1.0,
    "level": 42,
    "id": "mezar_leviatani",

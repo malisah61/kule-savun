@@ -229,8 +229,8 @@ d_iblis_prensi|pixel art, huge boss monster, demon prince with flaming sword, da
 d_golem_kral|pixel art, huge boss monster, golem king, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_eski_tanri|pixel art, huge boss monster, eldritch old god with tentacles, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_kiyamet_canavari|pixel art, huge boss monster, apocalypse beast, dark fantasy horror game enemy, full body, side view, simple plain white background
-d_lanetli_korkuluk|pixel art, haunted scarecrow with a burlap sack face holding a rusty sickle, dark fantasy horror game enemy, full body, side view, simple plain white background
-d_kafatasi_yengeci|pixel art, giant hermit crab living inside a human skull shell, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_lanetli_korkuluk|pixel art, creepy straw scarecrow monster with a burlap sack head, stitched mouth, straw sticking out of sleeves, holding a sickle, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kafatasi_yengeci|pixel art, giant crab carrying a big bone-white human skull on its back as a shell, red crab legs and claws, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_fener_baligi_adam|pixel art, swamp anglerfish man with a glowing lure on his head and sharp teeth, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_kuklaci|pixel art, gaunt hooded puppeteer cultist with long fingers trailing strings, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_can_kafali|pixel art, armored brute wearing a rusty church bell as a helmet, dark fantasy horror game enemy, full body, side view, simple plain white background
@@ -239,4 +239,4 @@ d_diken_geyik|pixel art, black stag beast with glowing antlers made of thorns, d
 d_lav_kaplumbagasi|pixel art, giant turtle with a volcanic shell oozing lava, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_kiragi_guvesi|pixel art, giant frost moth with icy crystal wings, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_sis_kontu|pixel art, vampire count in a long coat dissolving into red mist, dark fantasy horror game enemy, full body, side view, simple plain white background
-d_mezar_leviatani|pixel art, huge boss monster, colossal towering grave leviathan, giant majestic swamp sea serpent with a ribcage back and rotting fins, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mezar_leviatani|pixel art, huge boss monster, colossal majestic sea serpent leviathan boss rising, long scaly dark green body, exposed ribcage bones along its back, glowing eyes, huge jaws, dark fantasy horror game enemy, full body, side view, simple plain white background

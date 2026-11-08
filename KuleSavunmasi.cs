@@ -1040,8 +1040,10 @@ public partial class KuleSavunmasi : Node2D
 		await Bekle(0.4f);
 		await Kare(klasor + "/5_insa.png");
 		PanelleriKapat();
-		while (_dalga < _dalgaSayisi) { while (_dalgaSuruyor) await Bekle(0.5f); DalgaBaslat(); Engine.TimeScale = 3; await Bekle(1f); }
-		await Bekle(4f);
+		var boss = TdVeri.Dusmanlar.FirstOrDefault(d => d.Boss && d.Level == _bolum);
+		if (boss != null && _ekran == Ekran.Oyun) { DusmanDogur(boss); _dusmanlar[^1].Mesafe = 700; }
+		Engine.TimeScale = 1;
+		await Bekle(2.5f);
 		await Kare(klasor + "/6_boss.png");
 		GD.Print($"ONIZLEME bölüm={_bolum} dalga={_dalga}/{_dalgaSayisi} can={_can} düşman={_dusmanlar.Count} kule={_kuleler.Count} doku_kule={TdVeri.Kuleler.Count(k => k.Doku != null)} doku_dusman={TdVeri.Dusmanlar.Count(d => d.Doku != null)}");
 		GD.Print("ONIZLEME bitti");

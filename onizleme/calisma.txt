@@ -11,6 +11,10 @@ ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png
 ONIZLEME kaydedildi: onizleme/6_boss.png
 ONIZLEME kaydedildi: onizleme/7_genis_ekran.png
+ONIZLEME kaydedildi: onizleme/8_yol_0.png
+ONIZLEME kaydedildi: onizleme/8_yol_1.png
+ONIZLEME kaydedildi: onizleme/8_yol_2.png
+ONIZLEME kaydedildi: onizleme/9_menu_sonsuz.png
 ONIZLEME ekran=(1600, 720) yer=20
-ONIZLEME bölüm=3 dalga=0/5 can=20 düşman=0 kule=0 doku_kule=30 doku_dusman=200
+ONIZLEME bölüm=43 dalga=0/13 can=20 düşman=0 kule=0 doku_kule=30 doku_dusman=200
 ONIZLEME bitti

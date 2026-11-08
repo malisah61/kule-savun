@@ -1,0 +1,5112 @@
+{
+ "hasarTurleri": [
+  "Fiziksel",
+  "Ates",
+  "Buz",
+  "Zehir",
+  "Yildirim",
+  "Kutsal",
+  "Golge",
+  "Kusatma"
+ ],
+ "hasarTr": {
+  "Fiziksel": "Fiziksel",
+  "Ates": "Ateş",
+  "Buz": "Buz",
+  "Zehir": "Zehir",
+  "Yildirim": "Yıldırım",
+  "Kutsal": "Kutsal",
+  "Golge": "Gölge",
+  "Kusatma": "Kuşatma"
+ },
+ "zirhTr": {
+  "Olumsuz": "Ölümsüz",
+  "Hayalet": "Hayalet",
+  "Canavar": "Canavar",
+  "Zirhli": "Zırhlı",
+  "Seytan": "Şeytan",
+  "Vampir": "Vampir",
+  "Bocek": "Böcek",
+  "Tas": "Taş",
+  "Buz": "Buz",
+  "Bataklik": "Bataklık",
+  "Kultist": "Kültist",
+  "Ucan": "Uçan"
+ },
+ "carpanlar": {
+  "Olumsuz": {
+   "Kutsal": 2.0,
+   "Ates": 1.5,
+   "Zehir": 0.25,
+   "Golge": 0.5
+  },
+  "Hayalet": {
+   "Fiziksel": 0.25,
+   "Kusatma": 0.25,
+   "Kutsal": 2.0,
+   "Yildirim": 1.5,
+   "Golge": 0.5
+  },
+  "Canavar": {
+   "Fiziksel": 1.25,
+   "Zehir": 1.5,
+   "Golge": 0.75
+  },
+  "Zirhli": {
+   "Fiziksel": 0.5,
+   "Zehir": 0.5,
+   "Kusatma": 1.75,
+   "Yildirim": 1.5
+  },
+  "Seytan": {
+   "Ates": 0.0,
+   "Kutsal": 2.0,
+   "Buz": 1.5,
+   "Golge": 0.5
+  },
+  "Vampir": {
+   "Kutsal": 2.0,
+   "Ates": 1.5,
+   "Golge": 0.25,
+   "Zehir": 0.5
+  },
+  "Bocek": {
+   "Zehir": 2.0,
+   "Ates": 1.5,
+   "Kusatma": 0.75
+  },
+  "Tas": {
+   "Fiziksel": 0.5,
+   "Zehir": 0.0,
+   "Kusatma": 2.0,
+   "Buz": 0.5
+  },
+  "Buz": {
+   "Buz": 0.0,
+   "Ates": 2.0,
+   "Yildirim": 0.75
+  },
+  "Bataklik": {
+   "Zehir": 0.0,
+   "Ates": 1.75,
+   "Buz": 1.25
+  },
+  "Kultist": {
+   "Fiziksel": 1.5,
+   "Golge": 0.25,
+   "Kutsal": 1.25
+  },
+  "Ucan": {
+   "Kusatma": 0.0,
+   "Fiziksel": 1.25,
+   "Yildirim": 1.5
+  }
+ },
+ "levelSayisi": 40,
+ "kuleler": [
+  {
+   "id": "okcu",
+   "ad": "Okçu Kulesi",
+   "hasarTuru": "Fiziksel",
+   "mod": "tek",
+   "menzil": 150,
+   "atisHizi": 1.4,
+   "hasar": 10,
+   "maliyet": 60,
+   "level": 1,
+   "prompt": "wooden archer watchtower with arrow slits",
+   "etkili": [
+    "Canavar",
+    "Kültist",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Zırhlı",
+    "Taş"
+   ]
+  },
+  {
+   "id": "tas_atar",
+   "ad": "Taş Atar",
+   "hasarTuru": "Kusatma",
+   "mod": "alan",
+   "menzil": 140,
+   "atisHizi": 0.5,
+   "hasar": 22,
+   "maliyet": 90,
+   "level": 1,
+   "prompt": "medieval catapult tower with a stone basket",
+   "etkili": [
+    "Zırhlı",
+    "Taş"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Böcek",
+    "Uçan"
+   ]
+  },
+  {
+   "id": "ates_kazani",
+   "ad": "Ateş Kazanı",
+   "hasarTuru": "Ates",
+   "mod": "yakici",
+   "menzil": 110,
+   "atisHizi": 0.8,
+   "hasar": 8,
+   "maliyet": 80,
+   "level": 2,
+   "prompt": "stone tower with a burning fire cauldron on top",
+   "etkili": [
+    "Ölümsüz",
+    "Vampir",
+    "Böcek",
+    "Buz",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Şeytan"
+   ]
+  },
+  {
+   "id": "buz_kristali",
+   "ad": "Buz Kristali",
+   "hasarTuru": "Buz",
+   "mod": "yavas",
+   "menzil": 130,
+   "atisHizi": 0.9,
+   "hasar": 6,
+   "maliyet": 85,
+   "level": 3,
+   "prompt": "tower with a floating blue ice crystal",
+   "etkili": [
+    "Şeytan",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Taş",
+    "Buz"
+   ]
+  },
+  {
+   "id": "kutsal_can",
+   "ad": "Kutsal Çan",
+   "hasarTuru": "Kutsal",
+   "mod": "alan",
+   "menzil": 120,
+   "atisHizi": 0.6,
+   "hasar": 14,
+   "maliyet": 110,
+   "level": 4,
+   "prompt": "white chapel bell tower with golden glow",
+   "etkili": [
+    "Ölümsüz",
+    "Hayalet",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ],
+   "etkisiz": []
+  },
+  {
+   "id": "zehir_kazani",
+   "ad": "Zehir Kazanı",
+   "hasarTuru": "Zehir",
+   "mod": "zehir",
+   "menzil": 130,
+   "atisHizi": 0.8,
+   "hasar": 5,
+   "maliyet": 90,
+   "level": 5,
+   "prompt": "tower with a bubbling green poison cauldron",
+   "etkili": [
+    "Canavar",
+    "Böcek"
+   ],
+   "etkisiz": [
+    "Ölümsüz",
+    "Zırhlı",
+    "Vampir",
+    "Taş",
+    "Bataklık"
+   ]
+  },
+  {
+   "id": "tatar_yayi",
+   "ad": "Tatar Yayı",
+   "hasarTuru": "Fiziksel",
+   "mod": "delici",
+   "menzil": 190,
+   "atisHizi": 0.7,
+   "hasar": 26,
+   "maliyet": 130,
+   "level": 6,
+   "prompt": "ballista crossbow tower with heavy bolts",
+   "etkili": [
+    "Canavar",
+    "Kültist",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Zırhlı",
+    "Taş"
+   ]
+  },
+  {
+   "id": "yildirim",
+   "ad": "Yıldırım Kulesi",
+   "hasarTuru": "Yildirim",
+   "mod": "zincir",
+   "menzil": 140,
+   "atisHizi": 0.7,
+   "hasar": 16,
+   "maliyet": 140,
+   "level": 7,
+   "prompt": "tesla coil wizard tower crackling with lightning",
+   "etkili": [
+    "Hayalet",
+    "Zırhlı",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Buz"
+   ]
+  },
+  {
+   "id": "golge_obel",
+   "ad": "Gölge Obeliski",
+   "hasarTuru": "Golge",
+   "mod": "tek",
+   "menzil": 150,
+   "atisHizi": 1.0,
+   "hasar": 15,
+   "maliyet": 120,
+   "level": 8,
+   "prompt": "black obsidian obelisk with purple shadow runes",
+   "etkili": [],
+   "etkisiz": [
+    "Ölümsüz",
+    "Hayalet",
+    "Canavar",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ]
+  },
+  {
+   "id": "havan",
+   "ad": "Havan Topu",
+   "hasarTuru": "Kusatma",
+   "mod": "alan",
+   "menzil": 210,
+   "atisHizi": 0.35,
+   "hasar": 45,
+   "maliyet": 170,
+   "level": 9,
+   "prompt": "iron mortar cannon fortification",
+   "etkili": [
+    "Zırhlı",
+    "Taş"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Böcek",
+    "Uçan"
+   ]
+  },
+  {
+   "id": "sahin_yuvasi",
+   "ad": "Şahin Yuvası",
+   "hasarTuru": "Fiziksel",
+   "mod": "ucan_avci",
+   "menzil": 170,
+   "atisHizi": 1.6,
+   "hasar": 12,
+   "maliyet": 120,
+   "level": 10,
+   "prompt": "falconer tower with hawk nests and banners",
+   "etkili": [
+    "Canavar",
+    "Kültist",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Zırhlı",
+    "Taş"
+   ]
+  },
+  {
+   "id": "ejder_agzi",
+   "ad": "Ejder Ağzı",
+   "hasarTuru": "Ates",
+   "mod": "alan",
+   "menzil": 120,
+   "atisHizi": 0.9,
+   "hasar": 18,
+   "maliyet": 180,
+   "level": 11,
+   "prompt": "stone dragon head statue tower breathing fire",
+   "etkili": [
+    "Ölümsüz",
+    "Vampir",
+    "Böcek",
+    "Buz",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Şeytan"
+   ]
+  },
+  {
+   "id": "don_kuyusu",
+   "ad": "Don Kuyusu",
+   "hasarTuru": "Buz",
+   "mod": "aura",
+   "menzil": 110,
+   "atisHizi": 1.0,
+   "hasar": 4,
+   "maliyet": 150,
+   "level": 12,
+   "prompt": "frozen well tower emitting cold mist",
+   "etkili": [
+    "Şeytan",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Taş",
+    "Buz"
+   ]
+  },
+  {
+   "id": "ilahi_isik",
+   "ad": "İlahi Işık",
+   "hasarTuru": "Kutsal",
+   "mod": "delici",
+   "menzil": 200,
+   "atisHizi": 0.6,
+   "hasar": 30,
+   "maliyet": 200,
+   "level": 13,
+   "prompt": "angel statue tower shooting a holy light beam",
+   "etkili": [
+    "Ölümsüz",
+    "Hayalet",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ],
+   "etkisiz": []
+  },
+  {
+   "id": "orumcek_agi",
+   "ad": "Örümcek Ağı",
+   "hasarTuru": "Zehir",
+   "mod": "yavas",
+   "menzil": 120,
+   "atisHizi": 1.0,
+   "hasar": 6,
+   "maliyet": 140,
+   "level": 14,
+   "prompt": "spider web tower with a giant spider on top",
+   "etkili": [
+    "Canavar",
+    "Böcek"
+   ],
+   "etkisiz": [
+    "Ölümsüz",
+    "Zırhlı",
+    "Vampir",
+    "Taş",
+    "Bataklık"
+   ]
+  },
+  {
+   "id": "firtina",
+   "ad": "Fırtına Totemi",
+   "hasarTuru": "Yildirim",
+   "mod": "alan",
+   "menzil": 150,
+   "atisHizi": 0.5,
+   "hasar": 24,
+   "maliyet": 210,
+   "level": 15,
+   "prompt": "storm totem pole with dark clouds and lightning",
+   "etkili": [
+    "Hayalet",
+    "Zırhlı",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Buz"
+   ]
+  },
+  {
+   "id": "kemik_topu",
+   "ad": "Kemik Topu",
+   "hasarTuru": "Kusatma",
+   "mod": "alan",
+   "menzil": 160,
+   "atisHizi": 0.6,
+   "hasar": 30,
+   "maliyet": 190,
+   "level": 16,
+   "prompt": "cannon made of bones and skulls",
+   "etkili": [
+    "Zırhlı",
+    "Taş"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Böcek",
+    "Uçan"
+   ]
+  },
+  {
+   "id": "ruh_feneri",
+   "ad": "Ruh Feneri",
+   "hasarTuru": "Golge",
+   "mod": "sersem",
+   "menzil": 130,
+   "atisHizi": 0.7,
+   "hasar": 12,
+   "maliyet": 200,
+   "level": 17,
+   "prompt": "ghostly lantern tower with trapped souls",
+   "etkili": [],
+   "etkisiz": [
+    "Ölümsüz",
+    "Hayalet",
+    "Canavar",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ]
+  },
+  {
+   "id": "keskin_nisan",
+   "ad": "Keskin Nişancı",
+   "hasarTuru": "Fiziksel",
+   "mod": "tek",
+   "menzil": 260,
+   "atisHizi": 0.5,
+   "hasar": 60,
+   "maliyet": 230,
+   "level": 18,
+   "prompt": "tall sniper tower with a long crossbow",
+   "etkili": [
+    "Canavar",
+    "Kültist",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Zırhlı",
+    "Taş"
+   ]
+  },
+  {
+   "id": "lav_kuyusu",
+   "ad": "Lav Kuyusu",
+   "hasarTuru": "Ates",
+   "mod": "yakici",
+   "menzil": 120,
+   "atisHizi": 0.7,
+   "hasar": 20,
+   "maliyet": 240,
+   "level": 19,
+   "prompt": "volcanic tower pouring lava",
+   "etkili": [
+    "Ölümsüz",
+    "Vampir",
+    "Böcek",
+    "Buz",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Şeytan"
+   ]
+  },
+  {
+   "id": "buzul_topu",
+   "ad": "Buzul Topu",
+   "hasarTuru": "Buz",
+   "mod": "alan",
+   "menzil": 170,
+   "atisHizi": 0.45,
+   "hasar": 28,
+   "maliyet": 240,
+   "level": 20,
+   "prompt": "ice cannon tower firing frost balls",
+   "etkili": [
+    "Şeytan",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Taş",
+    "Buz"
+   ]
+  },
+  {
+   "id": "aziz_heykeli",
+   "ad": "Aziz Heykeli",
+   "hasarTuru": "Kutsal",
+   "mod": "aura",
+   "menzil": 130,
+   "atisHizi": 1.0,
+   "hasar": 10,
+   "maliyet": 260,
+   "level": 21,
+   "prompt": "statue of a praying saint with a halo",
+   "etkili": [
+    "Ölümsüz",
+    "Hayalet",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ],
+   "etkisiz": []
+  },
+  {
+   "id": "veba_kulesi",
+   "ad": "Veba Kulesi",
+   "hasarTuru": "Zehir",
+   "mod": "alan",
+   "menzil": 140,
+   "atisHizi": 0.6,
+   "hasar": 14,
+   "maliyet": 250,
+   "level": 22,
+   "prompt": "plague doctor tower releasing toxic fog",
+   "etkili": [
+    "Canavar",
+    "Böcek"
+   ],
+   "etkisiz": [
+    "Ölümsüz",
+    "Zırhlı",
+    "Vampir",
+    "Taş",
+    "Bataklık"
+   ]
+  },
+  {
+   "id": "sihir_kulesi",
+   "ad": "Arkan Kule",
+   "hasarTuru": "Yildirim",
+   "mod": "delici",
+   "menzil": 180,
+   "atisHizi": 0.8,
+   "hasar": 34,
+   "maliyet": 280,
+   "level": 24,
+   "prompt": "arcane mage tower with floating runes",
+   "etkili": [
+    "Hayalet",
+    "Zırhlı",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Buz"
+   ]
+  },
+  {
+   "id": "kara_delik",
+   "ad": "Kara Delik",
+   "hasarTuru": "Golge",
+   "mod": "yavas",
+   "menzil": 150,
+   "atisHizi": 0.5,
+   "hasar": 20,
+   "maliyet": 300,
+   "level": 26,
+   "prompt": "void portal tower swirling with darkness",
+   "etkili": [],
+   "etkisiz": [
+    "Ölümsüz",
+    "Hayalet",
+    "Canavar",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ]
+  },
+  {
+   "id": "mancinik",
+   "ad": "Dev Mancınık",
+   "hasarTuru": "Kusatma",
+   "mod": "alan",
+   "menzil": 240,
+   "atisHizi": 0.3,
+   "hasar": 80,
+   "maliyet": 320,
+   "level": 28,
+   "prompt": "giant trebuchet fortress",
+   "etkili": [
+    "Zırhlı",
+    "Taş"
+   ],
+   "etkisiz": [
+    "Hayalet",
+    "Böcek",
+    "Uçan"
+   ]
+  },
+  {
+   "id": "anka",
+   "ad": "Anka Yuvası",
+   "hasarTuru": "Ates",
+   "mod": "ucan_avci",
+   "menzil": 190,
+   "atisHizi": 1.0,
+   "hasar": 30,
+   "maliyet": 330,
+   "level": 30,
+   "prompt": "phoenix nest tower with burning feathers",
+   "etkili": [
+    "Ölümsüz",
+    "Vampir",
+    "Böcek",
+    "Buz",
+    "Bataklık"
+   ],
+   "etkisiz": [
+    "Şeytan"
+   ]
+  },
+  {
+   "id": "kader_carki",
+   "ad": "Kader Çarkı",
+   "hasarTuru": "Yildirim",
+   "mod": "zincir",
+   "menzil": 170,
+   "atisHizi": 0.9,
+   "hasar": 36,
+   "maliyet": 360,
+   "level": 33,
+   "prompt": "clockwork tower with a spinning golden wheel",
+   "etkili": [
+    "Hayalet",
+    "Zırhlı",
+    "Uçan"
+   ],
+   "etkisiz": [
+    "Buz"
+   ]
+  },
+  {
+   "id": "melek_kilici",
+   "ad": "Melek Kılıcı",
+   "hasarTuru": "Kutsal",
+   "mod": "tek",
+   "menzil": 180,
+   "atisHizi": 1.1,
+   "hasar": 48,
+   "maliyet": 400,
+   "level": 36,
+   "prompt": "giant glowing holy sword stuck in a stone pedestal",
+   "etkili": [
+    "Ölümsüz",
+    "Hayalet",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ],
+   "etkisiz": []
+  },
+  {
+   "id": "kiyamet",
+   "ad": "Kıyamet Kulesi",
+   "hasarTuru": "Golge",
+   "mod": "alan",
+   "menzil": 200,
+   "atisHizi": 0.4,
+   "hasar": 110,
+   "maliyet": 500,
+   "level": 40,
+   "prompt": "apocalypse tower with a burning eye on top",
+   "etkili": [],
+   "etkisiz": [
+    "Ölümsüz",
+    "Hayalet",
+    "Canavar",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ]
+  }
+ ],
+ "dusmanlar": [
+  {
+   "ad": "Çürük Zombi",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "rotting green zombie in torn rags",
+   "guc": 0.0,
+   "level": 1,
+   "id": "curuk_zombi",
+   "can": 24,
+   "hiz": 42,
+   "odul": 5,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Köylü Zombi",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "zombie peasant with a pitchfork",
+   "guc": 0.05263157894736842,
+   "level": 3,
+   "id": "koylu_zombi",
+   "can": 34,
+   "hiz": 42,
+   "odul": 7,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Piyade",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "skeleton soldier with a rusty sword",
+   "guc": 0.10526315789473684,
+   "level": 5,
+   "id": "kemik_piyade",
+   "can": 47,
+   "hiz": 42,
+   "odul": 8,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "İskelet Okçu",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "skeleton archer with a bow",
+   "guc": 0.15789473684210525,
+   "level": 7,
+   "id": "iskelet_okcu",
+   "can": 65,
+   "hiz": 42,
+   "odul": 10,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kafatası Fırlatan",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "skeleton throwing skulls",
+   "guc": 0.21052631578947367,
+   "level": 8,
+   "id": "kafatasi_firlatan",
+   "can": 79,
+   "hiz": 42,
+   "odul": 11,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mezar Kazıcı",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "undead gravedigger with a shovel",
+   "guc": 0.2631578947368421,
+   "level": 10,
+   "id": "mezar_kazici",
+   "can": 109,
+   "hiz": 42,
+   "odul": 13,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mumya",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "bandaged mummy",
+   "guc": 0.3157894736842105,
+   "level": 12,
+   "id": "mumya",
+   "can": 152,
+   "hiz": 42,
+   "odul": 15,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Kalkan",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "skeleton with a large wooden shield",
+   "guc": 0.3684210526315789,
+   "level": 14,
+   "id": "kemik_kalkan",
+   "can": 211,
+   "hiz": 42,
+   "odul": 17,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Zombi Kasap",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "fat zombie butcher with a cleaver",
+   "guc": 0.42105263157894735,
+   "level": 16,
+   "id": "zombi_kasap",
+   "can": 293,
+   "hiz": 42,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Gul",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "pale ghoul crawling with long claws",
+   "guc": 0.47368421052631576,
+   "level": 18,
+   "id": "gul",
+   "can": 406,
+   "hiz": 42,
+   "odul": 20,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Şövalye",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "skeleton knight in black armor",
+   "guc": 0.5263157894736842,
+   "level": 19,
+   "id": "kemik_sovalye",
+   "can": 484,
+   "hiz": 42,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Lanetli Rahip",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "undead priest in a torn robe",
+   "guc": 0.5789473684210527,
+   "level": 21,
+   "id": "lanetli_rahip",
+   "can": 670,
+   "hiz": 42,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Leş Yiyici",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "hunched corpse eater ghoul",
+   "guc": 0.631578947368421,
+   "level": 23,
+   "id": "les_yiyici",
+   "can": 926,
+   "hiz": 42,
+   "odul": 25,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Dev",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "giant skeleton made of many bones",
+   "guc": 0.6842105263157895,
+   "level": 25,
+   "id": "kemik_dev",
+   "can": 1280,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "İskelet Atlı",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "skeleton riding a skeletal horse",
+   "guc": 0.7368421052631579,
+   "level": 27,
+   "id": "iskelet_atli",
+   "can": 1767,
+   "hiz": 42,
+   "odul": 28,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Zombi Dev",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "huge stitched zombie brute",
+   "guc": 0.7894736842105263,
+   "level": 29,
+   "id": "zombi_dev",
+   "can": 2438,
+   "hiz": 42,
+   "odul": 30,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mumya Kral",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "mummy pharaoh with a golden mask",
+   "guc": 0.8421052631578947,
+   "level": 30,
+   "id": "mumya_kral",
+   "can": 2898,
+   "hiz": 42,
+   "odul": 31,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Ejder",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "small skeletal dragon walking",
+   "guc": 0.8947368421052632,
+   "level": 32,
+   "id": "kemik_ejder",
+   "can": 3994,
+   "hiz": 42,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kafasız Asker",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "headless undead soldier holding his head",
+   "guc": 0.9473684210526315,
+   "level": 34,
+   "id": "kafasiz_asker",
+   "can": 5501,
+   "hiz": 42,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Veba Zombisi",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "plague zombie with boils",
+   "guc": 1.0,
+   "level": 36,
+   "id": "veba_zombisi",
+   "can": 7573,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Gezgin Ruh",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "pale wandering ghost",
+   "guc": 0.0,
+   "level": 4,
+   "id": "gezgin_ruh",
+   "can": 37,
+   "hiz": 48,
+   "odul": 8,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Feryatçı",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "banshee screaming ghost woman",
+   "guc": 0.058823529411764705,
+   "level": 6,
+   "id": "feryatci",
+   "can": 53,
+   "hiz": 48,
+   "odul": 9,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Fener Hayaleti",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost carrying a lantern",
+   "guc": 0.11764705882352941,
+   "level": 8,
+   "id": "fener_hayaleti",
+   "can": 74,
+   "hiz": 48,
+   "odul": 11,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Zincirli Ruh",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost wrapped in chains",
+   "guc": 0.17647058823529413,
+   "level": 10,
+   "id": "zincirli_ruh",
+   "can": 103,
+   "hiz": 48,
+   "odul": 13,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Gölge Çocuk",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "creepy ghost child",
+   "guc": 0.23529411764705882,
+   "level": 12,
+   "id": "golge_cocuk",
+   "can": 144,
+   "hiz": 48,
+   "odul": 15,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Hortlak",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "hooded wraith with glowing eyes",
+   "guc": 0.29411764705882354,
+   "level": 13,
+   "id": "hortlak",
+   "can": 174,
+   "hiz": 48,
+   "odul": 16,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Boğulmuş Ruh",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "drowned ghost dripping water",
+   "guc": 0.35294117647058826,
+   "level": 15,
+   "id": "bogulmus_ruh",
+   "can": 242,
+   "hiz": 48,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Hayalet Şövalye",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost knight with a spectral sword",
+   "guc": 0.4117647058823529,
+   "level": 17,
+   "id": "hayalet_sovalye",
+   "can": 338,
+   "hiz": 48,
+   "odul": 19,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kötü Ruh",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "red angry poltergeist spirit",
+   "guc": 0.47058823529411764,
+   "level": 19,
+   "id": "kotu_ruh",
+   "can": 470,
+   "hiz": 48,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Ruh Toplayıcı",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost reaper with a scythe",
+   "guc": 0.5294117647058824,
+   "level": 21,
+   "id": "ruh_toplayici",
+   "can": 653,
+   "hiz": 48,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Ayna Hayaleti",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost emerging from a broken mirror",
+   "guc": 0.5882352941176471,
+   "level": 23,
+   "id": "ayna_hayaleti",
+   "can": 906,
+   "hiz": 48,
+   "odul": 25,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Hayalet Gelin",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost bride in a torn veil",
+   "guc": 0.6470588235294118,
+   "level": 25,
+   "id": "hayalet_gelin",
+   "can": 1256,
+   "hiz": 48,
+   "odul": 26,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Fısıltı",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "shadowy whispering specter",
+   "guc": 0.7058823529411765,
+   "level": 27,
+   "id": "fisilti",
+   "can": 1740,
+   "hiz": 48,
+   "odul": 28,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Hayalet Kaptan",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost pirate captain",
+   "guc": 0.7647058823529411,
+   "level": 28,
+   "id": "hayalet_kaptan",
+   "can": 2077,
+   "hiz": 48,
+   "odul": 29,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Ruh Fırtınası",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "swirling storm of ghost faces",
+   "guc": 0.8235294117647058,
+   "level": 30,
+   "id": "ruh_firtinasi",
+   "can": 2873,
+   "hiz": 48,
+   "odul": 31,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Hortlak Lordu",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "wraith lord with a crown",
+   "guc": 0.8823529411764706,
+   "level": 32,
+   "id": "hortlak_lordu",
+   "can": 3972,
+   "hiz": 48,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kukla Ruh",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "haunted porcelain doll ghost",
+   "guc": 0.9411764705882353,
+   "level": 34,
+   "id": "kukla_ruh",
+   "can": 5486,
+   "hiz": 48,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Mum Hayaleti",
+   "zirh": "Hayalet",
+   "ozel": [],
+   "prompt": "ghost made of melting candle wax",
+   "guc": 1.0,
+   "level": 36,
+   "id": "mum_hayaleti",
+   "can": 7573,
+   "hiz": 48,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kara Kurt",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "black wolf with red eyes",
+   "guc": 0.0,
+   "level": 2,
+   "id": "kara_kurt",
+   "can": 28,
+   "hiz": 62,
+   "odul": 6,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kurt Adam",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "hulking werewolf",
+   "guc": 0.058823529411764705,
+   "level": 4,
+   "id": "kurt_adam",
+   "can": 39,
+   "hiz": 62,
+   "odul": 8,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Dev Fare",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "giant plague rat",
+   "guc": 0.11764705882352941,
+   "level": 6,
+   "id": "dev_fare",
+   "can": 55,
+   "hiz": 62,
+   "odul": 9,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kuduz Köpek",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "rabid hound",
+   "guc": 0.17647058823529413,
+   "level": 8,
+   "id": "kuduz_kopek",
+   "can": 77,
+   "hiz": 62,
+   "odul": 11,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Yaban Domuzu",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "demonic wild boar with tusks",
+   "guc": 0.23529411764705882,
+   "level": 10,
+   "id": "yaban_domuzu",
+   "can": 107,
+   "hiz": 62,
+   "odul": 13,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Ayı Canavarı",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "undead bear monster",
+   "guc": 0.29411764705882354,
+   "level": 12,
+   "id": "ayi_canavari",
+   "can": 150,
+   "hiz": 62,
+   "odul": 15,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Hırlayan",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "goblin-like gremlin creature",
+   "guc": 0.35294117647058826,
+   "level": 14,
+   "id": "hirlayan",
+   "can": 209,
+   "hiz": 62,
+   "odul": 17,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mağara Trolü",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "cave troll with a club",
+   "guc": 0.4117647058823529,
+   "level": 16,
+   "id": "magara_trolu",
+   "can": 291,
+   "hiz": 62,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Boynuzlu Canavar",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "horned beast walking on two legs",
+   "guc": 0.47058823529411764,
+   "level": 18,
+   "id": "boynuzlu_canavar",
+   "can": 405,
+   "hiz": 62,
+   "odul": 20,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kertenkele Adam",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "lizardman warrior",
+   "guc": 0.5294117647058824,
+   "level": 20,
+   "id": "kertenkele_adam",
+   "can": 563,
+   "hiz": 62,
+   "odul": 22,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Dev Örümcek",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "giant black spider",
+   "guc": 0.5882352941176471,
+   "level": 22,
+   "id": "dev_orumcek",
+   "can": 781,
+   "hiz": 62,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kurt Sürü Lideri",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "giant alpha wolf with scars",
+   "guc": 0.6470588235294118,
+   "level": 24,
+   "id": "kurt_suru_lideri",
+   "can": 1083,
+   "hiz": 62,
+   "odul": 26,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Yeti",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "white furred yeti",
+   "guc": 0.7058823529411765,
+   "level": 26,
+   "id": "yeti",
+   "can": 1500,
+   "hiz": 62,
+   "odul": 27,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemirici",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "ratman with daggers",
+   "guc": 0.7647058823529411,
+   "level": 28,
+   "id": "kemirici",
+   "can": 2077,
+   "hiz": 62,
+   "odul": 29,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Chupakabra",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "chupacabra creature with spines",
+   "guc": 0.8235294117647058,
+   "level": 30,
+   "id": "chupakabra",
+   "can": 2873,
+   "hiz": 62,
+   "odul": 31,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mantikor",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "manticore with scorpion tail",
+   "guc": 0.8823529411764706,
+   "level": 32,
+   "id": "mantikor",
+   "can": 3972,
+   "hiz": 62,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kara Panter",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "shadow panther",
+   "guc": 0.9411764705882353,
+   "level": 34,
+   "id": "kara_panter",
+   "can": 5486,
+   "hiz": 62,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Wendigo",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "wendigo with antlers and skull face",
+   "guc": 1.0,
+   "level": 36,
+   "id": "wendigo",
+   "can": 7573,
+   "hiz": 62,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kara Muhafız",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "dark guard in heavy armor",
+   "guc": 0.0,
+   "level": 7,
+   "id": "kara_muhafiz",
+   "can": 76,
+   "hiz": 42,
+   "odul": 10,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Paslı Şövalye",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "rusty armored knight",
+   "guc": 0.06666666666666667,
+   "level": 9,
+   "id": "pasli_sovalye",
+   "can": 107,
+   "hiz": 42,
+   "odul": 12,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kalkan Taşıyıcı",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "soldier with a tower shield",
+   "guc": 0.13333333333333333,
+   "level": 11,
+   "id": "kalkan_tasiyici",
+   "can": 151,
+   "hiz": 42,
+   "odul": 14,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Zırhlı Gulyabani",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "armored ghoul brute",
+   "guc": 0.2,
+   "level": 13,
+   "id": "zirhli_gulyabani",
+   "can": 213,
+   "hiz": 42,
+   "odul": 16,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kara Paladin",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "dark paladin with a mace",
+   "guc": 0.26666666666666666,
+   "level": 15,
+   "id": "kara_paladin",
+   "can": 299,
+   "hiz": 42,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Demir Bekçi",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "iron sentinel armor",
+   "guc": 0.3333333333333333,
+   "level": 17,
+   "id": "demir_bekci",
+   "can": 419,
+   "hiz": 42,
+   "odul": 19,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Boş Zırh",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "living empty suit of armor",
+   "guc": 0.4,
+   "level": 19,
+   "id": "bos_zirh",
+   "can": 587,
+   "hiz": 42,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Ork Savaşçı",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "orc warrior in spiked armor",
+   "guc": 0.4666666666666667,
+   "level": 21,
+   "id": "ork_savasci",
+   "can": 820,
+   "hiz": 42,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Ork Şef",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "orc chieftain with a big axe",
+   "guc": 0.5333333333333333,
+   "level": 22,
+   "id": "ork_sef",
+   "can": 986,
+   "hiz": 42,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Ölüm Şövalyesi",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "death knight with a glowing sword",
+   "guc": 0.6,
+   "level": 24,
+   "id": "olum_sovalyesi",
+   "can": 1374,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Cellat",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "executioner with a giant axe and hood",
+   "guc": 0.6666666666666666,
+   "level": 26,
+   "id": "cellat",
+   "can": 1913,
+   "hiz": 42,
+   "odul": 27,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Gladyatör",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "undead gladiator",
+   "guc": 0.7333333333333333,
+   "level": 28,
+   "id": "gladyator",
+   "can": 2660,
+   "hiz": 42,
+   "odul": 29,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kara Lord",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "dark lord in spiked black armor",
+   "guc": 0.8,
+   "level": 30,
+   "id": "kara_lord",
+   "can": 3695,
+   "hiz": 42,
+   "odul": 31,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Zırhlı Kurt",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "wolf in iron armor",
+   "guc": 0.8666666666666667,
+   "level": 32,
+   "id": "zirhli_kurt",
+   "can": 5127,
+   "hiz": 42,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kuşatma Devi",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "giant ogre with a siege hammer",
+   "guc": 0.9333333333333333,
+   "level": 34,
+   "id": "kusatma_devi",
+   "can": 7108,
+   "hiz": 42,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Demir Golem",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "iron golem",
+   "guc": 1.0,
+   "level": 36,
+   "id": "demir_golem",
+   "can": 9845,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "İmp",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "small red imp",
+   "guc": 0.0,
+   "level": 21,
+   "id": "imp",
+   "can": 467,
+   "hiz": 42,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Ateş İblisi",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "fire demon",
+   "guc": 0.06666666666666667,
+   "level": 22,
+   "id": "ates_iblisi",
+   "can": 569,
+   "hiz": 42,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Boynuzlu Şeytan",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "horned devil with a trident",
+   "guc": 0.13333333333333333,
+   "level": 23,
+   "id": "boynuzlu_seytan",
+   "can": 691,
+   "hiz": 42,
+   "odul": 25,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Cehennem Köpeği",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "hellhound with flaming mane",
+   "guc": 0.2,
+   "level": 24,
+   "id": "cehennem_kopegi",
+   "can": 838,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Sukkubus",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "winged succubus demon",
+   "guc": 0.26666666666666666,
+   "level": 25,
+   "id": "sukkubus",
+   "can": 1015,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Lav İblisi",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "lava demon",
+   "guc": 0.3333333333333333,
+   "level": 26,
+   "id": "lav_iblisi",
+   "can": 1226,
+   "hiz": 42,
+   "odul": 27,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemirgen İblis",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "demonic rat imp",
+   "guc": 0.4,
+   "level": 27,
+   "id": "kemirgen_iblis",
+   "can": 1479,
+   "hiz": 42,
+   "odul": 28,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Zincirli İblis",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "demon wrapped in chains",
+   "guc": 0.4666666666666667,
+   "level": 28,
+   "id": "zincirli_iblis",
+   "can": 1782,
+   "hiz": 42,
+   "odul": 29,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kan İblisi",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "blood demon",
+   "guc": 0.5333333333333333,
+   "level": 29,
+   "id": "kan_iblisi",
+   "can": 2144,
+   "hiz": 42,
+   "odul": 30,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Çok Gözlü",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "demon with many eyes",
+   "guc": 0.6,
+   "level": 30,
+   "id": "cok_gozlu",
+   "can": 2575,
+   "hiz": 42,
+   "odul": 31,
+   "hasar": 1,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kül İblisi",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "ash demon",
+   "guc": 0.6666666666666666,
+   "level": 31,
+   "id": "kul_iblisi",
+   "can": 3091,
+   "hiz": 42,
+   "odul": 32,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "İşkenceci",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "demon torturer with hooks",
+   "guc": 0.7333333333333333,
+   "level": 32,
+   "id": "iskenceci",
+   "can": 3705,
+   "hiz": 42,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kara Keçi",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "goat headed demon baphomet style",
+   "guc": 0.8,
+   "level": 33,
+   "id": "kara_keci",
+   "can": 4436,
+   "hiz": 42,
+   "odul": 34,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Cehennem Şövalyesi",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "hell knight with burning armor",
+   "guc": 0.8666666666666667,
+   "level": 34,
+   "id": "cehennem_sovalyesi",
+   "can": 5307,
+   "hiz": 42,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kırmızı Dev",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "giant red demon",
+   "guc": 0.9333333333333333,
+   "level": 35,
+   "id": "kirmizi_dev",
+   "can": 6342,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Balrog",
+   "zirh": "Seytan",
+   "ozel": [],
+   "prompt": "huge fire demon with a whip",
+   "guc": 1.0,
+   "level": 36,
+   "id": "balrog",
+   "can": 7573,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Vampir Yarasa",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "giant vampire bat",
+   "guc": 0.0,
+   "level": 14,
+   "id": "vampir_yarasa",
+   "can": 165,
+   "hiz": 42,
+   "odul": 17,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Genç Vampir",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "young pale vampire",
+   "guc": 0.07692307692307693,
+   "level": 16,
+   "id": "genc_vampir",
+   "can": 235,
+   "hiz": 42,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Vampir Kontes",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire countess in a red dress",
+   "guc": 0.15384615384615385,
+   "level": 17,
+   "id": "vampir_kontes",
+   "can": 288,
+   "hiz": 42,
+   "odul": 19,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kan Emici",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "feral vampire creature",
+   "guc": 0.23076923076923078,
+   "level": 19,
+   "id": "kan_emici",
+   "can": 407,
+   "hiz": 42,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Vampir Asilzade",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire noble with a cane",
+   "guc": 0.3076923076923077,
+   "level": 21,
+   "id": "vampir_asilzade",
+   "can": 575,
+   "hiz": 42,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Strigoi",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "hunched strigoi vampire",
+   "guc": 0.38461538461538464,
+   "level": 22,
+   "id": "strigoi",
+   "can": 698,
+   "hiz": 42,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Gece Avcısı",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire hunter turned vampire",
+   "guc": 0.46153846153846156,
+   "level": 24,
+   "id": "gece_avcisi",
+   "can": 981,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kan Rahibesi",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire blood priestess",
+   "guc": 0.5384615384615384,
+   "level": 26,
+   "id": "kan_rahibesi",
+   "can": 1377,
+   "hiz": 42,
+   "odul": 27,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Vampir Muhafız",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire guard with a halberd",
+   "guc": 0.6153846153846154,
+   "level": 28,
+   "id": "vampir_muhafiz",
+   "can": 1929,
+   "hiz": 42,
+   "odul": 29,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Nosferatu",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "bald nosferatu vampire with long fingers",
+   "guc": 0.6923076923076923,
+   "level": 29,
+   "id": "nosferatu",
+   "can": 2326,
+   "hiz": 42,
+   "odul": 30,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Vampir Gelin",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire bride",
+   "guc": 0.7692307692307693,
+   "level": 31,
+   "id": "vampir_gelin",
+   "can": 3249,
+   "hiz": 42,
+   "odul": 32,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kan Lordu",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire lord with a long cape",
+   "guc": 0.8461538461538461,
+   "level": 33,
+   "id": "kan_lordu",
+   "can": 4532,
+   "hiz": 42,
+   "odul": 34,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Vampir Uşak",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "hunchback vampire servant",
+   "guc": 0.9230769230769231,
+   "level": 34,
+   "id": "vampir_usak",
+   "can": 5443,
+   "hiz": 42,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kan Şövalyesi",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "vampire knight in crimson armor",
+   "guc": 1.0,
+   "level": 36,
+   "id": "kan_sovalyesi",
+   "can": 7573,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Dev Sinek",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant fly",
+   "guc": 0.0,
+   "level": 5,
+   "id": "dev_sinek",
+   "can": 24,
+   "hiz": 50,
+   "odul": 8,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Leş Böceği",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "carrion beetle",
+   "guc": 0.06666666666666667,
+   "level": 7,
+   "id": "les_bocegi",
+   "can": 34,
+   "hiz": 50,
+   "odul": 10,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kırkayak",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant centipede",
+   "guc": 0.13333333333333333,
+   "level": 9,
+   "id": "kirkayak",
+   "can": 48,
+   "hiz": 50,
+   "odul": 12,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Akrep",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant scorpion",
+   "guc": 0.2,
+   "level": 11,
+   "id": "akrep",
+   "can": 67,
+   "hiz": 50,
+   "odul": 14,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kanlı Sivrisinek",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant blood mosquito",
+   "guc": 0.26666666666666666,
+   "level": 13,
+   "id": "kanli_sivrisinek",
+   "can": 94,
+   "hiz": 50,
+   "odul": 16,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Sürü Karıncası",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant soldier ant",
+   "guc": 0.3333333333333333,
+   "level": 15,
+   "id": "suru_karincasi",
+   "can": 132,
+   "hiz": 50,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Larva",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant maggot larva",
+   "guc": 0.4,
+   "level": 17,
+   "id": "larva",
+   "can": 184,
+   "hiz": 50,
+   "odul": 19,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Peygamber Devesi",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant praying mantis",
+   "guc": 0.4666666666666667,
+   "level": 19,
+   "id": "peygamber_devesi",
+   "can": 258,
+   "hiz": 50,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kene",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant tick",
+   "guc": 0.5333333333333333,
+   "level": 22,
+   "id": "kene",
+   "can": 417,
+   "hiz": 50,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Böcek Kraliçe",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "insect queen",
+   "guc": 0.6,
+   "level": 24,
+   "id": "bocek_kralice",
+   "can": 581,
+   "hiz": 50,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Zırhlı Böcek",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "armored beetle",
+   "guc": 0.6666666666666666,
+   "level": 26,
+   "id": "zirhli_bocek",
+   "can": 809,
+   "hiz": 50,
+   "odul": 27,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Yumurta Taşıyıcı",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "bug carrying eggs",
+   "guc": 0.7333333333333333,
+   "level": 28,
+   "id": "yumurta_tasiyici",
+   "can": 1125,
+   "hiz": 50,
+   "odul": 29,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Ateş Böceği",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "glowing fire beetle",
+   "guc": 0.8,
+   "level": 30,
+   "id": "ates_bocegi",
+   "can": 1563,
+   "hiz": 50,
+   "odul": 31,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Ağ Örücü",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "web spinning spider",
+   "guc": 0.8666666666666667,
+   "level": 32,
+   "id": "ag_orucu",
+   "can": 2169,
+   "hiz": 50,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kurt Böceği",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant worm",
+   "guc": 0.9333333333333333,
+   "level": 34,
+   "id": "kurt_bocegi",
+   "can": 3007,
+   "hiz": 50,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Eşek Arısı",
+   "zirh": "Bocek",
+   "ozel": [
+    "kalabalik"
+   ],
+   "prompt": "giant hornet",
+   "guc": 1.0,
+   "level": 36,
+   "id": "esek_arisi",
+   "can": 4165,
+   "hiz": 50,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Taş Gargoyl",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "stone gargoyle",
+   "guc": 0.0,
+   "level": 16,
+   "id": "tas_gargoyl",
+   "can": 356,
+   "hiz": 28,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kaya Golem",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "rock golem",
+   "guc": 0.09090909090909091,
+   "level": 18,
+   "id": "kaya_golem",
+   "can": 511,
+   "hiz": 28,
+   "odul": 20,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Mezar Taşı Canlısı",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "living tombstone monster",
+   "guc": 0.18181818181818182,
+   "level": 20,
+   "id": "mezar_tasi_canlisi",
+   "can": 732,
+   "hiz": 28,
+   "odul": 22,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Heykel Bekçi",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "animated stone statue guardian",
+   "guc": 0.2727272727272727,
+   "level": 21,
+   "id": "heykel_bekci",
+   "can": 900,
+   "hiz": 28,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kristal Golem",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "crystal golem",
+   "guc": 0.36363636363636365,
+   "level": 23,
+   "id": "kristal_golem",
+   "can": 1280,
+   "hiz": 28,
+   "odul": 25,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kum Golemi",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "sand golem",
+   "guc": 0.45454545454545453,
+   "level": 25,
+   "id": "kum_golemi",
+   "can": 1814,
+   "hiz": 28,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Obsidyen Dev",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "obsidian giant",
+   "guc": 0.5454545454545454,
+   "level": 27,
+   "id": "obsidyen_dev",
+   "can": 2566,
+   "hiz": 28,
+   "odul": 28,
+   "hasar": 1,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kemik Golem",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "bone golem",
+   "guc": 0.6363636363636364,
+   "level": 29,
+   "id": "kemik_golem",
+   "can": 3619,
+   "hiz": 28,
+   "odul": 30,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Et Golemi",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "flesh golem",
+   "guc": 0.7272727272727273,
+   "level": 31,
+   "id": "et_golemi",
+   "can": 5095,
+   "hiz": 28,
+   "odul": 32,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Dev Gargoyl",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "huge gargoyle",
+   "guc": 0.8181818181818182,
+   "level": 32,
+   "id": "dev_gargoyl",
+   "can": 6171,
+   "hiz": 28,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Toprak Elementali",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "earth elemental",
+   "guc": 0.9090909090909091,
+   "level": 34,
+   "id": "toprak_elementali",
+   "can": 8654,
+   "hiz": 28,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Anıt Dev",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "colossal stone titan",
+   "guc": 1.0,
+   "level": 36,
+   "id": "anit_dev",
+   "can": 12117,
+   "hiz": 28,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Buz Zombisi",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "frozen zombie",
+   "guc": 0.0,
+   "level": 18,
+   "id": "buz_zombisi",
+   "can": 299,
+   "hiz": 42,
+   "odul": 20,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Kar Hortlağı",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "snow wraith",
+   "guc": 0.07692307692307693,
+   "level": 19,
+   "id": "kar_hortlagi",
+   "can": 367,
+   "hiz": 42,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buz Kurdu",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "ice wolf",
+   "guc": 0.15384615384615385,
+   "level": 21,
+   "id": "buz_kurdu",
+   "can": 521,
+   "hiz": 42,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Don Devi",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "frost giant",
+   "guc": 0.23076923076923078,
+   "level": 22,
+   "id": "don_devi",
+   "can": 636,
+   "hiz": 42,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buz Elementali",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "ice elemental",
+   "guc": 0.3076923076923077,
+   "level": 24,
+   "id": "buz_elementali",
+   "can": 897,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buz Cadısı",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "ice witch",
+   "guc": 0.38461538461538464,
+   "level": 25,
+   "id": "buz_cadisi",
+   "can": 1090,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Donmuş Şövalye",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "frozen knight",
+   "guc": 0.46153846153846156,
+   "level": 26,
+   "id": "donmus_sovalye",
+   "can": 1321,
+   "hiz": 42,
+   "odul": 27,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buz Örümceği",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "ice spider",
+   "guc": 0.5384615384615384,
+   "level": 28,
+   "id": "buz_orumcegi",
+   "can": 1853,
+   "hiz": 42,
+   "odul": 29,
+   "hasar": 1,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buzul Trol",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "glacier troll",
+   "guc": 0.6153846153846154,
+   "level": 29,
+   "id": "buzul_trol",
+   "can": 2238,
+   "hiz": 42,
+   "odul": 30,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Kış Lordu",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "winter lord with an ice crown",
+   "guc": 0.6923076923076923,
+   "level": 30,
+   "id": "kis_lordu",
+   "can": 2698,
+   "hiz": 42,
+   "odul": 31,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buz Gulü",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "frost ghoul",
+   "guc": 0.7692307692307693,
+   "level": 32,
+   "id": "buz_gulu",
+   "can": 3769,
+   "hiz": 42,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Kar Adam",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "evil snowman monster",
+   "guc": 0.8461538461538461,
+   "level": 33,
+   "id": "kar_adam",
+   "can": 4532,
+   "hiz": 42,
+   "odul": 34,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Buz Golemi",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "ice golem",
+   "guc": 0.9230769230769231,
+   "level": 35,
+   "id": "buz_golemi",
+   "can": 6313,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Kar Leoparı",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "snow leopard beast",
+   "guc": 1.0,
+   "level": 36,
+   "id": "kar_leopari",
+   "can": 7573,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Bataklık Zombisi",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "swamp zombie covered in moss",
+   "guc": 0.0,
+   "level": 10,
+   "id": "bataklik_zombisi",
+   "can": 91,
+   "hiz": 42,
+   "odul": 13,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kurbağa Adam",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "frog man warrior",
+   "guc": 0.09090909090909091,
+   "level": 12,
+   "id": "kurbaga_adam",
+   "can": 131,
+   "hiz": 42,
+   "odul": 15,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Balçık",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "green slime blob",
+   "guc": 0.18181818181818182,
+   "level": 15,
+   "id": "balcik",
+   "can": 218,
+   "hiz": 42,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Bataklık Cadısı",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "swamp hag witch",
+   "guc": 0.2727272727272727,
+   "level": 17,
+   "id": "bataklik_cadisi",
+   "can": 311,
+   "hiz": 42,
+   "odul": 19,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Sülük",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "giant leech",
+   "guc": 0.36363636363636365,
+   "level": 19,
+   "id": "suluk",
+   "can": 442,
+   "hiz": 42,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Yosun Canavarı",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "moss monster",
+   "guc": 0.45454545454545453,
+   "level": 22,
+   "id": "yosun_canavari",
+   "can": 726,
+   "hiz": 42,
+   "odul": 24,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Timsah Adam",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "crocodile man",
+   "guc": 0.5454545454545454,
+   "level": 24,
+   "id": "timsah_adam",
+   "can": 1027,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Çürük Ent",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "rotten tree monster",
+   "guc": 0.6363636363636364,
+   "level": 27,
+   "id": "curuk_ent",
+   "can": 1681,
+   "hiz": 42,
+   "odul": 28,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Mantar Adam",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "fungus mushroom man",
+   "guc": 0.7272727272727273,
+   "level": 29,
+   "id": "mantar_adam",
+   "can": 2366,
+   "hiz": 42,
+   "odul": 30,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Hidra",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "small swamp hydra",
+   "guc": 0.8181818181818182,
+   "level": 31,
+   "id": "hidra",
+   "can": 3325,
+   "hiz": 42,
+   "odul": 32,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Zehirli Balçık",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "toxic purple slime",
+   "guc": 0.9090909090909091,
+   "level": 34,
+   "id": "zehirli_balcik",
+   "can": 5409,
+   "hiz": 42,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Bataklık Kralı",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "swamp king monster with a crown of roots",
+   "guc": 1.0,
+   "level": 36,
+   "id": "bataklik_krali",
+   "can": 7573,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kültist",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "hooded cultist with a dagger",
+   "guc": 0.0,
+   "level": 12,
+   "id": "kultist",
+   "can": 123,
+   "hiz": 42,
+   "odul": 15,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kara Rahip",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "dark priest",
+   "guc": 0.09090909090909091,
+   "level": 14,
+   "id": "kara_rahip",
+   "can": 177,
+   "hiz": 42,
+   "odul": 17,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Büyücüsü",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "necromancer",
+   "guc": 0.18181818181818182,
+   "level": 16,
+   "id": "kemik_buyucusu",
+   "can": 253,
+   "hiz": 42,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Cadı",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "old witch with a broom",
+   "guc": 0.2727272727272727,
+   "level": 19,
+   "id": "cadi",
+   "can": 418,
+   "hiz": 42,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kurban Taşıyıcı",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "cultist carrying a candle",
+   "guc": 0.36363636363636365,
+   "level": 21,
+   "id": "kurban_tasiyici",
+   "can": 594,
+   "hiz": 42,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Maskeli Tarikatçı",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "masked cultist",
+   "guc": 0.45454545454545453,
+   "level": 23,
+   "id": "maskeli_tarikatci",
+   "can": 843,
+   "hiz": 42,
+   "odul": 25,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Lanet Okuyucu",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "curse caster with a book",
+   "guc": 0.5454545454545454,
+   "level": 25,
+   "id": "lanet_okuyucu",
+   "can": 1192,
+   "hiz": 42,
+   "odul": 26,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Ölüm Büyücüsü",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "death wizard with a skull staff",
+   "guc": 0.6363636363636364,
+   "level": 27,
+   "id": "olum_buyucusu",
+   "can": 1681,
+   "hiz": 42,
+   "odul": 28,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Cadı Kazanı Ustası",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "witch with a cauldron",
+   "guc": 0.7272727272727273,
+   "level": 29,
+   "id": "cadi_kazani_ustasi",
+   "can": 2366,
+   "hiz": 42,
+   "odul": 30,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kan Büyücüsü",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "blood mage",
+   "guc": 0.8181818181818182,
+   "level": 32,
+   "id": "kan_buyucusu",
+   "can": 3857,
+   "hiz": 42,
+   "odul": 33,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Tarikat Lideri",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "cult leader with a goat mask",
+   "guc": 0.9090909090909091,
+   "level": 34,
+   "id": "tarikat_lideri",
+   "can": 5409,
+   "hiz": 42,
+   "odul": 35,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Liç",
+   "zirh": "Kultist",
+   "ozel": [],
+   "prompt": "lich with a glowing crown",
+   "guc": 1.0,
+   "level": 36,
+   "id": "lic",
+   "can": 7573,
+   "hiz": 42,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Yarasa Sürüsü",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "swarm of bats",
+   "guc": 0.0,
+   "level": 8,
+   "id": "yarasa_surusu",
+   "can": 54,
+   "hiz": 55,
+   "odul": 11,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kuzgun",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "giant raven",
+   "guc": 0.09090909090909091,
+   "level": 11,
+   "id": "kuzgun",
+   "can": 90,
+   "hiz": 55,
+   "odul": 14,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Harpi",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "harpy",
+   "guc": 0.18181818181818182,
+   "level": 13,
+   "id": "harpi",
+   "can": 130,
+   "hiz": 55,
+   "odul": 16,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Uçan Kafatası",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "flaming flying skull",
+   "guc": 0.2727272727272727,
+   "level": 16,
+   "id": "ucan_kafatasi",
+   "can": 214,
+   "hiz": 55,
+   "odul": 18,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Uçan Göz",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "floating demonic eyeball",
+   "guc": 0.36363636363636365,
+   "level": 18,
+   "id": "ucan_goz",
+   "can": 305,
+   "hiz": 55,
+   "odul": 20,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Akbaba Canavar",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "undead vulture",
+   "guc": 0.45454545454545453,
+   "level": 21,
+   "id": "akbaba_canavar",
+   "can": 501,
+   "hiz": 55,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kanatlı İblis",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "winged demon",
+   "guc": 0.5454545454545454,
+   "level": 23,
+   "id": "kanatli_iblis",
+   "can": 708,
+   "hiz": 55,
+   "odul": 25,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Wyvern",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "wyvern",
+   "guc": 0.6363636363636364,
+   "level": 26,
+   "id": "wyvern",
+   "can": 1159,
+   "hiz": 55,
+   "odul": 27,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Gece Kanadı",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "shadow wing creature",
+   "guc": 0.7272727272727273,
+   "level": 28,
+   "id": "gece_kanadi",
+   "can": 1632,
+   "hiz": 55,
+   "odul": 29,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kemik Kartal",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "skeletal eagle",
+   "guc": 0.8181818181818182,
+   "level": 31,
+   "id": "kemik_kartal",
+   "can": 2660,
+   "hiz": 55,
+   "odul": 32,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Hayalet Kuş",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "ghost bird",
+   "guc": 0.9090909090909091,
+   "level": 33,
+   "id": "hayalet_kus",
+   "can": 3730,
+   "hiz": 55,
+   "odul": 34,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Taş Kanat",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "flying stone gargoyle",
+   "guc": 1.0,
+   "level": 36,
+   "id": "tas_kanat",
+   "can": 6059,
+   "hiz": 55,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kemik Kral",
+   "zirh": "Olumsuz",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "giant skeleton king on a bone throne",
+   "guc": 1.0,
+   "level": 2,
+   "id": "kemik_kral",
+   "can": 682,
+   "hiz": 26,
+   "odul": 15,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Ay Kurt",
+   "zirh": "Canavar",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "giant werewolf howling",
+   "guc": 1.0,
+   "level": 4,
+   "id": "ay_kurt",
+   "can": 918,
+   "hiz": 26,
+   "odul": 26,
+   "hasar": 10,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Hayalet Kraliçe",
+   "zirh": "Hayalet",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "ghost queen with a spectral crown",
+   "guc": 1.0,
+   "level": 6,
+   "id": "hayalet_kralice",
+   "can": 1235,
+   "hiz": 26,
+   "odul": 36,
+   "hasar": 10,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kara Komutan",
+   "zirh": "Zirhli",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "dark armored warlord",
+   "guc": 1.0,
+   "level": 8,
+   "id": "kara_komutan",
+   "can": 1662,
+   "hiz": 26,
+   "odul": 47,
+   "hasar": 10,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Böcek Ana",
+   "zirh": "Bocek",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "giant insect broodmother",
+   "guc": 1.0,
+   "level": 10,
+   "id": "bocek_ana",
+   "can": 2236,
+   "hiz": 26,
+   "odul": 58,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Bataklık Hidrası",
+   "zirh": "Bataklik",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "three headed swamp hydra",
+   "guc": 1.0,
+   "level": 12,
+   "id": "bataklik_hidrasi",
+   "can": 3009,
+   "hiz": 26,
+   "odul": 69,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kara Başrahip",
+   "zirh": "Kultist",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "dark high priest with tentacles",
+   "guc": 1.0,
+   "level": 14,
+   "id": "kara_basrahip",
+   "can": 4049,
+   "hiz": 26,
+   "odul": 80,
+   "hasar": 10,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Taş Titan",
+   "zirh": "Tas",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "colossal stone titan",
+   "guc": 1.0,
+   "level": 16,
+   "id": "tas_titan",
+   "can": 5448,
+   "hiz": 26,
+   "odul": 90,
+   "hasar": 10,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Vampir Lordu",
+   "zirh": "Vampir",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "vampire lord with long white hair and red cape",
+   "guc": 1.0,
+   "level": 18,
+   "id": "vampir_lordu",
+   "can": 7331,
+   "hiz": 26,
+   "odul": 101,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Buz Ejderi",
+   "zirh": "Buz",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "ice dragon",
+   "guc": 1.0,
+   "level": 20,
+   "id": "buz_ejderi",
+   "can": 9865,
+   "hiz": 26,
+   "odul": 112,
+   "hasar": 10,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Cehennem Lordu",
+   "zirh": "Seytan",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "demon lord with huge horns",
+   "guc": 1.0,
+   "level": 22,
+   "id": "cehennem_lordu",
+   "can": 13274,
+   "hiz": 26,
+   "odul": 123,
+   "hasar": 10,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kara Ejder",
+   "zirh": "Ucan",
+   "ozel": [
+    "boss",
+    "ucan"
+   ],
+   "prompt": "black dragon",
+   "guc": 1.0,
+   "level": 24,
+   "id": "kara_ejder",
+   "can": 14289,
+   "hiz": 26,
+   "odul": 134,
+   "hasar": 10,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Liç Kral",
+   "zirh": "Olumsuz",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "lich king with a frozen crown",
+   "guc": 1.0,
+   "level": 26,
+   "id": "lic_kral",
+   "can": 24034,
+   "hiz": 26,
+   "odul": 144,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kimera",
+   "zirh": "Canavar",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "chimera beast",
+   "guc": 1.0,
+   "level": 28,
+   "id": "kimera",
+   "can": 32340,
+   "hiz": 26,
+   "odul": 155,
+   "hasar": 10,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Ölüm Meleği",
+   "zirh": "Hayalet",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "angel of death with black wings",
+   "guc": 1.0,
+   "level": 30,
+   "id": "olum_melegi",
+   "can": 43517,
+   "hiz": 26,
+   "odul": 166,
+   "hasar": 10,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kara Şövalye Lordu",
+   "zirh": "Zirhli",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "black knight lord on a horse",
+   "guc": 1.0,
+   "level": 32,
+   "id": "kara_sovalye_lordu",
+   "can": 58556,
+   "hiz": 26,
+   "odul": 177,
+   "hasar": 10,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "İblis Prensi",
+   "zirh": "Seytan",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "demon prince with flaming sword",
+   "guc": 1.0,
+   "level": 34,
+   "id": "iblis_prensi",
+   "can": 78794,
+   "hiz": 26,
+   "odul": 188,
+   "hasar": 10,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Golem Kral",
+   "zirh": "Tas",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "golem king",
+   "guc": 1.0,
+   "level": 36,
+   "id": "golem_kral",
+   "can": 106025,
+   "hiz": 26,
+   "odul": 198,
+   "hasar": 10,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Eski Tanrı",
+   "zirh": "Kultist",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "eldritch old god with tentacles",
+   "guc": 1.0,
+   "level": 38,
+   "id": "eski_tanri",
+   "can": 142667,
+   "hiz": 26,
+   "odul": 209,
+   "hasar": 10,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kıyamet Canavarı",
+   "zirh": "Seytan",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "apocalypse beast",
+   "guc": 1.0,
+   "level": 40,
+   "id": "kiyamet_canavari",
+   "can": 191972,
+   "hiz": 26,
+   "odul": 220,
+   "hasar": 10,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  }
+ ]
+}

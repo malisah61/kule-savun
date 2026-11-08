@@ -1,24 +1,27 @@
 # Kule Savunma (Godot 4.3 + C#)
 
-Grow Castle tarzı 2D kale savunma oyunu. Kuleni büyüt, kahramanlarını yerleştir, iskelet dalgalarını durdur.
+Karanlık fantastik, yol + kule savunma oyunu. Mezarlık yolundan gelen 200 farklı düşmanı 30 farklı kuleyle durdur.
 
 **APK:** https://github.com/malisah61/kule-savun/releases/download/son-surum/KuleSavunma.apk
 
 ## Oynanış
-- **SAVAŞ!** ile dalga başlar. Düşmanlara dokun: kale okçusu ateş eder.
-- Kahramanlar kendiliğinden saldırır; alttaki düğmelerle özel güçlerini kullan:
-  - Okçu: **Ok Yağmuru** · Büyücü: **Meteor** (ateş, yanma) · Barbar: **Deprem** (sersemletir) · Şövalye: **Kalkan Darbesi** (geri iter)
-- Dalgalar arasında altınla kaleyi, kale okçusunu ve kahramanları geliştir. Yeni kahraman açınca kuleye kat eklenir.
-- Her 5. dalgada Dev İskelet gelir.
+- Yolun yanındaki boş yerlere dokun → kule kur. Kuleye dokun → menzil, bilgi, bölüm içi yetenek ağacı (Güç / Ustalık), sat.
+- **▶ Dalga** ile dalgayı başlat. Yolu bitiren düşman savunmanın canını azaltır (boss 10 can).
+- 40 bölüm; çift bölümlerde boss. Her dalgada düşman sayısı, geliş hızı ve canı artar.
+- **Hasar türü × zırh:** 8 hasar türü (Fiziksel, Ateş, Buz, Zehir, Yıldırım, Kutsal, Gölge, Kuşatma) ve 12 zırh tipi. Örn. hayaletlere fiziksel neredeyse işlemez, kutsal 2 kat vurur; kuşatma uçanlara vuramaz.
+- **Düşman analizi:** her dalga sonunda savunma incelenir. Rahat geçiyorsan düşmanlar güçlenir; kulelerinin hasar türüne dirençli düşmanlar daha sık gelir. Zorluk asla düşmez.
+
+## İlerleme
+- Düşman, dalga ve bölüm **XP** ve kalıcı **para** verir; bölümü kaybetsen de kalır.
+- **Oyuncu seviyesi** yükseldikçe yeni kuleler açılır ve 2 yetenek puanı gelir.
+- **Kalıcı yetenek ağacı:** 30 kule × 10 küçük yükseltme (+%2 hasar, +%2 menzil, +%2 hız, %2 ucuz, zırh delme…). Para + puanla alınır.
 
 ## Dosyalar
-- `Oyun.cs` — oyun akışı, düşmanlar, kahramanlar, mermiler, arayüz
-- `Birimler.cs` — sprite yükleyici ve birim sınıfları
-- `Efekt.cs` — ateş/büyü/patlama parçacıkları, kodla üretilen sesler
-- `Arkaplan.cs`, `Halka.cs` — kodla çizilen arka plan ve halka efekti
-- `assets/sprites/` — karakter sprite sayfaları (3D modellerden çekildi)
-- `assets/kale/` — kale parçaları, ok, balta (3D'den çizildi)
-- `tools/sprite_uretici/` — 3D modelleri 2D sprite'a çeviren Godot betikleri
+- `KuleSavunmasi.cs` — oyun akışı, dalgalar, kuleler, düşmanlar, mermiler, arayüz, analiz
+- `TdVeri.cs` — `assets/td/veri.json` yükleyici, hasar çarpanları
+- `YetenekAgaci.cs` — bölüm içi Güç/Ustalık ağacı · `Ilerleme.cs` — XP, seviye, para, kalıcı ağaç, kayıt
+- `TdHarita.cs` — kodla çizilen mezarlık haritası ve yol · `Efekt.cs` — parçacıklar ve sesler
+- `assets/td/` — 30 kule + 200 düşman sprite'ı ve `veri.json`
 
-## Emeği geçenler (CC0)
-- Karakterler: KayKit Adventurers ve KayKit Skeletons — Kay Lousberg (kaylousberg.com)
+## Görseller
+Sprite'lar `sanat-uretimi` dalındaki iş akışıyla GitHub Actions'ta üretildi: Stable Diffusion XL + LCM LoRA + pixel-art-xl LoRA (CPU), ardından `araclar/temizle3.py` ile arka plan temizleme. Tasarım verisi: `tasarim/veri.py`.

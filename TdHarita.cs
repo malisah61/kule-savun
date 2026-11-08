@@ -2,34 +2,76 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-/// <summary>Mezarlık haritası: kodla çizilen zemin, kıvrımlı yol, kule yerleri ve süsler.</summary>
+/// <summary>
+/// Mezarlık haritası. Her bölüm başında yol ve kule yerleri rastgele üretilir.
+/// Zemin bir kez çizilir (performans); portal ve sis ayrı küçük bir düğümde canlanır.
+/// </summary>
 public partial class TdHarita : Node2D
 {
-	public static readonly Vector2[] Yol =
-	{
-		new(-60, 150), new(300, 150), new(300, 420), new(620, 420), new(620, 190),
-		new(950, 190), new(950, 520), new(1340, 520)
-	};
+	public static Vector2[] Yol = { new(-60, 360), new(1340, 360) };
+	public static readonly List<Vector2> Yerler = new();
 	public const float YolGenislik = 54f;
-
-	public static readonly Vector2[] AdayYerler =
-	{
-		new(150, 250), new(400, 260), new(200, 370), new(400, 520), new(520, 320), new(530, 525),
-		new(720, 300), new(720, 430), new(785, 100), new(860, 300), new(1050, 300), new(1050, 410),
-		new(860, 430), new(1150, 620), new(990, 630), new(800, 600), new(150, 560), new(1180, 400),
-	};
-
+	public static float Sol = 0, Sag = 1280;
 	public static float Uzunluk { get; private set; }
 	static readonly List<float> Birikim = new();
 
-	static TdHarita()
+	readonly List<(Vector2 p, float r, Color c)> _benekler = new();
+	readonly List<(Vector2 p, int tur)> _susler = new();
+	HaritaCanli _canli;
+
+	// ------------------------------------------------------------ üretim
+	/// <summary>Görünen genişliğe (sol..sağ) yayılan, kıvrımlı rastgele bir yol ve kule yerleri üretir.</summary>
+	public static void Olustur(ulong tohum, float sol, float sag)
 	{
+		Sol = sol; Sag = sag;
+		var rng = new RandomNumberGenerator { Seed = tohum };
+		var noktalar = new List<Vector2>();
+		int donus = rng.RandiRange(3, 5);
+		float y = rng.RandfRange(190, 560);
+		noktalar.Add(new Vector2(sol - 60, y));
+		for (int i = 1; i <= donus; i++)
+		{
+			float x = sol + (sag - sol) * i / (donus + 1f) + rng.RandfRange(-40, 40);
+			noktalar.Add(new Vector2(x, y));
+			float yeniY;
+			int deneme = 0;
+			do { yeniY = rng.RandfRange(165, i == donus ? 560 : 640); deneme++; }
+			while (Mathf.Abs(yeniY - y) < 160 && deneme < 30);
+			y = yeniY;
+			noktalar.Add(new Vector2(x, y));
+		}
+		noktalar.Add(new Vector2(sag + 60, y));
+		Yol = noktalar.ToArray();
+
+		Birikim.Clear();
 		Birikim.Add(0);
 		for (int i = 1; i < Yol.Length; i++) Birikim.Add(Birikim[i - 1] + Yol[i - 1].DistanceTo(Yol[i]));
 		Uzunluk = Birikim[^1];
+
+		// kule yerleri: yola 62-125 px uzaklıkta, birbirinden en az 78 px aralıklı
+		var adaylar = new List<Vector2>();
+		for (float x = sol + 45; x < sag - 40; x += 26)
+			for (float yy = 135; yy < 695; yy += 26)
+			{
+				var p = new Vector2(x, yy);
+				if (x > sag - 250 && yy > 610) continue;      // dalga düğmesinin altı
+				float u = YolaUzaklik(p);
+				if (u >= 64 && u <= 125) adaylar.Add(p);
+			}
+		// yola yakın olanlar önce (daha kullanışlı), biraz rastgelelikle
+		var anahtar = new Dictionary<Vector2, float>();
+		foreach (var p in adaylar) anahtar[p] = YolaUzaklik(p) + rng.RandfRange(0, 45);
+		adaylar.Sort((a, b) => anahtar[a].CompareTo(anahtar[b]));
+		Yerler.Clear();
+		foreach (var p in adaylar)
+		{
+			bool yakin = false;
+			foreach (var q in Yerler) if (q.DistanceTo(p) < 78) { yakin = true; break; }
+			if (!yakin) Yerler.Add(p);
+			if (Yerler.Count >= 20) break;
+		}
 	}
 
-	/// <summary>Yolun başından 'm' piksel ilerideki nokta ve gidiş yönü.</summary>
 	public static Vector2 Konum(float m, out Vector2 yon)
 	{
 		m = Mathf.Clamp(m, 0, Uzunluk);
@@ -57,58 +99,58 @@ public partial class TdHarita : Node2D
 		return en;
 	}
 
-	public static List<Vector2> KuleYerleri()
-	{
-		var l = new List<Vector2>();
-		foreach (var p in AdayYerler)
-			if (YolaUzaklik(p) > YolGenislik * 0.5f + 34f) l.Add(p);
-		return l;
-	}
+	/// <summary>Bitişe yakın görünen nokta (kaybedilen can yazısı için).</summary>
+	public static Vector2 Cikis => new(Sag - 40, Yol[^1].Y - 40);
 
-	readonly List<(Vector2 p, float r, Color c)> _benekler = new();
-	readonly List<(Vector2 p, int tur)> _susler = new();
-	float _t;
-
+	// ------------------------------------------------------------ çizim
 	public override void _Ready()
 	{
-		var rng = new RandomNumberGenerator { Seed = 61 };
-		for (int i = 0; i < 260; i++)
+		_canli = new HaritaCanli();
+		AddChild(_canli);
+		Yenile(1);
+	}
+
+	/// <summary>Süsleri yeni yola göre yerleştirip zemini bir kez yeniden çizer.</summary>
+	public void Yenile(ulong tohum)
+	{
+		var rng = new RandomNumberGenerator { Seed = tohum * 31 + 7 };
+		_benekler.Clear(); _susler.Clear();
+		for (int i = 0; i < 300; i++)
 		{
-			var p = new Vector2(rng.RandfRange(0, 1280), rng.RandfRange(56, 720));
+			var p = new Vector2(rng.RandfRange(Sol, Sag), rng.RandfRange(56, 720));
 			if (YolaUzaklik(p) < YolGenislik * 0.6f) continue;
 			_benekler.Add((p, rng.RandfRange(2, 7), rng.Randf() < 0.5f ? new Color(0.13f, 0.17f, 0.11f) : new Color(0.09f, 0.12f, 0.09f)));
 		}
-		var yerler = KuleYerleri();
-		for (int i = 0; i < 40; i++)
+		for (int i = 0; i < 60; i++)
 		{
-			var p = new Vector2(rng.RandfRange(20, 1260), rng.RandfRange(80, 700));
+			var p = new Vector2(rng.RandfRange(Sol + 20, Sag - 20), rng.RandfRange(90, 705));
 			if (YolaUzaklik(p) < YolGenislik * 0.5f + 20f) continue;
 			bool yakin = false;
-			foreach (var y in yerler) if (y.DistanceTo(p) < 52) yakin = true;
+			foreach (var y in Yerler) if (y.DistanceTo(p) < 50) yakin = true;
 			if (!yakin) _susler.Add((p, rng.RandiRange(0, 3)));
 		}
+		QueueRedraw();
+		_canli?.QueueRedraw();
 	}
-
-	public override void _Process(double delta) { _t += (float)delta; QueueRedraw(); }
 
 	public override void _Draw()
 	{
-		DrawRect(new Rect2(0, 0, 1280, 720), new Color(0.11f, 0.13f, 0.1f));
+		DrawRect(new Rect2(Sol - 20, 0, Sag - Sol + 40, 740), new Color(0.11f, 0.13f, 0.1f));
 		foreach (var (p, r, c) in _benekler) DrawCircle(p, r, c);
-		// yol: kenar + toprak + iz
+		var kenar = new Color(0.12f, 0.09f, 0.07f);
+		var toprak = new Color(0.3f, 0.23f, 0.17f);
 		for (int i = 1; i < Yol.Length; i++)
 		{
-			DrawLine(Yol[i - 1], Yol[i], new Color(0.12f, 0.09f, 0.07f), YolGenislik + 10);
-			DrawCircle(Yol[i - 1], (YolGenislik + 10) / 2, new Color(0.12f, 0.09f, 0.07f));
+			DrawLine(Yol[i - 1], Yol[i], kenar, YolGenislik + 10);
+			DrawCircle(Yol[i - 1], (YolGenislik + 10) / 2, kenar);
 		}
 		for (int i = 1; i < Yol.Length; i++)
 		{
-			DrawLine(Yol[i - 1], Yol[i], new Color(0.3f, 0.23f, 0.17f), YolGenislik);
-			DrawCircle(Yol[i - 1], YolGenislik / 2, new Color(0.3f, 0.23f, 0.17f));
+			DrawLine(Yol[i - 1], Yol[i], toprak, YolGenislik);
+			DrawCircle(Yol[i - 1], YolGenislik / 2, toprak);
 		}
 		for (int i = 1; i < Yol.Length; i++)
 			DrawDashedLine(Yol[i - 1], Yol[i], new Color(0.24f, 0.18f, 0.13f), 3, 14);
-		// süsler: mezar taşı, haç, ölü ağaç, kemik
 		foreach (var (p, tur) in _susler)
 		{
 			switch (tur)
@@ -134,17 +176,36 @@ public partial class TdHarita : Node2D
 					break;
 			}
 		}
-		// giriş portalı ve çıkış kapısı
+		// çıkış kapısı
+		var c = Cikis + new Vector2(0, 40);
+		DrawRect(new Rect2(c.X - 12, c.Y - 50, 52, 100), new Color(0.2f, 0.16f, 0.12f));
+		DrawRect(new Rect2(c.X - 4, c.Y - 38, 44, 88), new Color(0.07f, 0.05f, 0.05f));
+	}
+}
+
+/// <summary>Haritanın canlı kısmı: giriş portalı, kapı meşalesi, sis. Saniyede 20 kez çizilir.</summary>
+public partial class HaritaCanli : Node2D
+{
+	float _t, _sayac;
+	public override void _Process(double delta)
+	{
+		_t += (float)delta;
+		_sayac -= (float)delta;
+		if (_sayac <= 0) { _sayac = 0.05f; QueueRedraw(); }
+	}
+
+	public override void _Draw()
+	{
 		float n = 0.5f + 0.5f * Mathf.Sin(_t * 3);
-		DrawCircle(new Vector2(18, 150), 34, new Color(0.25f, 0.9f, 0.3f, 0.12f + 0.08f * n));
-		DrawCircle(new Vector2(18, 150), 22, new Color(0.15f, 0.6f, 0.2f, 0.25f));
-		DrawRect(new Rect2(1228, 470, 52, 100), new Color(0.2f, 0.16f, 0.12f));
-		DrawRect(new Rect2(1236, 482, 44, 88), new Color(0.07f, 0.05f, 0.05f));
-		DrawCircle(new Vector2(1240, 470), 8, new Color(1f, 0.6f, 0.2f, 0.5f + 0.3f * n));
-		// sis
+		var giris = new Vector2(TdHarita.Sol + 18, TdHarita.Yol[0].Y);
+		DrawCircle(giris, 34, new Color(0.25f, 0.9f, 0.3f, 0.12f + 0.08f * n));
+		DrawCircle(giris, 22, new Color(0.15f, 0.6f, 0.2f, 0.25f));
+		var c = TdHarita.Cikis + new Vector2(0, 40);
+		DrawCircle(new Vector2(c.X - 8, c.Y - 50), 8, new Color(1f, 0.6f, 0.2f, 0.5f + 0.3f * n));
+		float gen = TdHarita.Sag - TdHarita.Sol;
 		for (int i = 0; i < 6; i++)
 		{
-			float x = Mathf.PosMod(_t * (12 + i * 5) + i * 230, 1500) - 110;
+			float x = TdHarita.Sol + Mathf.PosMod(_t * (12 + i * 5) + i * 230, gen + 220) - 110;
 			DrawRect(new Rect2(x, 120 + i * 105, 160, 10), new Color(0.7f, 0.9f, 0.75f, 0.04f));
 		}
 	}

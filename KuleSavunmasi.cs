@@ -114,15 +114,22 @@ public partial class KuleSavunmasi : Node2D
 		foreach (var s in new[] { "ok", "ates", "patlama", "vurus", "altin", "buyu", "boru", "kale", "kalkan" }) _sesler[s] = Efekt.SesUret(s);
 		for (int i = 0; i < 8; i++) { var p = new AudioStreamPlayer { VolumeDb = -8 }; AddChild(p); _oynaticilar.Add(p); }
 
+		// kamera haritanın ortasında; geniş telefonlarda harita yanlara doğru uzar
+		var kamera = new Camera2D { Position = new Vector2(640, 360) };
+		AddChild(kamera);
+		kamera.MakeCurrent();
+		HaritaUret((ulong)_rng.Randi());
 		_harita = new TdHarita { ZIndex = -10 };
 		AddChild(_harita);
 		_dunya = new Node2D { YSortEnabled = true };
 		AddChild(_dunya);
-		_yerler = TdHarita.KuleYerleri();
+		_yerler = TdHarita.Yerler;
 		_yerCizer = new YerCizer { Oyun = this, ZIndex = -5 };
 		AddChild(_yerCizer);
 
 		ArayuzKur();
+		EkranAyarla();
+		GetViewport().SizeChanged += EkranAyarla;
 		MenuyuGoster();
 
 		foreach (var arg in OS.GetCmdlineUserArgs())
@@ -143,6 +150,39 @@ public partial class KuleSavunmasi : Node2D
 	}
 
 	// ================================================================ KAYIT
+	float EkranGen => GetViewportRect().Size.X;
+
+	void HaritaUret(ulong tohum)
+	{
+		float g = Mathf.Max(1280f, EkranGen);
+		TdHarita.Olustur(tohum, 640 - g / 2, 640 + g / 2);
+	}
+
+	/// <summary>Arayüzü ekranın gerçek genişliğine yerleştirir (20:9 telefonlar dahil).</summary>
+	void EkranAyarla()
+	{
+		float g = Mathf.Max(1280f, EkranGen);
+		_ust.Size = new Vector2(g, 56);
+		_menu.Size = new Vector2(g, 720);
+		_agacEkrani.Size = new Vector2(g, 720);
+		_dalgaButon.Position = new Vector2(g - 220, 640);
+		_mesaj.Position = new Vector2((g - 1000) / 2, 250);
+		_sonucPanel.Position = new Vector2((g - 600) / 2, 170);
+		if (_ekran == Ekran.Menu && Mathf.Abs(TdHarita.Sag - TdHarita.Sol - g) > 1)
+		{
+			ulong t = (ulong)_rng.Randi();
+			HaritaUret(t);
+			_harita?.Yenile(t);
+		}
+	}
+
+	/// <summary>Panel, seçilen noktanın karşı tarafında açılır.</summary>
+	float PanelX(Vector2 dunya, float gen)
+	{
+		float g = Mathf.Max(1280f, EkranGen);
+		return dunya.X > 640 ? 10 : g - gen - 10;
+	}
+
 	IEnumerable<KuleTanim> AcikKuleler => TdVeri.Kuleler.Where(Ilerleme.KuleAcik);
 
 	/// <summary>XP ve kalıcı para kazanımı; seviye atlarsa yeni kuleleri duyurur.</summary>
@@ -170,6 +210,9 @@ public partial class KuleSavunmasi : Node2D
 		Temizle();
 		_bolum = bolum;
 		_dalga = 0;
+		ulong tohum = (ulong)_rng.Randi();
+		HaritaUret(tohum);
+		_harita.Yenile(tohum);
 		_dalgaSayisi = Math.Min(13, 5 + bolum / 5);
 		_can = 20;
 		_altin = 160 + bolum * 25;
@@ -263,32 +306,19 @@ public partial class KuleSavunmasi : Node2D
 		float onceki = _uyum;
 		float ort = _olumSayisi > 0 ? _olumMesafeToplam / _olumSayisi : 1f;
 		// zorluk sadece artar: savunma rahatsa düşmanlar güçlenir, zorlanıyorsa sabit kalır
-		if (_kacanBuDalga == 0 && ort < 0.3f) _uyum *= 1.15f;
-		else if (_kacanBuDalga == 0 && ort < 0.5f) _uyum *= 1.07f;
+		if (_kacanBuDalga == 0 && ort < 0.3f) _uyum *= 1.08f;
+		else if (_kacanBuDalga == 0 && ort < 0.5f) _uyum *= 1.04f;
 		// kulelere yapılan yatırım: saniyede verilebilecek hasar / bir sonraki dalganın gerektirdiği hasar
 		float guc = _kuleler.Sum(k => k.Dps);
 		int sonrakiAdet = Mathf.RoundToInt(5 + _bolum * 0.5f + (_dalga + 1) * 2.5f);
 		float gereken = TdVeri.TemelCan(_bolum) * (1f + 0.1f * _dalga) * _uyum * sonrakiAdet
 			/ (sonrakiAdet * _dogmaAralik + TdHarita.Uzunluk / 46f);
 		float oran = gereken > 0 ? guc / gereken : 1f;
-		if (_kacanBuDalga == 0 && oran > 2.5f) _uyum *= 1.06f;
+		if (_kacanBuDalga == 0 && oran > 2.5f) _uyum *= 1.03f;
 		_uyum = Mathf.Clamp(_uyum, 1f, 3f);
 		KarsiSecimHesapla();
 
-		string durum = _kacanBuDalga > 0 ? $"{_kacanBuDalga} düşman sızdı — kulelerini Yetenek Ağacı'nda güçlendir"
-			: ort < 0.3f ? "düşmanlar yolun başında eriyor"
-			: ort < 0.5f ? "savunma rahat" : "savunma zorlanıyor";
-		string yon = _uyum > onceki + 0.005f ? $"Düşmanlar güçlendi (x{_uyum:0.00})"
-			: $"Tehdit sabit (x{_uyum:0.00})";
-		string karsi = "";
-		if (_kuleler.Count > 0)
-		{
-			var baskin = _kuleler.GroupBy(k => k.T.HasarTuru).OrderByDescending(g => g.Sum(k => k.Dps)).First().Key;
-			var (zirh, agirlik) = _karsiAgirlik.OrderByDescending(kv => kv.Value).Select(kv => (kv.Key, kv.Value)).FirstOrDefault();
-			if (zirh != null && agirlik > 1.15f)
-				karsi = $"\n{TdVeri.HasarTr[baskin]} ağırlıklı savunmana karşı {TdVeri.ZirhTr[zirh]} düşmanlar öne çıkıyor";
-		}
-		Mesaj($"Analiz: {durum}\n{yon}{karsi}", _uyum >= onceki ? new Color(1f, 0.6f, 0.45f) : new Color(0.6f, 0.95f, 0.65f), 3.2f);
+		// zorluk sessizce ayarlanır; oyuncuya mesaj gösterilmez
 		ArayuzGuncelle();
 	}
 
@@ -427,7 +457,7 @@ public partial class KuleSavunmasi : Node2D
 				_can -= kayip;
 				_kacanBuDalga += kayip;
 				Ses("kale");
-				Efekt.Yazi(_dunya, new Vector2(1220, 450), $"-{kayip} ♥", new Color(1f, 0.3f, 0.3f), 30);
+				Efekt.Yazi(_dunya, TdHarita.Cikis, $"-{kayip} ♥", new Color(1f, 0.3f, 0.3f), 30);
 				DusmaniSil(d, false);
 				ArayuzGuncelle();
 				if (_can <= 0) { Kaybedildi(); return; }
@@ -1197,7 +1227,7 @@ public partial class KuleSavunmasi : Node2D
 		_dalgaYazi.Text = $"Dalga {_dalga}/{_dalgaSayisi}";
 		_canYazi.Text = $"♥ {_can}";
 		_altinYazi.Text = $"◎ {_altin}";
-		_tehditYazi.Text = $"Tehdit x{_uyum:0.00}   Sv {Ilerleme.Seviye}";
+		_tehditYazi.Text = $"Sv {Ilerleme.Seviye}";
 		if (_kulePanel.Visible && _seciliKule != null) KuleBilgiYaz(_seciliKule);
 		if (_insaPanel.Visible) InsaListesiYaz();
 	}
@@ -1214,7 +1244,7 @@ public partial class KuleSavunmasi : Node2D
 	{
 		PanelleriKapat();
 		_seciliYer = yer;
-		_insaPanel.Position = new Vector2(_yerler[yer].X > 640 ? 10 : 880, 66);
+		_insaPanel.Position = new Vector2(PanelX(_yerler[yer], 390), 66);
 		InsaListesiYaz();
 		_insaPanel.Visible = true;
 	}
@@ -1252,7 +1282,7 @@ public partial class KuleSavunmasi : Node2D
 	{
 		PanelleriKapat();
 		_seciliKule = k;
-		_kulePanel.Position = new Vector2(k.P.X > 640 ? 10 : 860, 66);
+		_kulePanel.Position = new Vector2(PanelX(k.P, 410), 66);
 		KuleBilgiYaz(k);
 		_kulePanel.Visible = true;
 	}
@@ -1362,8 +1392,12 @@ public partial class KuleSavunmasi : Node2D
 public partial class YerCizer : Node2D
 {
 	public KuleSavunmasi Oyun;
-	float _t;
-	public override void _Process(double delta) { _t += (float)delta; QueueRedraw(); }
+	float _t, _sayac;
+	public override void _Process(double delta)
+	{
+		_t += (float)delta; _sayac -= (float)delta;
+		if (_sayac <= 0) { _sayac = 0.1f; QueueRedraw(); }   // her karede değil, saniyede 10 kez
+	}
 	public override void _Draw()
 	{
 		if (Oyun == null || !Oyun.OyunEkrani) return;

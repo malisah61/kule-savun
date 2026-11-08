@@ -1,11 +1,9 @@
   Determining projects to restore...
-  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 685 ms).
-/home/runner/work/kule-savun/kule-savun/TdHarita.cs(274,24): error CS0136: A local or parameter named 'c' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 755 ms).
+  KuleSavun -> /home/runner/work/kule-savun/kule-savun/.godot/mono/temp/bin/Debug/KuleSavun.dll
 
-Build FAILED.
-
-/home/runner/work/kule-savun/kule-savun/TdHarita.cs(274,24): error CS0136: A local or parameter named 'c' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter [/home/runner/work/kule-savun/kule-savun/KuleSavun.csproj]
+Build succeeded.
     0 Warning(s)
-    1 Error(s)
+    0 Error(s)
 
-Time Elapsed 00:00:08.86
+Time Elapsed 00:00:09.11

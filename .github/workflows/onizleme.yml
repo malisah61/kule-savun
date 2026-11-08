@@ -47,7 +47,8 @@ jobs:
 
       - name: Ekran görüntüleri
         run: |
-          timeout 150 R="${{ inputs.cozunurluk || '1280x720' }}"; xvfb-run -a -s "-screen 0 ${R}x24" godot --path . --rendering-driver opengl3 --audio-driver Dummy --resolution $R -- --onizleme=onizleme 2>&1 | grep -vE "^\s*$" | tee onizleme/calisma.txt | tail -40
+          R="${{ inputs.cozunurluk || '1280x720' }}"
+          timeout 150 xvfb-run -a -s "-screen 0 ${R}x24" godot --path . --rendering-driver opengl3 --audio-driver Dummy --resolution $R -- --onizleme=onizleme 2>&1 | grep -vE "^\s*$" | tee onizleme/calisma.txt | tail -40
           ls -la onizleme
 
       - name: Depoya kaydet

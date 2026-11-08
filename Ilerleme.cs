@@ -23,6 +23,7 @@ public static class Ilerleme
 
 	public static int EnUstBolum = 1;
 	public static int Xp, Para, HarcananPuan;
+	public static bool MuzikAcik = true;
 	public static readonly Dictionary<string, int> Kademe = new();
 
 	// ------------------------------------------------------------ seviye
@@ -132,6 +133,7 @@ public static class Ilerleme
 		if (d.ContainsKey("xp")) Xp = d["xp"].AsInt32();
 		if (d.ContainsKey("para")) Para = d["para"].AsInt32();
 		if (d.ContainsKey("harcananPuan")) HarcananPuan = d["harcananPuan"].AsInt32();
+		if (d.ContainsKey("muzik")) MuzikAcik = d["muzik"].AsBool();
 		if (d.ContainsKey("kademe"))
 			foreach (var (k, v) in d["kademe"].AsGodotDictionary()) Kademe[k.AsString()] = v.AsInt32();
 	}
@@ -142,7 +144,7 @@ public static class Ilerleme
 		foreach (var (k, v) in Kademe) kad[k] = v;
 		var d = new Godot.Collections.Dictionary
 		{
-			["enUst"] = EnUstBolum, ["xp"] = Xp, ["para"] = Para, ["harcananPuan"] = HarcananPuan, ["kademe"] = kad
+			["enUst"] = EnUstBolum, ["xp"] = Xp, ["para"] = Para, ["harcananPuan"] = HarcananPuan, ["kademe"] = kad, ["muzik"] = MuzikAcik
 		};
 		using var f = FileAccess.Open(Dosya, FileAccess.ModeFlags.Write);
 		f?.StoreString(Json.Stringify(d));

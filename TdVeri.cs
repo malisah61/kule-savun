@@ -87,5 +87,5 @@ public static class TdVeri
 		Carpan.TryGetValue(zirh, out var t) && t.TryGetValue(hasar, out var c) ? c : 1f;
 
 	/// <summary>Bölüm zorluğuna göre temel can (tüm düşmanlar bunun üstüne çarpanla).</summary>
-	public static float TemelCan(int bolum) => 26f * Mathf.Pow(1f + 0.2f * (bolum - 1), 1.4f);
+	public static float TemelCan(int bolum) => 38f * Mathf.Pow(1f + 0.22f * (bolum - 1), 1.45f);
 }

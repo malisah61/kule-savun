@@ -105,6 +105,12 @@ public partial class KuleSavunmasi : Node2D
 	readonly Dictionary<string, AudioStreamWav> _sesler = new();
 	readonly List<AudioStreamPlayer> _oynaticilar = new();
 	readonly Dictionary<string, float> _sesSon = new();
+	// müzik: menüde ürpertici ortam, savaşta gerilim (kodla bestelendi, assets/ses)
+	AudioStreamPlayer _muzik;
+	readonly Dictionary<string, AudioStream> _muzikler = new();
+	string _calan;
+	Button _muzikDugme, _muzikDugmeMenu;
+	const float MuzikDb = -9f;
 
 	// ================================================================ BAŞLANGIÇ
 	public override void _Ready()
@@ -114,6 +120,13 @@ public partial class KuleSavunmasi : Node2D
 		Ilerleme.Yukle();
 		foreach (var s in new[] { "ok", "ates", "patlama", "vurus", "altin", "buyu", "boru", "kale", "kalkan" }) _sesler[s] = Efekt.SesUret(s);
 		for (int i = 0; i < 8; i++) { var p = new AudioStreamPlayer { VolumeDb = -8 }; AddChild(p); _oynaticilar.Add(p); }
+		_muzik = new AudioStreamPlayer { VolumeDb = MuzikDb };
+		AddChild(_muzik);
+		foreach (var ad in new[] { "menu", "savas" })
+		{
+			var m = GD.Load<AudioStreamOggVorbis>($"res://assets/ses/{ad}.ogg");
+			if (m != null) { m.Loop = true; _muzikler[ad] = m; }
+		}
 
 		// kamera haritanın ortasında; geniş telefonlarda harita yanlara doğru uzar
 		var kamera = new Camera2D { Position = new Vector2(640, 360) };
@@ -136,6 +149,33 @@ public partial class KuleSavunmasi : Node2D
 		foreach (var arg in OS.GetCmdlineUserArgs())
 			if (arg.StartsWith("--onizleme="))
 				_ = OnizlemeCek(arg.Substring("--onizleme=".Length));
+	}
+
+	void MuzikCal(string ad)
+	{
+		if (_calan == ad && _muzik.Playing) return;
+		_calan = ad;
+		if (!Ilerleme.MuzikAcik || !_muzikler.TryGetValue(ad, out var akis)) { _muzik.Stop(); return; }
+		var tw = _muzik.CreateTween();
+		if (_muzik.Playing) tw.TweenProperty(_muzik, "volume_db", -40f, 0.6f);
+		tw.TweenCallback(Callable.From(() => { _muzik.Stream = akis; _muzik.VolumeDb = -40f; _muzik.Play(); }));
+		tw.TweenProperty(_muzik, "volume_db", MuzikDb, 1.2f);
+	}
+
+	void MuzikDegistir()
+	{
+		Ilerleme.MuzikAcik = !Ilerleme.MuzikAcik;
+		Ilerleme.Kaydet();
+		string c = _calan; _calan = null;
+		if (Ilerleme.MuzikAcik) MuzikCal(c ?? "menu"); else { _muzik.Stop(); _calan = c; }
+		MuzikDugmeGuncelle();
+	}
+
+	void MuzikDugmeGuncelle()
+	{
+		string m = Ilerleme.MuzikAcik ? "♪ Açık" : "♪ Kapalı";
+		if (_muzikDugme != null) _muzikDugme.Text = m;
+		if (_muzikDugmeMenu != null) _muzikDugmeMenu.Text = "Müzik: " + m;
 	}
 
 	void Ses(string ad)
@@ -229,6 +269,7 @@ public partial class KuleSavunmasi : Node2D
 		_hizKat = 1; Engine.TimeScale = 1; _hizButon.Text = "Hız x1";
 		ArayuzGuncelle();
 		_bolumXp = 0; _bolumPara = 0;
+		MuzikCal("savas");
 		Mesaj($"Bölüm {bolum}", new Color(1f, 0.9f, 0.55f), 2f);
 	}
 
@@ -346,6 +387,11 @@ public partial class KuleSavunmasi : Node2D
 		if (t.Ucan) { hiz = 58f; can *= 0.85f; }
 		if (t.Zirh == "Hayalet") hiz = 50f;
 		if (t.Boss) { hiz = 27f; can *= 16f; }
+		// Kingdom Rush tarzı aile rolleri: kalabalık/zayıf, tank/yavaş, hızlı, sürü...
+		var (rc, rh) = Rol(t.Zirh);
+		can *= rc; hiz *= rh;
+		// uzun yollarda yürüyüş süresi makul kalsın
+		hiz *= Mathf.Clamp(TdHarita.Uzunluk / 3400f, 1f, 1.6f);
 		d.Can = d.CanMax = can;
 		d.Hiz = hiz * _rng.RandfRange(0.92f, 1.08f);
 		d.Odul = t.Boss ? 25 + _bolum * 4 : (2 + _bolum * 0.35f) * (t.Ozel.Contains("kalabalik") ? 0.5f : 1f);
@@ -381,6 +427,24 @@ public partial class KuleSavunmasi : Node2D
 			if (t.Boss) Ses("kale");
 		}
 	}
+
+	/// <summary>Zırh tipine göre (can, hız) çarpanı.</summary>
+	static (float, float) Rol(string z) => z switch
+	{
+		"Olumsuz" => (1.0f, 0.95f),   // piyade: ortalama, kalabalık gelir
+		"Hayalet" => (0.8f, 1.1f),    // fiziksele dirençli, hızlıca süzülür
+		"Canavar" => (0.9f, 1.35f),   // hızlı koşucu
+		"Zirhli" => (1.7f, 0.75f),    // tank: yavaş, dayanıklı
+		"Seytan" => (1.25f, 1.0f),
+		"Vampir" => (1.1f, 1.05f),    // kendini iyileştirir
+		"Bocek" => (0.55f, 1.2f),     // sürü: zayıf ama çok
+		"Tas" => (2.1f, 0.6f),        // dev tank
+		"Buz" => (1.2f, 0.9f),
+		"Bataklik" => (1.1f, 0.85f),
+		"Kultist" => (0.85f, 1.0f),
+		"Ucan" => (0.8f, 1.15f),      // sadece bazı kuleler vurur
+		_ => (1f, 1f),
+	};
 
 	static Color ZirhRenk(string z) => z switch
 	{
@@ -992,6 +1056,9 @@ public partial class KuleSavunmasi : Node2D
 			Engine.TimeScale = _hizKat;
 			_hizButon.Text = $"Hız x{_hizKat}";
 		};
+		_muzikDugme = Dugme("♪", 18);
+		_muzikDugme.Pressed += MuzikDegistir;
+		satir.AddChild(_muzikDugme);
 		var menuButon = Dugme("Menü", 18);
 		menuButon.Pressed += MenuyuGoster;
 		satir.AddChild(_hizButon);
@@ -1121,7 +1188,10 @@ public partial class KuleSavunmasi : Node2D
 		var ustDugmeler = new HBoxContainer { Alignment = BoxContainer.AlignmentMode.Center };
 		ustDugmeler.AddThemeConstantOverride("separation", 16);
 		_devamKutu = new HBoxContainer();
-		ustDugmeler.AddChild(_devamKutu); ustDugmeler.AddChild(agacButon);
+		_muzikDugmeMenu = Dugme("Müzik", 20);
+		_muzikDugmeMenu.CustomMinimumSize = new Vector2(0, 58);
+		_muzikDugmeMenu.Pressed += MuzikDegistir;
+		ustDugmeler.AddChild(_devamKutu); ustDugmeler.AddChild(agacButon); ustDugmeler.AddChild(_muzikDugmeMenu);
 		mk.AddChild(baslik); mk.AddChild(alt); mk.AddChild(_menuOzet); mk.AddChild(ustDugmeler); mk.AddChild(orta);
 		_menu.AddChild(mk);
 		_ui.AddChild(_menu);
@@ -1245,6 +1315,8 @@ public partial class KuleSavunmasi : Node2D
 		var (ilr, ger) = Ilerleme.SeviyeDurumu();
 		_menuOzet.Text = $"Oyuncu Sv {Ilerleme.Seviye}  ({ilr}/{ger} XP)   ·   Para {Ilerleme.Para}   ·   Yetenek puanı {Ilerleme.Puan}   ·   Açık kuleler {AcikKuleler.Count()}/{TdVeri.Kuleler.Count}";
 		_agacEkrani.Visible = false;
+		MuzikDugmeGuncelle();
+		MuzikCal("menu");
 	}
 
 	void ArayuzGuncelle()
@@ -1396,6 +1468,7 @@ public partial class KuleSavunmasi : Node2D
 			await Bekle(d == 0 ? 6f : 4f);
 		}
 		await Kare(klasor + "/3_savas.png");
+		GD.Print($"ONIZLEME fps={Engine.GetFramesPerSecond()} dusman={_dusmanlar.Count} yol={TdHarita.Uzunluk:0} muzik={_muzikler.Count} calan={_calan}");
 		Engine.TimeScale = 3;
 		for (int i = 0; i < 40 && _dalgaSuruyor; i++) await Bekle(0.5f);
 		Engine.TimeScale = 1;

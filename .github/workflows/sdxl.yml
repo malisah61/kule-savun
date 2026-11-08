@@ -2,7 +2,7 @@ name: SDXL piksel karakter uret
 on:
   push:
     branches: [spritecook-indir]
-    paths: ['sdxl/**', '.github/workflows/sdxl.yml']
+    paths: ['sdxl/prompts.txt', 'sdxl/uret.py']
   workflow_dispatch:
 permissions:
   contents: write

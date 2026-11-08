@@ -756,6 +756,27 @@
     "Taş",
     "Buz"
    ]
+  },
+  {
+   "id": "ruh_zinciri",
+   "ad": "Ruh Zinciri",
+   "hasarTuru": "Golge",
+   "mod": "zincir",
+   "menzil": 160,
+   "atisHizi": 0.8,
+   "hasar": 32,
+   "maliyet": 320,
+   "level": 31,
+   "prompt": "dark stone tower wrapped in glowing purple spectral chains with a floating skull on top",
+   "etkili": [],
+   "etkisiz": [
+    "Ölümsüz",
+    "Hayalet",
+    "Canavar",
+    "Şeytan",
+    "Vampir",
+    "Kültist"
+   ]
   }
  ],
  "dusmanlar": [
@@ -5370,6 +5391,250 @@
    ],
    "guclu": [
     "Zehir"
+   ]
+  },
+  {
+   "ad": "Kafes Taşıyıcı",
+   "zirh": "Olumsuz",
+   "ozel": [],
+   "prompt": "hunched undead skeleton jailer in rags walking, a small rusty iron birdcage strapped to his back",
+   "guc": 0.25,
+   "level": 7,
+   "id": "kafes_tasiyici",
+   "can": 69,
+   "hiz": 42,
+   "odul": 10,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Böcek Rahip",
+   "zirh": "Bocek",
+   "ozel": [],
+   "prompt": "dark hooded priest in a black robe covered with crawling brown beetles",
+   "guc": 0.4,
+   "level": 12,
+   "id": "bocek_rahip",
+   "can": 160,
+   "hiz": 42,
+   "odul": 15,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kök Dişli",
+   "zirh": "Bataklik",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "swamp creature made of tangled mangrove roots with a gaping toothy mouth",
+   "guc": 0.5,
+   "level": 19,
+   "id": "kok_disli",
+   "can": 764,
+   "hiz": 28,
+   "odul": 21,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Ayna Şövalye",
+   "zirh": "Zirhli",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "knight in polished cracked mirror armor",
+   "guc": 0.6,
+   "level": 28,
+   "id": "ayna_sovalye",
+   "can": 2488,
+   "hiz": 42,
+   "odul": 29,
+   "hasar": 1,
+   "zayif": [
+    "Yıldırım",
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Kan Kuğusu",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "black swan monster with bone wings and red eyes",
+   "guc": 0.7,
+   "level": 35,
+   "id": "kan_kugusu",
+   "can": 4551,
+   "hiz": 55,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Saat Hortlağı",
+   "zirh": "Hayalet",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "ghost whose body is a broken grandfather clock",
+   "guc": 0.85,
+   "level": 45,
+   "id": "saat_hortlagi",
+   "can": 26949,
+   "hiz": 48,
+   "odul": 44,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Tuz Golemi",
+   "zirh": "Tas",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "golem made of cracked white salt crystals",
+   "guc": 0.85,
+   "level": 45,
+   "id": "tuz_golemi",
+   "can": 43119,
+   "hiz": 28,
+   "odul": 44,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Demirci İblis",
+   "zirh": "Seytan",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "blacksmith demon with a molten hammer and leather apron",
+   "guc": 0.9,
+   "level": 45,
+   "id": "demirci_iblis",
+   "can": 35836,
+   "hiz": 42,
+   "odul": 44,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Buzul Mamutu",
+   "zirh": "Buz",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "undead woolly mammoth covered in frost and icicles",
+   "guc": 0.95,
+   "level": 46,
+   "id": "buzul_mamutu",
+   "can": 52308,
+   "hiz": 28,
+   "odul": 45,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Gölge Terzi",
+   "zirh": "Kultist",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "tall pale masked cultist tailor in a long black coat holding huge iron scissors",
+   "guc": 0.9,
+   "level": 46,
+   "id": "golge_terzi",
+   "can": 31977,
+   "hiz": 62,
+   "odul": 45,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Yüz Maske Kahini",
+   "zirh": "Kultist",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "colossal towering hooded prophet in dark purple robes, single giant majestic figure wearing a white porcelain mask, many small masks hanging from his robe",
+   "guc": 1.0,
+   "level": 44,
+   "id": "yuz_maske_kahini",
+   "can": 347593,
+   "hiz": 26,
+   "odul": 242,
+   "hasar": 10,
+   "zayif": [
+    "Fiziksel",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Gölge"
    ]
   }
  ]

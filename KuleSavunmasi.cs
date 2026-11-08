@@ -1121,6 +1121,7 @@ public partial class KuleSavunmasi : Node2D
 	{
 		_agacSecili = t;
 		_agacEkrani.Visible = true;
+		_menu.Visible = false;
 		var (ilr, ger) = Ilerleme.SeviyeDurumu();
 		_agacUst.Text = $"Oyuncu Sv {Ilerleme.Seviye}  ({ilr}/{ger} XP)     Yetenek puanı: {Ilerleme.Puan}     Para: {Ilerleme.Para}";
 		foreach (var c in _agacListe.GetChildren()) c.QueueFree();

@@ -275,11 +275,9 @@ public partial class KuleSavunmasi : Node2D
 			var baskin = _kuleler.GroupBy(k => k.T.HasarTuru).OrderByDescending(g => g.Sum(k => k.Dps)).First().Key;
 			var (zirh, agirlik) = _karsiAgirlik.OrderByDescending(kv => kv.Value).Select(kv => (kv.Key, kv.Value)).FirstOrDefault();
 			if (zirh != null && agirlik > 1.15f)
-				karsi = $"
-{TdVeri.HasarTr[baskin]} ağırlıklı savunmana karşı {TdVeri.ZirhTr[zirh]} düşmanlar öne çıkıyor";
+				karsi = $"\n{TdVeri.HasarTr[baskin]} ağırlıklı savunmana karşı {TdVeri.ZirhTr[zirh]} düşmanlar öne çıkıyor";
 		}
-		Mesaj($"Analiz: {durum}
-{yon}{karsi}", _uyum >= onceki ? new Color(1f, 0.6f, 0.45f) : new Color(0.6f, 0.95f, 0.65f), 3.2f);
+		Mesaj($"Analiz: {durum}\n{yon}{karsi}", _uyum >= onceki ? new Color(1f, 0.6f, 0.45f) : new Color(0.6f, 0.95f, 0.65f), 3.2f);
 		ArayuzGuncelle();
 	}
 
@@ -1206,6 +1204,11 @@ public partial class KuleSavunmasi : Node2D
 			await Bekle(d == 0 ? 6f : 4f);
 		}
 		await Kare(klasor + "/3_savas.png");
+		Engine.TimeScale = 3;
+		for (int i = 0; i < 40 && _dalgaSuruyor; i++) await Bekle(0.5f);
+		Engine.TimeScale = 1;
+		await Bekle(0.3f);
+		await Kare(klasor + "/3b_analiz.png");
 		KulePaneliAc(_kuleler[2]);
 		await Bekle(0.4f);
 		await Kare(klasor + "/4_kule_panel.png");

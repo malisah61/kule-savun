@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        parca: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+        parca: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
     steps:
       - uses: actions/checkout@v4
       - run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
@@ -24,7 +24,7 @@ jobs:
       - run: |
           pip install -q torch --index-url https://download.pytorch.org/whl/cpu
           pip install -q diffusers transformers accelerate peft safetensors
-      - run: python araclar/uret.py ${{ matrix.parca }} 20
+      - run: python araclar/uret.py ${{ matrix.parca }} 18
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,0 +1,25 @@
+name: SpriteCook indir
+on:
+  push:
+    branches: [spritecook-indir]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  indir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Görselleri indir
+        run: |
+          mkdir -p sprites
+          curl -fsSL -o sprites/sovalye.png "https://api.spritecook.ai/v1/assets/da4268e1-f18a-4a13-9a9a-ed7918f532b9/signed-content/pixel?sig=63_bFYA4YnO-FF5EK-nGhs0T957r9na-qYARpQ2MNCQ&exp=1794140431"
+          curl -fsSL -o sprites/buyucu.png "https://api.spritecook.ai/v1/assets/be5e7e27-f956-43c2-a17e-2f53f93ac692/signed-content/pixel?sig=drIt_P73OQqE98eOqZPkvIXAK6KGF3WTGpZnMT16G9o&exp=1794140494"
+          file sprites/*
+      - name: Depoya kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add sprites
+          git diff --cached --quiet || git commit -m "SpriteCook karakterleri"
+          git push

@@ -271,7 +271,7 @@ public partial class HaritaCizim : Node2D
 		public override void _Draw()
 		{
 			DrawRect(new Rect2(Sol - 20, 0, Sag - Sol + 40, 740), new Color(0.1f, 0.12f, 0.09f));
-			foreach (var (p, r, c) in Lekeler) DrawCircle(p, r, c);
+			foreach (var (lp, lr, lc) in Lekeler) DrawCircle(lp, lr, lc);
 			var rng = new RandomNumberGenerator { Seed = 5 };
 			for (int i = 0; i < 500; i++)
 			{
@@ -296,10 +296,10 @@ public partial class HaritaCizim : Node2D
 				DrawLine(Konum(m, out _), Konum(m + 12, out _), new Color(0.24f, 0.18f, 0.13f), 3);
 			foreach (var (tur, p, s, t) in Susler) Ciz(tur, p, s, t);
 			// çıkış kapısı
-			var c = Cikis;
-			DrawRect(new Rect2(c.X - 26, c.Y - 56, 52, 56), new Color(0.22f, 0.18f, 0.14f));
-			DrawRect(new Rect2(c.X - 18, c.Y - 46, 36, 46), new Color(0.06f, 0.04f, 0.04f));
-			DrawRect(new Rect2(c.X - 30, c.Y - 62, 60, 8), new Color(0.3f, 0.26f, 0.22f));
+			var kapi = Cikis;
+			DrawRect(new Rect2(kapi.X - 26, kapi.Y - 56, 52, 56), new Color(0.22f, 0.18f, 0.14f));
+			DrawRect(new Rect2(kapi.X - 18, kapi.Y - 46, 36, 46), new Color(0.06f, 0.04f, 0.04f));
+			DrawRect(new Rect2(kapi.X - 30, kapi.Y - 62, 60, 8), new Color(0.3f, 0.26f, 0.22f));
 			// kenar karartma
 			for (int i = 0; i < 6; i++)
 			{

@@ -52,7 +52,7 @@ jobs:
           for f in sorted(os.listdir('ham')):
               ad = f[:-4]
               Image.open(f'ham/{f}').convert('RGB').save(f'ham_jpg/{ad}.jpg', quality=90)
-              r = subprocess.run(['python', 'araclar/temizle.py', f'ham/{f}', f'sprite/{ad}.png', str(boy.get(ad, 84))], capture_output=True, text=True)
+              r = subprocess.run(['python', 'araclar/temizle3.py', f'ham/{f}', f'sprite/{ad}.png', str(boy.get(ad, 84))], capture_output=True, text=True)
               print(r.stdout.strip() or r.stderr.strip()[-200:])
           PY
           ls sprite | wc -l

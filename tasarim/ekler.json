@@ -11,6 +11,18 @@
    "maliyet": 300,
    "level": 25,
    "prompt": "tower of jagged blue ice spikes with a giant frost spear launcher on top"
+  },
+  {
+   "id": "ruh_zinciri",
+   "ad": "Ruh Zinciri",
+   "hasarTuru": "Golge",
+   "mod": "zincir",
+   "menzil": 160,
+   "atisHizi": 0.8,
+   "hasar": 32,
+   "maliyet": 320,
+   "level": 31,
+   "prompt": "dark stone tower wrapped in glowing purple spectral chains with a floating skull on top"
   }
  ],
  "dusmanlar": [
@@ -115,6 +127,112 @@
    "zirh": "Bataklik",
    "prompt": "colossal majestic sea serpent leviathan boss rising, long scaly dark green body, exposed ribcage bones along its back, glowing eyes, huge jaws",
    "level": 42,
+   "ozel": [
+    "boss"
+   ],
+   "guc": 1.0
+  },
+  {
+   "ad": "Kafes Taşıyıcı",
+   "zirh": "Olumsuz",
+   "prompt": "undead jailer carrying a rusty iron cage on his back",
+   "level": 7,
+   "ozel": [],
+   "guc": 0.25
+  },
+  {
+   "ad": "Böcek Rahip",
+   "zirh": "Bocek",
+   "prompt": "hooded priest whose robe is made of crawling black beetles",
+   "level": 12,
+   "ozel": [],
+   "guc": 0.4
+  },
+  {
+   "ad": "Kök Dişli",
+   "zirh": "Bataklik",
+   "prompt": "swamp creature made of tangled mangrove roots with a gaping toothy mouth",
+   "level": 19,
+   "ozel": [
+    "yavas"
+   ],
+   "guc": 0.5
+  },
+  {
+   "ad": "Ayna Şövalye",
+   "zirh": "Zirhli",
+   "prompt": "knight in polished cracked mirror armor",
+   "level": 28,
+   "ozel": [
+    "kalkan"
+   ],
+   "guc": 0.6
+  },
+  {
+   "ad": "Kan Kuğusu",
+   "zirh": "Ucan",
+   "prompt": "black swan monster with bone wings and red eyes",
+   "level": 35,
+   "ozel": [
+    "ucan"
+   ],
+   "guc": 0.7
+  },
+  {
+   "ad": "Saat Hortlağı",
+   "zirh": "Hayalet",
+   "prompt": "ghost whose body is a broken grandfather clock",
+   "level": 45,
+   "ozel": [
+    "hizli"
+   ],
+   "guc": 0.85
+  },
+  {
+   "ad": "Tuz Golemi",
+   "zirh": "Tas",
+   "prompt": "golem made of cracked white salt crystals",
+   "level": 45,
+   "ozel": [
+    "yavas"
+   ],
+   "guc": 0.85
+  },
+  {
+   "ad": "Demirci İblis",
+   "zirh": "Seytan",
+   "prompt": "blacksmith demon with a molten hammer and leather apron",
+   "level": 45,
+   "ozel": [
+    "kalkan"
+   ],
+   "guc": 0.9
+  },
+  {
+   "ad": "Buzul Mamutu",
+   "zirh": "Buz",
+   "prompt": "undead woolly mammoth covered in frost and icicles",
+   "level": 46,
+   "ozel": [
+    "yavas"
+   ],
+   "guc": 0.95
+  },
+  {
+   "ad": "Gölge Terzi",
+   "zirh": "Kultist",
+   "prompt": "tall masked cultist tailor holding giant shears and spools of black thread",
+   "level": 46,
+   "ozel": [
+    "hizli"
+   ],
+   "guc": 0.9
+  },
+  {
+   "ad": "Yüz Maske Kahini",
+   "zirh": "Kultist",
+   "prompt": "colossal towering prophet in dark robes, giant majestic figure surrounded by a hundred floating porcelain masks",
+   "level": 44,
    "ozel": [
     "boss"
    ],

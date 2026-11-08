@@ -29,6 +29,7 @@ kule_kader_carki|pixel art, clockwork tower with a spinning golden wheel, dark f
 kule_melek_kilici|pixel art, giant glowing holy sword stuck in a stone pedestal, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
 kule_kiyamet|pixel art, apocalypse tower with a burning eye on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
 kule_buz_mizragi|pixel art, tower of jagged blue ice spikes with a giant frost spear launcher on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_ruh_zinciri|pixel art, dark stone tower wrapped in glowing purple spectral chains with a floating skull on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
 d_curuk_zombi|pixel art, rotting green zombie in torn rags, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_koylu_zombi|pixel art, zombie peasant with a pitchfork, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_kemik_piyade|pixel art, skeleton soldier with a rusty sword, dark fantasy horror game enemy, full body, side view, simple plain white background
@@ -240,3 +241,14 @@ d_lav_kaplumbagasi|pixel art, giant turtle with a volcanic shell oozing lava, da
 d_kiragi_guvesi|pixel art, giant frost moth with icy crystal wings, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_sis_kontu|pixel art, vampire count in a long coat dissolving into red mist, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_mezar_leviatani|pixel art, huge boss monster, colossal majestic sea serpent leviathan boss rising, long scaly dark green body, exposed ribcage bones along its back, glowing eyes, huge jaws, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kafes_tasiyici|pixel art, undead jailer carrying a rusty iron cage on his back, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_bocek_rahip|pixel art, hooded priest whose robe is made of crawling black beetles, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kok_disli|pixel art, swamp creature made of tangled mangrove roots with a gaping toothy mouth, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ayna_sovalye|pixel art, knight in polished cracked mirror armor, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_kugusu|pixel art, black swan monster with bone wings and red eyes, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_saat_hortlagi|pixel art, ghost whose body is a broken grandfather clock, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_tuz_golemi|pixel art, golem made of cracked white salt crystals, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_demirci_iblis|pixel art, blacksmith demon with a molten hammer and leather apron, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_buzul_mamutu|pixel art, undead woolly mammoth covered in frost and icicles, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_golge_terzi|pixel art, tall masked cultist tailor holding giant shears and spools of black thread, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_yuz_maske_kahini|pixel art, huge boss monster, colossal towering prophet in dark robes, giant majestic figure surrounded by a hundred floating porcelain masks, dark fantasy horror game enemy, full body, side view, simple plain white background

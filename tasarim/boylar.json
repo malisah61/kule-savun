@@ -30,6 +30,7 @@
 "kule_melek_kilici": 100,
 "kule_kiyamet": 100,
 "kule_buz_mizragi": 100,
+"kule_ruh_zinciri": 100,
 "d_curuk_zombi": 84,
 "d_koylu_zombi": 84,
 "d_kemik_piyade": 84,
@@ -240,5 +241,16 @@
 "d_lav_kaplumbagasi": 84,
 "d_kiragi_guvesi": 84,
 "d_sis_kontu": 84,
-"d_mezar_leviatani": 120
+"d_mezar_leviatani": 120,
+"d_kafes_tasiyici": 84,
+"d_bocek_rahip": 84,
+"d_kok_disli": 84,
+"d_ayna_sovalye": 84,
+"d_kan_kugusu": 84,
+"d_saat_hortlagi": 84,
+"d_tuz_golemi": 84,
+"d_demirci_iblis": 84,
+"d_buzul_mamutu": 84,
+"d_golge_terzi": 84,
+"d_yuz_maske_kahini": 120
 }

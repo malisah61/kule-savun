@@ -2,9 +2,13 @@ Godot Engine v4.3.stable.mono.official.77dcf97d8 - https://godotengine.org
 WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
      at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
 OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
-ONIZLEME kaydedildi: onizleme/1_hazirlik.png
-ONIZLEME kaydedildi: onizleme/2_savas.png
-ONIZLEME kaydedildi: onizleme/3_meteor.png
-ONIZLEME kaydedildi: onizleme/4_deprem.png
-ONIZLEME kaydedildi: onizleme/5_savas_sonra.png
+ONIZLEME kaydedildi: onizleme/1_menu.png
+ONIZLEME kaydedildi: onizleme/2_harita.png
+ONIZLEME kaydedildi: onizleme/3_savas.png
+ONIZLEME kaydedildi: onizleme/4_kule_panel.png
+ONIZLEME kaydedildi: onizleme/5_insa.png
+ONIZLEME kaydedildi: onizleme/6_boss.png
+ONIZLEME bölüm=12 dalga=1/7 can=20 düşman=1 kule=17 doku_kule=0 doku_dusman=0
 ONIZLEME bitti
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2284)

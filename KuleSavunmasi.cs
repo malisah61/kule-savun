@@ -1367,7 +1367,7 @@ public partial class KuleSavunmasi : Node2D
 	async System.Threading.Tasks.Task OnizlemeCek(string klasor)
 	{
 		DirAccess.MakeDirRecursiveAbsolute(klasor);
-		Ilerleme.EnUstBolum = 14; Ilerleme.Xp = 9000; Ilerleme.Para = 5000;
+		Ilerleme.EnUstBolum = 46; Ilerleme.Xp = 9000; Ilerleme.Para = 5000;
 		foreach (var t in TdVeri.Kuleler.Take(6)) for (int j = 0; j < 3 + t.Level % 5; j++) Ilerleme.DugumAl(t);
 		MenuyuGoster();
 		await Bekle(0.5f);
@@ -1420,6 +1420,15 @@ public partial class KuleSavunmasi : Node2D
 		BolumBaslat(3);
 		await Bekle(1.2f);
 		await Kare(klasor + "/7_genis_ekran.png");
+		for (int i = 0; i < 3; i++)
+		{
+			BolumBaslat(41 + i);
+			await Bekle(0.6f);
+			await Kare(klasor + $"/8_yol_{i}.png");
+		}
+		MenuyuGoster();
+		await Bekle(0.5f);
+		await Kare(klasor + "/9_menu_sonsuz.png");
 		GD.Print($"ONIZLEME ekran={GetViewportRect().Size} yer={_yerler.Count}");
 		GD.Print($"ONIZLEME bölüm={_bolum} dalga={_dalga}/{_dalgaSayisi} can={_can} düşman={_dusmanlar.Count} kule={_kuleler.Count} doku_kule={TdVeri.Kuleler.Count(k => k.Doku != null)} doku_dusman={TdVeri.Dusmanlar.Count(d => d.Doku != null)}");
 		GD.Print("ONIZLEME bitti");

@@ -471,7 +471,18 @@ void fragment() {
 		d.Spr.Offset = new Vector2(0, -doku.GetHeight() * 0.5f);
 		d.Spr.TextureFilter = CanvasItem.TextureFilterEnum.Nearest;
 		if (t.Doku == null) d.Spr.Modulate = ZirhRenk(t.Zirh);
-		if (t.Doku != null)
+		bool kareli = t.Yuru != null && !t.Ucan && t.Zirh != "Hayalet";
+		if (kareli)
+		{
+			// gerçek yürüme kareleri: 4 kare yan yana
+			d.Spr.Texture = t.Yuru;
+			d.Spr.Hframes = 4;
+			d.Spr.Frame = 1;
+			float yo = d.Boy / t.Yuru.GetHeight();
+			d.Spr.Scale = Vector2.One * yo;
+			d.Spr.Offset = new Vector2(0, -t.Yuru.GetHeight() * 0.5f);
+		}
+		else if (t.Doku != null)
 		{
 			_yurume ??= new Shader { Code = YurumeKod };
 			var b = BacakBul(t.Doku);
@@ -598,7 +609,13 @@ void fragment() {
 			{
 				bool adimda = kare == 0 || kare == 2;
 				d.Spr.Rotation = (d.Spr.FlipH ? -1f : 1f) * 0.04f;     // yürüme yönüne hafif eğik
-				d.Spr.Position = new Vector2(0, adimda ? -2f : 0f);       // adımda gövde 2 px yükselir
+				if (d.Spr.Hframes == 4)
+				{
+					d.Spr.Frame = hiz > 0 ? kare : 1;
+					d.Spr.Position = new Vector2(0, adimda ? 0f : -1.5f); // kareler zaten basışta çöküyor
+				}
+				else
+					d.Spr.Position = new Vector2(0, adimda ? -2f : 0f);   // adımda gövde 2 px yükselir
 			}
 			if (d.Mat != null)
 			{
@@ -1590,7 +1607,8 @@ void fragment() {
 			await Kare(klasor + $"/8_yol_{i}.png");
 		}
 		// yürüme yakın çekimi: kulesiz bölümde birkaç düşman, kamera 3x
-		var yuruyen = TdVeri.Dusmanlar.Where(t => t.Doku != null && !t.Ucan && !t.Boss && t.Zirh != "Hayalet").Take(4).ToList();
+		var yuruyen = TdVeri.Dusmanlar.Where(t => t.Yuru != null && !t.Ucan && !t.Boss && t.Zirh != "Hayalet").Take(3)
+			.Concat(TdVeri.Dusmanlar.Where(t => t.Yuru == null && t.Doku != null && !t.Ucan && !t.Boss && t.Zirh != "Hayalet").Take(1)).ToList();
 		var ucan = TdVeri.Dusmanlar.FirstOrDefault(t => t.Doku != null && t.Ucan && !t.Boss);
 		if (ucan != null) yuruyen.Add(ucan);
 		for (int i = 0; i < yuruyen.Count; i++) { DusmanDogur(yuruyen[i]); _dusmanlar[^1].Mesafe = 260 + i * 45; _dusmanlar[^1].Can = 1e9f; _dusmanlar[^1].CanMax = 1e9f; }
@@ -1612,7 +1630,7 @@ void fragment() {
 		await Bekle(0.5f);
 		await Kare(klasor + "/9_menu_sonsuz.png");
 		GD.Print($"ONIZLEME ekran={GetViewportRect().Size} yer={_yerler.Count}");
-		GD.Print($"ONIZLEME bölüm={_bolum} dalga={_dalga}/{_dalgaSayisi} can={_can} düşman={_dusmanlar.Count} kule={_kuleler.Count} doku_kule={TdVeri.Kuleler.Count(k => k.Doku != null)} doku_dusman={TdVeri.Dusmanlar.Count(d => d.Doku != null)}");
+		GD.Print($"ONIZLEME bölüm={_bolum} dalga={_dalga}/{_dalgaSayisi} can={_can} düşman={_dusmanlar.Count} kule={_kuleler.Count} doku_kule={TdVeri.Kuleler.Count(k => k.Doku != null)} doku_dusman={TdVeri.Dusmanlar.Count(d => d.Doku != null)} yuru={TdVeri.Dusmanlar.Count(d => d.Yuru != null)}");
 		GD.Print("ONIZLEME bitti");
 		GetTree().Quit();
 	}

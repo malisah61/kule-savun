@@ -21,6 +21,8 @@ public class DusmanTanim
 	public int Level;
 	public string[] Zayif, Guclu;
 	public Texture2D Doku;
+	/// <summary>4 karelik yürüme şeridi (sağ adım, duruş, sol adım, duruş); yoksa shader yürüyüşü.</summary>
+	public Texture2D Yuru;
 	public bool Boss => Ozel.Contains("boss");
 	public bool Ucan => Ozel.Contains("ucan") || Zirh == "Ucan";
 }
@@ -79,6 +81,7 @@ public static class TdVeri
 			};
 			foreach (var o in Dizi(d["ozel"])) t.Ozel.Add(o);
 			t.Doku = DokuYukle($"res://assets/td/d_{t.Id}.png");
+			t.Yuru = DokuYukle($"res://assets/td/yuru_{t.Id}.png");
 			Dusmanlar.Add(t);
 		}
 	}

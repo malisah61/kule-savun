@@ -7,7 +7,7 @@ on:
     types: [completed]
   push:
     branches: [sanat-uretimi]
-    paths: ['araclar/yurume2.py', '.github/workflows/yurume.yml']
+    paths: ['araclar/yurume2.py', 'araclar/hareket.py', '.github/workflows/yurume.yml']
   workflow_dispatch:
     inputs:
       yeniden:
@@ -38,12 +38,14 @@ jobs:
       - name: Uret
         env:
           YENIDEN: ${{ github.event.inputs.yeniden }}
-        run: python araclar/yurume2.py
+        run: |
+          python araclar/yurume2.py
+          python araclar/hareket.py
       - name: Sanat dalina kaydet
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add anim2
+          git add anim2 hareket.json
           git commit -qm "Yürüme kareleri" || echo yok
           git pull -q --rebase origin sanat-uretimi && git push origin HEAD:sanat-uretimi
       - name: Oyuna kopyala (main)
@@ -51,7 +53,10 @@ jobs:
           git fetch -q origin main
           git worktree add -q ../ana origin/main
           for f in anim2/E/d_*.png; do b=$(basename "$f" .png); cp "$f" "../ana/assets/td/yuru_${b#d_}.png"; done
+          cp hareket.json ../ana/assets/td/hareket.json
           cd ../ana
-          git add assets/td/yuru_*.png
-          git commit -qm "Yürüme kareleri güncellendi" || { echo degisiklik yok; exit 0; }
-          git push origin HEAD:main
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add assets/td/yuru_*.png assets/td/hareket.json
+          git commit -qm "Yürüme kareleri ve hareket tipleri güncellendi" || { echo degisiklik yok; exit 0; }
+          git pull -q --rebase origin main && git push origin HEAD:main

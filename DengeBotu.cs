@@ -33,7 +33,7 @@ public partial class KuleSavunmasi
 		foreach (var a in OS.GetCmdlineUserArgs())
 			if (a.StartsWith("--denge-son=")) hedefBolum = int.Parse(a.Substring(12));
 
-		while (Ilerleme.EnUstBolum <= hedefBolum && oyun < 400 && Time.GetTicksMsec() - bas < 40 * 60 * 1000)
+		while (Ilerleme.EnUstBolum <= hedefBolum && oyun < 400 && Time.GetTicksMsec() - bas < 36 * 60 * 1000)
 		{
 			int b = Ilerleme.EnUstBolum;
 			if (b != sonBolum) { deneme = 0; sonBolum = b; }
@@ -66,6 +66,7 @@ public partial class KuleSavunmasi
 			int kalici = Ilerleme.Kademe.Values.Sum();
 			csv.Append($"{oyun},{b},{deneme},{(kazandi ? "K" : "Y")},{_dalga},{_dalgaSayisi},{Math.Max(0, _can)},{Ilerleme.Seviye},{kalici},{_kuleler.Count},{sim:0},{_uyum:0.00}\n");
 			GD.Print($"DENGE oyun={oyun} bölüm={b} deneme={deneme} {(kazandi ? "KAZANDI" : "kaybetti")} dalga={_dalga}/{_dalgaSayisi} can={Math.Max(0, _can)} sv={Ilerleme.Seviye} kalıcı={kalici} uyum={_uyum:0.00}");
+			using (var f = FileAccess.Open(yol, FileAccess.ModeFlags.Write)) f?.StoreString(csv.ToString());   // her oyundan sonra yaz
 			if (!kazandi)
 			{
 				var kacan = string.Join(", ", _botKacan.OrderByDescending(x => x.Value).Take(4).Select(x => $"{x.Key}×{x.Value}"));

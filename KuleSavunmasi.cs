@@ -345,7 +345,7 @@ void fragment() {
 		_harita.Yenile(tohum);
 		_dalgaSayisi = Math.Min(13, 5 + bolum / 5);
 		_can = 20;
-		_altin = 180 + bolum * 30;
+		_altin = 170 + bolum * 28;
 		_dalgaSuruyor = false;
 		_uyum = 1f;
 		_karsiAgirlik.Clear();
@@ -467,7 +467,8 @@ void fragment() {
 	void DusmanDogur(DusmanTanim t)
 	{
 		var d = new Dus { T = t };
-		float can = TdVeri.TemelCan(_bolum) * (0.8f + 0.6f * t.Guc) * DalgaCanCarpani * _uyum;
+		// boss son dalgada gelir; dalga çarpanı bossa uygulanmaz (yoksa hiç ölmüyordu)
+		float can = TdVeri.TemelCan(_bolum) * (0.8f + 0.6f * t.Guc) * (t.Boss ? 1f : DalgaCanCarpani) * _uyum;
 		float hiz = 46f;
 		if (t.Ozel.Contains("hizli")) { hiz = 70f; can *= 0.8f; }
 		if (t.Ozel.Contains("yavas")) { hiz = 30f; can *= 1.8f; }
@@ -475,7 +476,7 @@ void fragment() {
 		if (t.Ozel.Contains("kalabalik")) { hiz = 54f; can *= 0.45f; }
 		if (t.Ucan) { hiz = 58f; can *= 0.85f; }
 		if (t.Zirh == "Hayalet") hiz = 50f;
-		if (t.Boss) { hiz = 27f; can *= 16f; }
+		if (t.Boss) { hiz = 27f; can *= 12f; }
 		// Kingdom Rush tarzı aile rolleri: kalabalık/zayıf, tank/yavaş, hızlı, sürü...
 		var (rc, rh) = Rol(t.Zirh);
 		can *= rc; hiz *= rh;

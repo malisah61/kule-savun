@@ -22,7 +22,7 @@ Karanlık fantastik, yol + kule savunma oyunu. Mezarlık yolundan gelen 233 fark
 - `TdVeri.cs` — `assets/td/veri.json` yükleyici, hasar çarpanları
 - `YetenekAgaci.cs` — bölüm içi Güç/Ustalık ağacı · `Ilerleme.cs` — XP, seviye, para, kalıcı ağaç, kayıt
 - `TdHarita.cs` — kodla çizilen mezarlık haritası ve yol · `Efekt.cs` — parçacıklar ve sesler
-- `assets/td/` — 33 kule + 233 düşman sprite'ı ve `veri.json`
+- `assets/td/` — 33 kule + 233 düşman sprite'ı, 97 düşmanın 4 karelik yürüme şeridi (`yuru_<id>.png`) ve `veri.json`
 
 ## Müzik
 `assets/ses/menu.ogg` (ürpertici ortam) ve `assets/ses/savas.ogg` (gerilim) `araclar/besteci.py` ile kodla bestelendi; telifsiz. Oyunda ♪ düğmesiyle açılıp kapanır.

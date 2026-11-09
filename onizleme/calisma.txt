@@ -6,7 +6,7 @@ ONIZLEME kaydedildi: onizleme/0_yetenek_agaci.png
 ONIZLEME kaydedildi: onizleme/1_menu.png
 ONIZLEME kaydedildi: onizleme/2_harita.png
 ONIZLEME kaydedildi: onizleme/3_savas.png
-ONIZLEME fps=85 dusman=6 yol=4913 muzik=2 calan=savas
+ONIZLEME fps=81 dusman=0 yol=3751 muzik=2 calan=savas
 ONIZLEME kaydedildi: onizleme/3b_analiz.png
 ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png
@@ -15,9 +15,18 @@ ONIZLEME kaydedildi: onizleme/7_genis_ekran.png
 ONIZLEME kaydedildi: onizleme/8_yol_0.png
 ONIZLEME kaydedildi: onizleme/8_yol_1.png
 ONIZLEME kaydedildi: onizleme/8_yol_2.png
+ONIZLEME kaydedildi: onizleme/10_yurume_0.png
+ONIZLEME kaydedildi: onizleme/10_yurume_1.png
+ONIZLEME kaydedildi: onizleme/10_yurume_2.png
+ONIZLEME kaydedildi: onizleme/10_yurume_3.png
+ONIZLEME yer bölüm 1: 10
+ONIZLEME yer bölüm 12: 12
+ONIZLEME yer bölüm 30: 16
+ONIZLEME yer bölüm 45: 18
+ONIZLEME kaydedildi: onizleme/11_yerler_45.png
 ONIZLEME kaydedildi: onizleme/9_menu_sonsuz.png
-ONIZLEME ekran=(1280, 720) yer=26
-ONIZLEME bölüm=43 dalga=0/13 can=20 düşman=0 kule=0 doku_kule=32 doku_dusman=222
+ONIZLEME ekran=(1280, 720) yer=18
+ONIZLEME bölüm=45 dalga=0/13 can=20 düşman=0 kule=0 doku_kule=32 doku_dusman=222
 ONIZLEME bitti
 WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
      at: cleanup (core/object/object.cpp:2284)

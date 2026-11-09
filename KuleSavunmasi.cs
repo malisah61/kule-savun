@@ -689,6 +689,7 @@ void fragment() {
 	void Oldur(Dus d, Kule katil = null)
 	{
 		if (d.Olu) return;
+		d.Olu = true;   // önce işaretle: zincirleme Kül Patlaması bu düşmanı tekrar öldürmeye çalışıp sonsuz döngüye girmesin
 		_altin += Mathf.Max(1, Mathf.RoundToInt(d.Odul * (katil != null && katil.Var("ruh_hasadi") ? 1.6f : 1f)));
 		Kazan(d.T.Boss ? 30 + _bolum * 3 : 1 + _bolum / 4, d.T.Boss ? 15 + _bolum : (_rng.Randf() < 0.35f ? 1 : 0));
 		_olumSayisi++;

@@ -777,6 +777,29 @@
     "Vampir",
     "Kültist"
    ]
+  },
+  {
+   "id": "curuk_mantar",
+   "ad": "Çürük Mantar",
+   "hasarTuru": "Zehir",
+   "mod": "zehir",
+   "menzil": 165,
+   "atisHizi": 0.7,
+   "hasar": 22,
+   "maliyet": 340,
+   "level": 34,
+   "prompt": "giant rotting mushroom tower with twisted fungal stalks releasing glowing green spores",
+   "etkili": [
+    "Canavar",
+    "Böcek"
+   ],
+   "etkisiz": [
+    "Ölümsüz",
+    "Zırhlı",
+    "Vampir",
+    "Taş",
+    "Bataklık"
+   ]
   }
  ],
  "dusmanlar": [
@@ -5634,6 +5657,253 @@
     "Kutsal"
    ],
    "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Tabut Taşıyıcı",
+   "zirh": "Olumsuz",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "rotting undead pallbearer with a small black wooden coffin strapped to his back, tattered grey funeral suit, standing, legs apart, front view",
+   "guc": 0.3,
+   "level": 8,
+   "id": "tabut_tasiyici",
+   "can": 108,
+   "hiz": 42,
+   "odul": 11,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Sırtlan Adam",
+   "zirh": "Canavar",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "hyena-headed beastman with spotted fur, hunched shoulders and a crude bone club, standing, legs apart, front view",
+   "guc": 0.4,
+   "level": 14,
+   "id": "sirtlan_adam",
+   "can": 215,
+   "hiz": 62,
+   "odul": 17,
+   "hasar": 1,
+   "zayif": [
+    "Fiziksel",
+    "Zehir"
+   ],
+   "guclu": [
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Demir Salyangoz",
+   "zirh": "Bocek",
+   "ozel": [
+    "yavas"
+   ],
+   "prompt": "giant slimy slug monster carrying a spiked rusty iron shell, long eye stalks",
+   "guc": 0.5,
+   "level": 21,
+   "id": "demir_salyangoz",
+   "can": 1028,
+   "hiz": 28,
+   "odul": 23,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Zehir"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Kan Cerrahı",
+   "zirh": "Vampir",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "pale vampire surgeon in a bloody leather apron holding a bone saw, standing, legs apart, front view",
+   "guc": 0.6,
+   "level": 27,
+   "id": "kan_cerrahi",
+   "can": 1650,
+   "hiz": 42,
+   "odul": 28,
+   "hasar": 1,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Kemik Vatozu",
+   "zirh": "Ucan",
+   "ozel": [
+    "ucan"
+   ],
+   "prompt": "flying manta ray made of bones with tattered grey membrane wings and a long barbed tail",
+   "guc": 0.75,
+   "level": 36,
+   "id": "kemik_vatozu",
+   "can": 5409,
+   "hiz": 55,
+   "odul": 36,
+   "hasar": 2,
+   "zayif": [
+    "Fiziksel",
+    "Yıldırım"
+   ],
+   "guclu": [
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Vitray Bekçi",
+   "zirh": "Tas",
+   "ozel": [
+    "kalkan"
+   ],
+   "prompt": "statue guardian made of cracked colorful stained glass with black lead seams, standing, legs apart, front view",
+   "guc": 0.9,
+   "level": 47,
+   "id": "vitray_bekci",
+   "can": 48221,
+   "hiz": 42,
+   "odul": 46,
+   "hasar": 2,
+   "zayif": [
+    "Kuşatma"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Buz",
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "Sayfa Hayaleti",
+   "zirh": "Hayalet",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "ghost made of swirling torn old book pages and dripping black ink, hollow glowing eyes",
+   "guc": 0.85,
+   "level": 47,
+   "id": "sayfa_hayaleti",
+   "can": 36263,
+   "hiz": 48,
+   "odul": 46,
+   "hasar": 2,
+   "zayif": [
+    "Yıldırım",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Fiziksel",
+    "Gölge",
+    "Kuşatma"
+   ]
+  },
+  {
+   "ad": "Ayaz Cellatı",
+   "zirh": "Buz",
+   "ozel": [],
+   "prompt": "tall frost executioner in a white hood holding a huge icicle axe, frozen chains on his arms, standing, legs apart, front view",
+   "guc": 0.9,
+   "level": 48,
+   "id": "ayaz_cellati",
+   "can": 43028,
+   "hiz": 42,
+   "odul": 47,
+   "hasar": 2,
+   "zayif": [
+    "Ateş"
+   ],
+   "guclu": [
+    "Buz",
+    "Yıldırım"
+   ]
+  },
+  {
+   "ad": "Çamur Ahtapotu",
+   "zirh": "Bataklik",
+   "ozel": [
+    "iyilesir"
+   ],
+   "prompt": "swamp octopus monster made of dripping brown mud with many yellow eyes and long tentacles",
+   "guc": 0.95,
+   "level": 48,
+   "id": "camur_ahtapotu",
+   "can": 43991,
+   "hiz": 42,
+   "odul": 47,
+   "hasar": 2,
+   "zayif": [
+    "Ateş",
+    "Buz"
+   ],
+   "guclu": [
+    "Zehir"
+   ]
+  },
+  {
+   "ad": "İblis Davulcu",
+   "zirh": "Seytan",
+   "ozel": [
+    "hizli"
+   ],
+   "prompt": "horned red demon beating a big war drum strapped to his chest, standing, legs apart, front view",
+   "guc": 0.95,
+   "level": 47,
+   "id": "iblis_davulcu",
+   "can": 37924,
+   "hiz": 62,
+   "odul": 46,
+   "hasar": 2,
+   "zayif": [
+    "Buz",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Ateş",
+    "Gölge"
+   ]
+  },
+  {
+   "ad": "Mezar Fili",
+   "zirh": "Olumsuz",
+   "ozel": [
+    "boss"
+   ],
+   "prompt": "colossal majestic undead war elephant boss, rotting grey hide, huge cracked ivory tusks, a bone tower on its back, glowing green eyes",
+   "guc": 1.0,
+   "level": 46,
+   "id": "mezar_fili",
+   "can": 467721,
+   "hiz": 26,
+   "odul": 252,
+   "hasar": 10,
+   "zayif": [
+    "Ateş",
+    "Kutsal"
+   ],
+   "guclu": [
+    "Zehir",
     "Gölge"
    ]
   }

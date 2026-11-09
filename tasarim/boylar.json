@@ -31,6 +31,7 @@
 "kule_kiyamet": 100,
 "kule_buz_mizragi": 100,
 "kule_ruh_zinciri": 100,
+"kule_curuk_mantar": 100,
 "d_curuk_zombi": 84,
 "d_koylu_zombi": 84,
 "d_kemik_piyade": 84,
@@ -252,5 +253,16 @@
 "d_demirci_iblis": 84,
 "d_buzul_mamutu": 84,
 "d_golge_terzi": 84,
-"d_yuz_maske_kahini": 120
+"d_yuz_maske_kahini": 120,
+"d_tabut_tasiyici": 84,
+"d_sirtlan_adam": 84,
+"d_demir_salyangoz": 84,
+"d_kan_cerrahi": 84,
+"d_kemik_vatozu": 84,
+"d_vitray_bekci": 84,
+"d_sayfa_hayaleti": 84,
+"d_ayaz_cellati": 84,
+"d_camur_ahtapotu": 84,
+"d_iblis_davulcu": 84,
+"d_mezar_fili": 120
 }

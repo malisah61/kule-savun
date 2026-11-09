@@ -30,6 +30,7 @@ kule_melek_kilici|pixel art, giant glowing holy sword stuck in a stone pedestal,
 kule_kiyamet|pixel art, apocalypse tower with a burning eye on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
 kule_buz_mizragi|pixel art, tower of jagged blue ice spikes with a giant frost spear launcher on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
 kule_ruh_zinciri|pixel art, dark stone tower wrapped in glowing purple spectral chains with a floating skull on top, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
+kule_curuk_mantar|pixel art, giant rotting mushroom tower with twisted fungal stalks releasing glowing green spores, dark fantasy game defense tower building, whole building visible, front view, simple plain white background
 d_curuk_zombi|pixel art, rotting green zombie in torn rags, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_koylu_zombi|pixel art, zombie peasant with a pitchfork, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_kemik_piyade|pixel art, skeleton soldier with a rusty sword, dark fantasy horror game enemy, full body, side view, simple plain white background
@@ -252,3 +253,14 @@ d_demirci_iblis|pixel art, blacksmith demon with a molten hammer and leather apr
 d_buzul_mamutu|pixel art, undead woolly mammoth covered in frost and icicles, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_golge_terzi|pixel art, tall pale masked cultist tailor in a long black coat holding huge iron scissors, dark fantasy horror game enemy, full body, side view, simple plain white background
 d_yuz_maske_kahini|pixel art, huge boss monster, colossal towering hooded prophet in dark purple robes, single giant majestic figure wearing a white porcelain mask, many small masks hanging from his robe, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_tabut_tasiyici|pixel art, rotting undead pallbearer with a small black wooden coffin strapped to his back, tattered grey funeral suit, standing, legs apart, front view, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_sirtlan_adam|pixel art, hyena-headed beastman with spotted fur, hunched shoulders and a crude bone club, standing, legs apart, front view, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_demir_salyangoz|pixel art, giant slimy slug monster carrying a spiked rusty iron shell, long eye stalks, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kan_cerrahi|pixel art, pale vampire surgeon in a bloody leather apron holding a bone saw, standing, legs apart, front view, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_kemik_vatozu|pixel art, flying manta ray made of bones with tattered grey membrane wings and a long barbed tail, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_vitray_bekci|pixel art, statue guardian made of cracked colorful stained glass with black lead seams, standing, legs apart, front view, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_sayfa_hayaleti|pixel art, ghost made of swirling torn old book pages and dripping black ink, hollow glowing eyes, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_ayaz_cellati|pixel art, tall frost executioner in a white hood holding a huge icicle axe, frozen chains on his arms, standing, legs apart, front view, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_camur_ahtapotu|pixel art, swamp octopus monster made of dripping brown mud with many yellow eyes and long tentacles, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_iblis_davulcu|pixel art, horned red demon beating a big war drum strapped to his chest, standing, legs apart, front view, dark fantasy horror game enemy, full body, side view, simple plain white background
+d_mezar_fili|pixel art, huge boss monster, colossal majestic undead war elephant boss, rotting grey hide, huge cracked ivory tusks, a bone tower on its back, glowing green eyes, dark fantasy horror game enemy, full body, side view, simple plain white background

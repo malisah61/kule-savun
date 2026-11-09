@@ -23,6 +23,18 @@
    "maliyet": 320,
    "level": 31,
    "prompt": "dark stone tower wrapped in glowing purple spectral chains with a floating skull on top"
+  },
+  {
+   "id": "curuk_mantar",
+   "ad": "Çürük Mantar",
+   "hasarTuru": "Zehir",
+   "mod": "zehir",
+   "menzil": 165,
+   "atisHizi": 0.7,
+   "hasar": 22,
+   "maliyet": 340,
+   "level": 34,
+   "prompt": "giant rotting mushroom tower with twisted fungal stalks releasing glowing green spores"
   }
  ],
  "dusmanlar": [
@@ -233,6 +245,114 @@
    "zirh": "Kultist",
    "prompt": "colossal towering hooded prophet in dark purple robes, single giant majestic figure wearing a white porcelain mask, many small masks hanging from his robe",
    "level": 44,
+   "ozel": [
+    "boss"
+   ],
+   "guc": 1.0
+  },
+  {
+   "ad": "Tabut Taşıyıcı",
+   "zirh": "Olumsuz",
+   "prompt": "rotting undead pallbearer with a small black wooden coffin strapped to his back, tattered grey funeral suit, standing, legs apart, front view",
+   "level": 8,
+   "ozel": [
+    "kalkan"
+   ],
+   "guc": 0.3
+  },
+  {
+   "ad": "Sırtlan Adam",
+   "zirh": "Canavar",
+   "prompt": "hyena-headed beastman with spotted fur, hunched shoulders and a crude bone club, standing, legs apart, front view",
+   "level": 14,
+   "ozel": [
+    "hizli"
+   ],
+   "guc": 0.4
+  },
+  {
+   "ad": "Demir Salyangoz",
+   "zirh": "Bocek",
+   "prompt": "giant slimy slug monster carrying a spiked rusty iron shell, long eye stalks",
+   "level": 21,
+   "ozel": [
+    "yavas"
+   ],
+   "guc": 0.5
+  },
+  {
+   "ad": "Kan Cerrahı",
+   "zirh": "Vampir",
+   "prompt": "pale vampire surgeon in a bloody leather apron holding a bone saw, standing, legs apart, front view",
+   "level": 27,
+   "ozel": [
+    "iyilesir"
+   ],
+   "guc": 0.6
+  },
+  {
+   "ad": "Kemik Vatozu",
+   "zirh": "Ucan",
+   "prompt": "flying manta ray made of bones with tattered grey membrane wings and a long barbed tail",
+   "level": 36,
+   "ozel": [
+    "ucan"
+   ],
+   "guc": 0.75
+  },
+  {
+   "ad": "Vitray Bekçi",
+   "zirh": "Tas",
+   "prompt": "statue guardian made of cracked colorful stained glass with black lead seams, standing, legs apart, front view",
+   "level": 47,
+   "ozel": [
+    "kalkan"
+   ],
+   "guc": 0.9
+  },
+  {
+   "ad": "Sayfa Hayaleti",
+   "zirh": "Hayalet",
+   "prompt": "ghost made of swirling torn old book pages and dripping black ink, hollow glowing eyes",
+   "level": 47,
+   "ozel": [
+    "hizli"
+   ],
+   "guc": 0.85
+  },
+  {
+   "ad": "Ayaz Cellatı",
+   "zirh": "Buz",
+   "prompt": "tall frost executioner in a white hood holding a huge icicle axe, frozen chains on his arms, standing, legs apart, front view",
+   "level": 48,
+   "ozel": [],
+   "guc": 0.9
+  },
+  {
+   "ad": "Çamur Ahtapotu",
+   "zirh": "Bataklik",
+   "prompt": "swamp octopus monster made of dripping brown mud with many yellow eyes and long tentacles",
+   "level": 48,
+   "ozel": [
+    "iyilesir"
+   ],
+   "guc": 0.95
+  },
+  {
+   "ad": "İblis Davulcu",
+   "zirh": "Seytan",
+   "prompt": "horned red demon beating a big war drum strapped to his chest, standing, legs apart, front view",
+   "level": 47,
+   "ozel": [
+    "hizli"
+   ],
+   "guc": 0.95
+  },
+  {
+   "ad": "Mezar Fili",
+   "zirh": "Olumsuz",
+   "prompt": "colossal majestic undead war elephant boss, rotting grey hide, huge cracked ivory tusks, a bone tower on its back, glowing green eyes",
+   "level": 46,
    "ozel": [
     "boss"
    ],

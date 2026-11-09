@@ -1,0 +1,16 @@
+bölüm  deneme  seviye  kalan_can
+    1       1       2         20
+    2       1       4         10
+    3       1       5         19
+    4       1       6          8
+    5       1       7         17
+    6       1       8          4
+    7       1       9         15
+    8       2      10          1
+    9       1      11          9
+   10       7      15          5
+   11       1      16         11
+   12       5      18          3
+   13       4      19          7
+
+Toplam oyun: 52, ulaşılan bölüm: 14, oyuncu seviyesi: 24, gerçek süre: 94 sn

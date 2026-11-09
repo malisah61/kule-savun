@@ -1,0 +1,95 @@
+DENGE oyun=1 bölüm=1 deneme=1 KAZANDI dalga=5/5 can=20 sv=2 kalıcı=3 uyum=1.31
+DENGE oyun=2 bölüm=2 deneme=1 KAZANDI dalga=5/5 can=10 sv=4 kalıcı=5 uyum=1.32
+DENGE oyun=3 bölüm=3 deneme=1 KAZANDI dalga=5/5 can=19 sv=5 kalıcı=7 uyum=1.09
+DENGE oyun=4 bölüm=4 deneme=1 KAZANDI dalga=5/5 can=8 sv=6 kalıcı=8 uyum=1.10
+DENGE oyun=5 bölüm=5 deneme=1 KAZANDI dalga=6/6 can=17 sv=7 kalıcı=11 uyum=1.17
+DENGE oyun=6 bölüm=6 deneme=1 KAZANDI dalga=6/6 can=4 sv=8 kalıcı=12 uyum=1.15
+DENGE oyun=7 bölüm=7 deneme=1 KAZANDI dalga=6/6 can=15 sv=9 kalıcı=14 uyum=1.07
+DENGE oyun=8 bölüm=8 deneme=1 kaybetti dalga=6/6 can=0 sv=9 kalıcı=15 uyum=1.07
+DENGE   kaçan: Feryatçı×8, Kara Muhafız×6, Fener Hayaleti×5, Gezgin Ruh×1   kuleler[8/11]: Tatar Yayı×1(0), Kutsal Çan×1(0), Okçu Kulesi×6(222222)   altın=34
+DENGE oyun=9 bölüm=8 deneme=2 KAZANDI dalga=6/6 can=1 sv=10 kalıcı=16 uyum=1.07
+DENGE oyun=10 bölüm=9 deneme=1 KAZANDI dalga=6/6 can=9 sv=11 kalıcı=17 uyum=1.03
+DENGE oyun=11 bölüm=10 deneme=1 kaybetti dalga=5/7 can=0 sv=12 kalıcı=18 uyum=1.00
+DENGE   kaçan: Zincirli Ruh×7, Fener Hayaleti×7, Paslı Şövalye×2, Feryatçı×2   kuleler[7/12]: Tatar Yayı×1(0), Kutsal Çan×1(1), Okçu Kulesi×3(222), Taş Atar×2(21)   altın=35
+DENGE oyun=12 bölüm=10 deneme=2 kaybetti dalga=6/7 can=0 sv=12 kalıcı=20 uyum=1.03
+DENGE   kaçan: Zincirli Ruh×6, Fener Hayaleti×6, Gezgin Ruh×3, Paslı Şövalye×3   kuleler[9/12]: Tatar Yayı×1(0), Taş Atar×1(2), Kutsal Çan×1(1), Okçu Kulesi×6(222222)   altın=29
+DENGE oyun=13 bölüm=10 deneme=3 kaybetti dalga=7/7 can=0 sv=13 kalıcı=21 uyum=1.06
+DENGE   kaçan: Böcek Ana×10, Zincirli Ruh×5, Paslı Şövalye×2, Fener Hayaleti×2   kuleler[10/12]: Tatar Yayı×1(0), Taş Atar×1(2), Kutsal Çan×1(1), Okçu Kulesi×7(3332222)   altın=12
+DENGE oyun=14 bölüm=10 deneme=4 kaybetti dalga=7/7 can=0 sv=13 kalıcı=23 uyum=1.17
+DENGE   kaçan: Böcek Ana×10, Zincirli Ruh×3, Paslı Şövalye×3, Kafatası Fırlatan×2   kuleler[10/12]: İlahi Işık×1(0), Tatar Yayı×1(0), Okçu Kulesi×6(332222), Taş Atar×2(22)   altın=15
+DENGE oyun=15 bölüm=10 deneme=5 kaybetti dalga=7/7 can=0 sv=14 kalıcı=24 uyum=1.06
+DENGE   kaçan: Böcek Ana×10, Paslı Şövalye×6, Fener Hayaleti×2, İskelet Okçu×1   kuleler[10/12]: İlahi Işık×1(0), Tatar Yayı×1(0), Okçu Kulesi×6(322222), Taş Atar×2(22)   altın=52
+DENGE oyun=16 bölüm=10 deneme=6 kaybetti dalga=7/7 can=0 sv=14 kalıcı=24 uyum=1.10
+DENGE   kaçan: Böcek Ana×10, Paslı Şövalye×4, Kara Muhafız×3, Yaban Domuzu×1   kuleler[10/12]: İlahi Işık×1(0), Tatar Yayı×1(0), Okçu Kulesi×7(3332222), Taş Atar×1(2)   altın=1
+DENGE oyun=17 bölüm=10 deneme=7 KAZANDI dalga=7/7 can=5 sv=15 kalıcı=25 uyum=1.10
+DENGE oyun=18 bölüm=11 deneme=1 KAZANDI dalga=7/7 can=11 sv=16 kalıcı=26 uyum=1.09
+DENGE oyun=19 bölüm=12 deneme=1 kaybetti dalga=7/7 can=0 sv=16 kalıcı=26 uyum=1.03
+DENGE   kaçan: Bataklık Hidrası×10, Kurbağa Adam×3, Fener Hayaleti×2, Bataklık Zombisi×2   kuleler[11/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×7(3322221)   altın=24
+DENGE oyun=20 bölüm=12 deneme=2 kaybetti dalga=7/7 can=0 sv=17 kalıcı=28 uyum=1.03
+DENGE   kaçan: Bataklık Hidrası×10, Kalkan Taşıyıcı×5, Gölge Çocuk×2, Kuzgun×1   kuleler[11/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×7(3322221)   altın=6
+DENGE oyun=21 bölüm=12 deneme=3 kaybetti dalga=7/7 can=0 sv=17 kalıcı=28 uyum=1.03
+DENGE   kaçan: Kalkan Taşıyıcı×10, Bataklık Hidrası×10, Bataklık Zombisi×2, Köylü Zombi×1   kuleler[10/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×4(2222), Okçu Kulesi×4(3320)   altın=24
+DENGE oyun=22 bölüm=12 deneme=4 kaybetti dalga=7/7 can=0 sv=18 kalıcı=30 uyum=1.03
+DENGE   kaçan: Bataklık Hidrası×10, Kurbağa Adam×5, Bataklık Zombisi×5, Kalkan Taşıyıcı×1   kuleler[11/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×4(2222), Okçu Kulesi×5(22221)   altın=1
+DENGE oyun=23 bölüm=12 deneme=5 KAZANDI dalga=7/7 can=3 sv=18 kalıcı=30 uyum=1.06
+DENGE oyun=24 bölüm=13 deneme=1 kaybetti dalga=4/7 can=0 sv=18 kalıcı=30 uyum=1.00
+DENGE   kaçan: Kalkan Taşıyıcı×5, Gölge Çocuk×4, Zırhlı Gulyabani×3, Kurbağa Adam×3   kuleler[7/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×1(2), Okçu Kulesi×4(2222)   altın=30
+DENGE oyun=25 bölüm=13 deneme=2 kaybetti dalga=3/7 can=0 sv=19 kalıcı=32 uyum=1.00
+DENGE   kaçan: Kalkan Taşıyıcı×7, Zincirli Ruh×3, Zırhlı Gulyabani×3, Hortlak×2   kuleler[6/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×1(0), Okçu Kulesi×3(222)   altın=41
+DENGE oyun=26 bölüm=13 deneme=3 kaybetti dalga=6/7 can=0 sv=19 kalıcı=32 uyum=1.00
+DENGE   kaçan: Hortlak×5, Gezgin Ruh×4, Feryatçı×2, Kalkan Taşıyıcı×2   kuleler[9/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×4(2222), Okçu Kulesi×3(222)   altın=53
+DENGE oyun=27 bölüm=13 deneme=4 KAZANDI dalga=7/7 can=7 sv=19 kalıcı=32 uyum=1.03
+DENGE oyun=28 bölüm=14 deneme=1 kaybetti dalga=5/7 can=0 sv=20 kalıcı=33 uyum=1.00
+DENGE   kaçan: Kurbağa Adam×6, Zırhlı Gulyabani×5, Gölge Çocuk×4, Kalkan Taşıyıcı×1   kuleler[9/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×4(2222), Kutsal Çan×1(0)   altın=30
+DENGE oyun=29 bölüm=14 deneme=2 kaybetti dalga=4/7 can=0 sv=20 kalıcı=33 uyum=1.00
+DENGE   kaçan: Hortlak×4, Gölge Çocuk×3, Vampir Yarasa×3, Zırhlı Gulyabani×3   kuleler[6/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×1(2), Okçu Kulesi×3(332)   altın=24
+DENGE oyun=30 bölüm=14 deneme=3 kaybetti dalga=5/7 can=0 sv=20 kalıcı=33 uyum=1.00
+DENGE   kaçan: Hortlak×7, Zırhlı Gulyabani×4, Gölge Çocuk×2, Fener Hayaleti×1   kuleler[8/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×3(222), Okçu Kulesi×3(222)   altın=37
+DENGE oyun=31 bölüm=14 deneme=4 kaybetti dalga=5/7 can=0 sv=20 kalıcı=33 uyum=1.00
+DENGE   kaçan: Kurbağa Adam×5, Hortlak×5, Zırhlı Gulyabani×3, Fener Hayaleti×1   kuleler[9/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×5(22222)   altın=4
+DENGE oyun=32 bölüm=14 deneme=5 kaybetti dalga=3/7 can=0 sv=20 kalıcı=33 uyum=1.00
+DENGE   kaçan: Vampir Yarasa×4, Zırhlı Gulyabani×4, Kurbağa Adam×4, Gölge Çocuk×3   kuleler[6/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×1(1), Okçu Kulesi×3(222)   altın=33
+DENGE oyun=33 bölüm=14 deneme=6 kaybetti dalga=6/7 can=0 sv=21 kalıcı=34 uyum=1.03
+DENGE   kaçan: Hortlak×4, Kurbağa Adam×3, Zırhlı Gulyabani×3, Gölge Çocuk×2   kuleler[11/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×3(222), Okçu Kulesi×6(222220)   altın=4
+DENGE oyun=34 bölüm=14 deneme=7 kaybetti dalga=4/7 can=0 sv=21 kalıcı=34 uyum=1.00
+DENGE   kaçan: Hortlak×3, Gölge Çocuk×3, Kurbağa Adam×2, Kafes Taşıyıcı×2   kuleler[7/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×3(221)   altın=32
+DENGE oyun=35 bölüm=14 deneme=8 kaybetti dalga=5/7 can=0 sv=21 kalıcı=34 uyum=1.00
+DENGE   kaçan: Hortlak×6, Gölge Çocuk×3, Kara Muhafız×2, Gezgin Ruh×2   kuleler[8/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×4(3320)   altın=11
+DENGE oyun=36 bölüm=14 deneme=9 kaybetti dalga=7/7 can=0 sv=21 kalıcı=34 uyum=1.03
+DENGE   kaçan: Hortlak×3, Gölge Çocuk×3, Vampir Yarasa×2, Kurbağa Adam×2   kuleler[11/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×4(2222), Okçu Kulesi×5(33222)   altın=50
+DENGE oyun=37 bölüm=14 deneme=10 kaybetti dalga=4/7 can=0 sv=21 kalıcı=34 uyum=1.00
+DENGE   kaçan: Zırhlı Gulyabani×5, Kurbağa Adam×3, Hortlak×2, Gölge Çocuk×2   kuleler[7/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×3(320)   altın=28
+DENGE oyun=38 bölüm=14 deneme=11 kaybetti dalga=4/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Hortlak×5, Zırhlı Gulyabani×3, Gölge Çocuk×3, Kurbağa Adam×2   kuleler[6/12]: Tatar Yayı×1(0), İlahi Işık×1(0), Taş Atar×2(22), Okçu Kulesi×2(22)   altın=40
+DENGE oyun=39 bölüm=14 deneme=12 kaybetti dalga=5/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Gölge Çocuk×3, Zincirli Ruh×3, Kurbağa Adam×3, Hortlak×2   kuleler[8/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×3(322), Taş Atar×2(22)   altın=33
+DENGE oyun=40 bölüm=14 deneme=13 kaybetti dalga=4/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Hortlak×5, Kurbağa Adam×3, Gölge Çocuk×2, Paslı Şövalye×2   kuleler[7/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×3(320), Taş Atar×1(2)   altın=22
+DENGE oyun=41 bölüm=14 deneme=14 kaybetti dalga=3/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Zırhlı Gulyabani×5, Gölge Çocuk×4, Kurbağa Adam×3, Kara Muhafız×2   kuleler[6/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×2(22), Taş Atar×1(1)   altın=28
+DENGE oyun=42 bölüm=14 deneme=15 kaybetti dalga=6/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Kurbağa Adam×4, Zırhlı Gulyabani×4, Gölge Çocuk×4, Hortlak×4   kuleler[9/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×3(332), Taş Atar×3(222)   altın=23
+DENGE oyun=43 bölüm=14 deneme=16 kaybetti dalga=3/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Hortlak×4, Gölge Çocuk×4, Vampir Yarasa×2, Feryatçı×2   kuleler[6/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×3(222)   altın=14
+DENGE oyun=44 bölüm=14 deneme=17 kaybetti dalga=6/7 can=0 sv=22 kalıcı=35 uyum=1.00
+DENGE   kaçan: Vampir Yarasa×6, Hortlak×3, Feryatçı×2, Gölge Çocuk×2   kuleler[10/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×4(3222), Taş Atar×2(22), Kutsal Çan×1(0)   altın=38
+DENGE oyun=45 bölüm=14 deneme=18 kaybetti dalga=6/7 can=0 sv=23 kalıcı=37 uyum=1.03
+DENGE   kaçan: Gölge Çocuk×7, Vampir Yarasa×2, Paslı Şövalye×2, Hortlak×2   kuleler[10/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×5(33222), Taş Atar×2(22)   altın=24
+DENGE oyun=46 bölüm=14 deneme=19 kaybetti dalga=5/7 can=0 sv=23 kalıcı=37 uyum=1.00
+DENGE   kaçan: Vampir Yarasa×4, Zırhlı Gulyabani×3, Hortlak×3, Gölge Çocuk×2   kuleler[9/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×6(322221)   altın=27
+DENGE oyun=47 bölüm=14 deneme=20 kaybetti dalga=6/7 can=0 sv=23 kalıcı=37 uyum=1.00
+DENGE   kaçan: Gölge Çocuk×7, Hortlak×5, Zincirli Ruh×2, Vampir Yarasa×2   kuleler[12/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×9(222222221)   altın=5
+DENGE oyun=48 bölüm=14 deneme=21 kaybetti dalga=7/7 can=0 sv=23 kalıcı=37 uyum=1.00
+DENGE   kaçan: Hortlak×6, Kurbağa Adam×4, Zırhlı Gulyabani×3, Gölge Çocuk×2   kuleler[12/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×6(332222), Taş Atar×2(22), Kutsal Çan×1(0)   altın=48
+DENGE oyun=49 bölüm=14 deneme=22 kaybetti dalga=5/7 can=0 sv=24 kalıcı=39 uyum=1.00
+DENGE   kaçan: Zırhlı Gulyabani×4, Kurbağa Adam×4, Paslı Şövalye×3, Hortlak×3   kuleler[9/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×3(220), Taş Atar×3(222)   altın=1
+DENGE oyun=50 bölüm=14 deneme=23 kaybetti dalga=4/7 can=0 sv=24 kalıcı=39 uyum=1.03
+DENGE   kaçan: Gölge Çocuk×4, Fener Hayaleti×3, Kemik Kalkan×3, Kurbağa Adam×3   kuleler[7/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×2(21), Taş Atar×2(22)   altın=31
+DENGE oyun=51 bölüm=14 deneme=24 kaybetti dalga=5/7 can=0 sv=24 kalıcı=39 uyum=1.00
+DENGE   kaçan: Hortlak×5, Gölge Çocuk×4, Kemik Kalkan×2, Zırhlı Gulyabani×2   kuleler[9/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×4(2221), Taş Atar×2(22)   altın=19
+DENGE oyun=52 bölüm=14 deneme=25 kaybetti dalga=7/7 can=0 sv=24 kalıcı=39 uyum=1.00
+DENGE   kaçan: Zırhlı Gulyabani×5, Gölge Çocuk×5, Hortlak×2, Paslı Şövalye×1   kuleler[12/12]: Tatar Yayı×2(00), İlahi Işık×1(0), Okçu Kulesi×7(3332220), Taş Atar×2(22)   altın=28
+DENGE DUVAR: bölüm 14 25 denemede geçilemedi
+bölüm  deneme  seviye  kalan_can
+Toplam oyun: 52, ulaşılan bölüm: 14, oyuncu seviyesi: 24, gerçek süre: 94 sn
+DENGE bitti

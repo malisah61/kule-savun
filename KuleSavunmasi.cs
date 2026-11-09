@@ -48,23 +48,21 @@ public partial class KuleSavunmasi : Node2D
 	// Sprite'lar tek kare; bacaklar parça shader'ıyla oynatılır: kalçanın altı
 	// sol/sağ ikiye bölünüp adım fazına göre açılıp kapanır, öndeki ayak hafif kalkar.
 	const string YurumeKod = @"shader_type canvas_item;
-uniform float faz = 0.0;
-uniform float genlik = 0.0;
+uniform float sol_kalk = 0.0;
+uniform float sag_kalk = 0.0;
 uniform float kalca = 0.62;
 uniform float orta = 0.5;
 uniform float kanat = 0.0;
+uniform float faz = 0.0;
 void fragment() {
 	vec2 uv = UV;
+	// kalçadan ayağa doğru artan etki: kalkan bacak kısalır, ayak yerden kesilir
 	float t = clamp((uv.y - kalca) / (1.0 - kalca), 0.0, 1.0);
-	t = t * t * (3.0 - 2.0 * t);
-	float s = sin(faz);
-	float taraf = uv.x < orta ? -1.0 : 1.0;
-	// adım: bacaklar sırayla öne/arkaya; öne giden ayak yerden kalkar
-	uv.x -= taraf * abs(s) * genlik * t;
-	uv.y += max(0.0, s * taraf) * genlik * 0.7 * t;
-	// kanat çırpma (uçanlar): üst kısım yatayda nabız gibi genişler
+	float kalk = uv.x < orta ? sol_kalk : sag_kalk;
+	uv.y += kalk * t;
+	// kanat çırpma (uçanlar)
 	float k = clamp((kalca - uv.y) / kalca, 0.0, 1.0);
-	uv.x = orta + (uv.x - orta) / (1.0 + kanat * sin(faz * 2.0) * k);
+	uv.x = orta + (uv.x - orta) / (1.0 + kanat * sin(faz) * k);
 	uv = (floor(uv / TEXTURE_PIXEL_SIZE) + 0.5) * TEXTURE_PIXEL_SIZE;
 	vec4 c = texture(TEXTURE, uv);
 	if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) c.a = 0.0;
@@ -72,7 +70,7 @@ void fragment() {
 }";
 	static Shader _yurume;
 	static readonly Dictionary<Texture2D, Vector2> _bacak = new();
-	static readonly StringName FazAd = "faz", GenlikAd = "genlik", KanatAd = "kanat";
+	static readonly StringName FazAd = "faz", SolAd = "sol_kalk", SagAd = "sag_kalk", KanatAd = "kanat";
 
 	/// <summary>Sprite'ın ayak hizasındaki dolu piksellerin ortasını (orta) ve kalça yüksekliğini bulur.</summary>
 	static Vector2 BacakBul(Texture2D doku)
@@ -588,29 +586,27 @@ void fragment() {
 			if (Mathf.Abs(yon.X) > 0.1f) d.Spr.FlipH = yon.X < 0;
 			// yürüme / süzülme
 			bool suzulur = d.T.Ucan || d.T.Zirh == "Hayalet";
-			float adim = d.Faz * 8;
-			float acik = Mathf.Abs(Mathf.Sin(adim));            // 1 = adım açık, 0 = bacaklar yan yana
+			// klasik 4 karelik yürüyüş: sol ayak kalkık → duruş → sağ ayak kalkık → duruş
+			// (yumuşak sinüs yerine kare kare; sallanma yok)
+			int kare = ((int)Mathf.Floor(d.Faz * 8 / (Mathf.Pi / 2)) % 4 + 4) % 4;
 			if (suzulur)
 			{
-				d.Spr.Rotation = Mathf.Sin(d.Faz * 3) * 0.06f;
+				d.Spr.Rotation = 0;
 				d.Spr.Position = new Vector2(0, Mathf.Sin(d.Faz * 2.5f) * 5);
-				d.Spr.Scale = Vector2.One * (d.Boy / d.Spr.Texture.GetHeight());
 			}
 			else
 			{
-				// gövde: bacaklar yan yana gelince yükselir, adım açıkken çöker; yön tarafına eğilir
-				float on = d.Spr.FlipH ? -1f : 1f;
-				d.Spr.Rotation = on * 0.06f + Mathf.Sin(adim) * 0.045f;
-				d.Spr.Position = new Vector2(0, -(1f - acik) * 3.5f);
-				float o = d.Boy / d.Spr.Texture.GetHeight();
-				d.Spr.Scale = new Vector2(o * (1f + 0.035f * acik), o * (1f - 0.035f * acik));
+				bool adimda = kare == 0 || kare == 2;
+				d.Spr.Rotation = (d.Spr.FlipH ? -1f : 1f) * 0.04f;     // yürüme yönüne hafif eğik
+				d.Spr.Position = new Vector2(0, adimda ? -2f : 0f);       // adımda gövde 2 px yükselir
 			}
 			if (d.Mat != null)
 			{
-				bool kalabalik = !d.T.Boss && d.T.Ozel.Contains("kalabalik");
-				d.Mat.SetShaderParameter(FazAd, d.T.Ucan ? d.Faz * 3f : adim);
-				d.Mat.SetShaderParameter(GenlikAd, suzulur || hiz <= 0 ? 0f : (kalabalik ? 0.05f : 0.07f));
+				float g = suzulur || hiz <= 0 ? 0f : (!d.T.Boss && d.T.Ozel.Contains("kalabalik") ? 0.09f : 0.12f);
+				d.Mat.SetShaderParameter(SolAd, kare == 0 ? g : 0f);
+				d.Mat.SetShaderParameter(SagAd, kare == 2 ? g : 0f);
 				d.Mat.SetShaderParameter(KanatAd, d.T.Ucan ? 0.12f : 0f);
+				d.Mat.SetShaderParameter(FazAd, d.Faz * 3f);
 			}
 			if (d.T.Zirh == "Hayalet") d.Spr.SelfModulate = new Color(1, 1, 1, 0.65f + 0.2f * Mathf.Sin(d.Faz * 2));
 			var renk = Colors.White;
@@ -1600,13 +1596,13 @@ void fragment() {
 		for (int i = 0; i < yuruyen.Count; i++) { DusmanDogur(yuruyen[i]); _dusmanlar[^1].Mesafe = 260 + i * 45; _dusmanlar[^1].Can = 1e9f; _dusmanlar[^1].CanMax = 1e9f; }
 		await Bekle(0.15f);
 		var kam = GetViewport().GetCamera2D();
-		for (int f = 0; f < 4; f++)
+		for (int f = 0; f < 10; f++)
 		{
 			var hedefD = _dusmanlar.Where(e => !e.Olu).ToList();
 			if (hedefD.Count > 0) kam.Position = hedefD.Aggregate(Vector2.Zero, (a, e) => a + e.Kok.Position) / hedefD.Count + new Vector2(0, -25);
 			kam.Zoom = Vector2.One * 3f;
 			await Kare(klasor + $"/10_yurume_{f}.png");
-			await Bekle(0.09f);
+			await Bekle(0.1f);
 		}
 		kam.Zoom = Vector2.One; kam.Position = new Vector2(640, 360);
 		foreach (var b in new[] { 1, 12, 30, 45 }) { BolumBaslat(b); GD.Print($"ONIZLEME yer bölüm {b}: {_yerler.Count}"); }

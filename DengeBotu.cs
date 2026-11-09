@@ -15,6 +15,7 @@ public partial class KuleSavunmasi
 {
 	bool _botModu;
 	readonly Dictionary<string, int> _botKullanim = new();
+	readonly Dictionary<string, int> _botKacan = new();
 
 	async System.Threading.Tasks.Task DengeBotu(string yol)
 	{
@@ -37,6 +38,7 @@ public partial class KuleSavunmasi
 			int b = Ilerleme.EnUstBolum;
 			if (b != sonBolum) { deneme = 0; sonBolum = b; }
 			deneme++; oyun++;
+			_botKacan.Clear();
 			BolumBaslat(b);
 			float sim = 0, harcamaSayac = 0;
 			bool bitti = false;
@@ -64,6 +66,12 @@ public partial class KuleSavunmasi
 			int kalici = Ilerleme.Kademe.Values.Sum();
 			csv.Append($"{oyun},{b},{deneme},{(kazandi ? "K" : "Y")},{_dalga},{_dalgaSayisi},{Math.Max(0, _can)},{Ilerleme.Seviye},{kalici},{_kuleler.Count},{sim:0},{_uyum:0.00}\n");
 			GD.Print($"DENGE oyun={oyun} bölüm={b} deneme={deneme} {(kazandi ? "KAZANDI" : "kaybetti")} dalga={_dalga}/{_dalgaSayisi} can={Math.Max(0, _can)} sv={Ilerleme.Seviye} kalıcı={kalici} uyum={_uyum:0.00}");
+			if (!kazandi)
+			{
+				var kacan = string.Join(", ", _botKacan.OrderByDescending(x => x.Value).Take(4).Select(x => $"{x.Key}×{x.Value}"));
+				var kuleler = string.Join(", ", _kuleler.GroupBy(k => k.T.Ad).Select(g => $"{g.Key}×{g.Count()}({string.Join("", g.Select(k => k.Kademe))})"));
+				GD.Print($"DENGE   kaçan: {kacan}   kuleler[{_kuleler.Count}/{_yerler.Count}]: {kuleler}   altın={_altin}");
+			}
 			if (kazandi && !ilkGecis.ContainsKey(b)) ilkGecis[b] = (deneme, Ilerleme.Seviye, Math.Max(0, _can));
 			_sonucPanel.Visible = false;
 			if (deneme >= 25) { GD.Print($"DENGE DUVAR: bölüm {b} 25 denemede geçilemedi"); break; }

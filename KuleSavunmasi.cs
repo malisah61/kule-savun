@@ -588,6 +588,7 @@ void fragment() {
 			}
 		}
 		DusmanlariGuncelle(dt);
+		if (_ekran != Ekran.Oyun) return;   // son düşman kaçıp can bittiyse "kazandı" sayılmasın
 		KuleleriGuncelle(dt);
 		MermileriGuncelle(dt);
 
@@ -644,6 +645,7 @@ void fragment() {
 			if (d.Mesafe >= TdHarita.Uzunluk)
 			{
 				int kayip = d.T.Boss ? 10 : 1;
+				if (_botModu) _botKacan[d.T.Ad] = _botKacan.GetValueOrDefault(d.T.Ad) + kayip;
 				_can -= kayip;
 				_kacanBuDalga += kayip;
 				Ses("kale");

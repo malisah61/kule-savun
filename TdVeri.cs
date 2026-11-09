@@ -23,6 +23,8 @@ public class DusmanTanim
 	public Texture2D Doku;
 	/// <summary>4 karelik yürüme şeridi (sağ adım, duruş, sol adım, duruş); yoksa shader yürüyüşü.</summary>
 	public Texture2D Yuru;
+	/// <summary>hareket.json: kare, adim, kanat, suzul, surun, zipla, bocek, dortayak, yuzen, cuppe.</summary>
+	public string Hareket = "adim";
 	public bool Boss => Ozel.Contains("boss");
 	public bool Ucan => Ozel.Contains("ucan") || Zirh == "Ucan";
 }
@@ -71,6 +73,8 @@ public static class TdVeri
 			t.Doku = DokuYukle($"res://assets/td/kule_{t.Id}.png");
 			Kuleler.Add(t);
 		}
+		Godot.Collections.Dictionary hareket = FileAccess.FileExists("res://assets/td/hareket.json")
+			? Json.ParseString(FileAccess.GetFileAsString("res://assets/td/hareket.json")).AsGodotDictionary() : null;
 		foreach (var dv in kok["dusmanlar"].AsGodotArray())
 		{
 			var d = dv.AsGodotDictionary();
@@ -82,6 +86,7 @@ public static class TdVeri
 			foreach (var o in Dizi(d["ozel"])) t.Ozel.Add(o);
 			t.Doku = DokuYukle($"res://assets/td/d_{t.Id}.png");
 			t.Yuru = DokuYukle($"res://assets/td/yuru_{t.Id}.png");
+			if (hareket != null && hareket.TryGetValue(t.Id, out var hv)) t.Hareket = hv.AsString();
 			Dusmanlar.Add(t);
 		}
 	}

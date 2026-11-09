@@ -34,6 +34,9 @@ public partial class KuleSavunmasi : Node2D
 		public Node2D Kok, Govde;
 		public Sprite2D Spr;
 		public ShaderMaterial Mat;
+		public Vector2 TemelOlcek;
+		public string Hareket;
+		public float Zaman;
 		public ColorRect CanArka, CanOn;
 		public float Can, CanMax, Hiz, Mesafe, Faz, Boy, Odul;
 		public float Yavas, YavasSure, ZehirDps, ZehirSure, YanmaDps, YanmaSure, Sersem, KirilganSure;
@@ -54,8 +57,12 @@ uniform float kalca = 0.62;
 uniform float orta = 0.5;
 uniform float kanat = 0.0;
 uniform float faz = 0.0;
+uniform float dalga = 0.0;
 void fragment() {
 	vec2 uv = UV;
+	// dalgalanma: alttan yukarı azalan yatay dalga (etek, hayalet kuyruğu, yüzgeç)
+	float tb = clamp((uv.y - 0.4) / 0.6, 0.0, 1.0);
+	uv.x += sin(uv.y * 16.0 - faz * 1.7) * dalga * tb;
 	// kalçadan ayağa doğru artan etki: kalkan bacak kısalır, ayak yerden kesilir
 	float t = clamp((uv.y - kalca) / (1.0 - kalca), 0.0, 1.0);
 	float kalk = uv.x < orta ? sol_kalk : sag_kalk;
@@ -70,7 +77,7 @@ void fragment() {
 }";
 	static Shader _yurume;
 	static readonly Dictionary<Texture2D, Vector2> _bacak = new();
-	static readonly StringName FazAd = "faz", SolAd = "sol_kalk", SagAd = "sag_kalk", KanatAd = "kanat";
+	static readonly StringName FazAd = "faz", SolAd = "sol_kalk", SagAd = "sag_kalk", KanatAd = "kanat", DalgaAd = "dalga";
 
 	/// <summary>Sprite'ın ayak hizasındaki dolu piksellerin ortasını (orta) ve kalça yüksekliğini bulur.</summary>
 	static Vector2 BacakBul(Texture2D doku)
@@ -181,7 +188,8 @@ void fragment() {
 		for (int i = 0; i < 8; i++) { var p = new AudioStreamPlayer { VolumeDb = -8 }; AddChild(p); _oynaticilar.Add(p); }
 		_muzik = new AudioStreamPlayer { VolumeDb = MuzikDb };
 		AddChild(_muzik);
-		foreach (var ad in new[] { "menu", "savas" })
+		// menu, savas1..3, boss (CC0 müzikler + sentez; bkz. assets/ses/KREDILER.md)
+		foreach (var ad in new[] { "menu", "savas1", "savas2", "savas3", "boss" })
 		{
 			var m = GD.Load<AudioStreamOggVorbis>($"res://assets/ses/{ad}.ogg");
 			if (m != null) { m.Loop = true; _muzikler[ad] = m; }
@@ -208,6 +216,16 @@ void fragment() {
 		foreach (var arg in OS.GetCmdlineUserArgs())
 			if (arg.StartsWith("--onizleme="))
 				_ = OnizlemeCek(arg.Substring("--onizleme=".Length));
+	}
+
+	/// <summary>Her bölümün kendi savaş müziği (bölüm numarasına göre sırayla).</summary>
+	string SavasParcasi
+	{
+		get
+		{
+			var l = _muzikler.Keys.Where(k => k.StartsWith("savas")).OrderBy(k => k).ToList();
+			return l.Count == 0 ? "savas" : l[(Math.Max(1, _bolum) - 1) % l.Count];
+		}
 	}
 
 	void MuzikCal(string ad)
@@ -333,7 +351,7 @@ void fragment() {
 		_hizKat = 1; Engine.TimeScale = 1; _hizButon.Text = "Hız x1";
 		ArayuzGuncelle();
 		_bolumXp = 0; _bolumPara = 0;
-		MuzikCal("savas");
+		MuzikCal(SavasParcasi);
 		Mesaj($"Bölüm {bolum}", new Color(1f, 0.9f, 0.55f), 2f);
 	}
 
@@ -495,6 +513,10 @@ void fragment() {
 			d.Spr.Material = d.Mat;
 		}
 		d.Govde.AddChild(d.Spr);
+		d.TemelOlcek = d.Spr.Scale;
+		d.Hareket = kareli ? "kare" : t.Hareket;
+		if (d.Hareket is "adim" or "kare" && t.Zirh == "Hayalet") d.Hareket = "suzul";
+		if (d.Hareket is "adim" && t.Ucan) d.Hareket = "kanat";
 		float gen = t.Boss ? 70 : 36;
 		d.CanArka = new ColorRect { Color = new Color(0, 0, 0, 0.7f), Size = new Vector2(gen + 2, 5), Position = new Vector2(-gen / 2 - 1, -d.Boy - 10) };
 		d.CanOn = new ColorRect { Color = t.Boss ? new Color(0.9f, 0.2f, 0.25f) : new Color(0.35f, 0.9f, 0.35f), Size = new Vector2(gen, 3), Position = new Vector2(-gen / 2, -d.Boy - 9) };
@@ -502,6 +524,7 @@ void fragment() {
 		d.Kok.Position = TdHarita.Konum(0, out _);
 		_dunya.AddChild(d.Kok);
 		_dusmanlar.Add(d);
+		if (t.Boss && _ekran == Ekran.Oyun) MuzikCal("boss");
 		if (t.Ozel.Contains("kalabalik")) d.Mesafe = -_rng.RandfRange(0, 20);
 		if (_gorulen.Add(t.Id))
 		{
@@ -598,37 +621,9 @@ void fragment() {
 			var p = TdHarita.Konum(Mathf.Max(0, d.Mesafe), out var yon);
 			d.Kok.Position = p;
 			if (Mathf.Abs(yon.X) > 0.1f) d.Spr.FlipH = yon.X < 0;
-			// yürüme / süzülme
-			bool suzulur = d.T.Ucan || d.T.Zirh == "Hayalet";
-			// klasik 4 karelik yürüyüş: sol ayak kalkık → duruş → sağ ayak kalkık → duruş
-			// (yumuşak sinüs yerine kare kare; sallanma yok)
-			int kare = ((int)Mathf.Floor(d.Faz * 8 / (Mathf.Pi / 2)) % 4 + 4) % 4;
-			if (suzulur)
-			{
-				d.Spr.Rotation = 0;
-				d.Spr.Position = new Vector2(0, Mathf.Sin(d.Faz * 2.5f) * 5);
-			}
-			else
-			{
-				bool adimda = kare == 0 || kare == 2;
-				d.Spr.Rotation = (d.Spr.FlipH ? -1f : 1f) * 0.04f;     // yürüme yönüne hafif eğik
-				if (d.Spr.Hframes == 4)
-				{
-					d.Spr.Frame = hiz > 0 ? kare : 1;
-					d.Spr.Position = new Vector2(0, adimda ? 0f : -1.5f); // kareler zaten basışta çöküyor
-				}
-				else
-					d.Spr.Position = new Vector2(0, adimda ? -2f : 0f);   // adımda gövde 2 px yükselir
-			}
-			if (d.Mat != null)
-			{
-				float g = suzulur || hiz <= 0 ? 0f : (!d.T.Boss && d.T.Ozel.Contains("kalabalik") ? 0.09f : 0.12f);
-				d.Mat.SetShaderParameter(SolAd, kare == 0 ? g : 0f);
-				d.Mat.SetShaderParameter(SagAd, kare == 2 ? g : 0f);
-				d.Mat.SetShaderParameter(KanatAd, d.T.Ucan ? 0.12f : 0f);
-				d.Mat.SetShaderParameter(FazAd, d.Faz * 3f);
-			}
-			if (d.T.Zirh == "Hayalet") d.Spr.SelfModulate = new Color(1, 1, 1, 0.65f + 0.2f * Mathf.Sin(d.Faz * 2));
+			// hareket: her düşman tipinin kendine özgü yürüyüşü (bkz. HareketUygula)
+			d.Zaman += dt;
+			HareketUygula(d, hiz);
 			var renk = Colors.White;
 			if (d.Yavas > 0) renk = new Color(0.65f, 0.85f, 1.25f);
 			else if (d.ZehirSure > 0) renk = new Color(0.75f, 1.2f, 0.6f);
@@ -713,10 +708,119 @@ void fragment() {
 		ArayuzGuncelle();
 	}
 
+	/// <summary>
+	/// Düşman tipine göre hareket. kare: gerçek 4 karelik yürüme; adim: shader ile sırayla ayak;
+	/// kanat: çırparak uçar; suzul: süzülür ve dalgalanır; yuzen: havada yüzer; surun: esneyip büzülür;
+	/// zipla: sıçrar; bocek: hızlı titrek adımlar; dortayak: dörtnala sallanır; cuppe: eteği dalgalanarak kayar.
+	/// </summary>
+	void HareketUygula(Dus d, float hiz)
+	{
+		var s = d.Spr;
+		float on = s.FlipH ? -1f : 1f;
+		bool duruyor = hiz <= 0;
+		float sol = 0, sag = 0, kanat = 0, dalga = 0, faz = d.Faz * 3f;
+		var olcek = d.TemelOlcek;
+		float rot = 0, y = 0;
+		int kare = ((int)Mathf.Floor(d.Faz * 8 / (Mathf.Pi / 2)) % 4 + 4) % 4;
+		bool adimda = kare == 0 || kare == 2;
+		float g = !d.T.Boss && d.T.Ozel.Contains("kalabalik") ? 0.09f : 0.12f;
+		switch (d.Hareket)
+		{
+			case "kare":
+				s.Frame = duruyor ? 1 : kare;
+				rot = on * 0.04f;
+				y = adimda ? 0f : -1.5f;
+				if (d.T.Boss && adimda && !duruyor) olcek *= new Vector2(1.04f, 0.96f);   // ağır adım
+				break;
+			case "kanat":
+				rot = on * 0.08f + Mathf.Sin(d.Zaman * 2.6f + 1f) * 0.05f;
+				y = Mathf.Sin(d.Zaman * 2.6f) * 5f;
+				kanat = 0.2f; faz = d.Zaman * 14f;
+				olcek *= new Vector2(1f, 1f + 0.035f * Mathf.Sin(d.Zaman * 14f));
+				break;
+			case "suzul":
+				rot = Mathf.Sin(d.Zaman * 1.3f) * 0.06f;
+				y = Mathf.Sin(d.Zaman * 1.8f) * 6f - 4f;
+				dalga = 0.035f; faz = d.Zaman * 3f;
+				break;
+			case "yuzen":
+				rot = on * 0.05f + Mathf.Sin(d.Zaman * 2.2f) * 0.1f;
+				y = Mathf.Sin(d.Zaman * 2.2f + 0.7f) * 7f - 8f;
+				dalga = 0.06f; faz = d.Zaman * 5f;
+				break;
+			case "surun":
+			{
+				float e = duruyor ? 0 : Mathf.Sin(d.Faz * 5f);
+				olcek *= new Vector2(1f + 0.1f * e, 1f - 0.09f * e);
+				dalga = 0.02f; faz = d.Faz * 4f;
+				break;
+			}
+			case "zipla":
+			{
+				float c = d.Faz * 0.9f % 1f;
+				if (duruyor) c = 0.8f;
+				if (c < 0.55f)
+				{
+					float u = c / 0.55f;
+					y = -Mathf.Sin(u * Mathf.Pi) * 16f;
+					olcek *= new Vector2(0.93f, 1.09f);
+				}
+				else if (c < 0.7f) olcek *= new Vector2(1.15f, 0.86f);   // iniş ezilmesi
+				break;
+			}
+			case "bocek":
+			{
+				int k2 = ((int)Mathf.Floor(d.Faz * 22 / (Mathf.Pi / 2)) % 4 + 4) % 4;
+				if (!duruyor) { sol = k2 == 0 ? 0.05f : 0; sag = k2 == 2 ? 0.05f : 0; }
+				rot = duruyor ? 0 : Mathf.Sin(d.Zaman * 40f) * 0.02f;
+				y = duruyor ? 0 : -Mathf.Abs(Mathf.Sin(d.Faz * 22f)) * 1.2f;
+				break;
+			}
+			case "dortayak":
+			{
+				float gl = d.Faz * 5f;
+				if (!duruyor)
+				{
+					rot = on * Mathf.Sin(gl) * 0.09f;
+					y = -Mathf.Abs(Mathf.Sin(gl)) * 4f;
+					sol = Mathf.Max(0, Mathf.Sin(gl)) * 0.08f;
+					sag = Mathf.Max(0, -Mathf.Sin(gl)) * 0.08f;
+				}
+				break;
+			}
+			case "cuppe":
+				rot = on * 0.03f + Mathf.Sin(d.Faz * 4f) * 0.02f;
+				y = -Mathf.Abs(Mathf.Sin(d.Faz * 4f)) * 1.5f;
+				dalga = 0.03f; faz = d.Faz * 6f + d.Zaman;
+				break;
+			default: // adim
+				rot = on * 0.04f;
+				y = adimda ? -2f : 0f;
+				if (!duruyor) { sol = kare == 0 ? g : 0; sag = kare == 2 ? g : 0; }
+				if (d.T.Boss && adimda && !duruyor) olcek *= new Vector2(1.04f, 0.96f);
+				break;
+		}
+		s.Rotation = rot;
+		s.Position = new Vector2(0, y);
+		s.Scale = olcek;
+		if (d.Mat != null)
+		{
+			d.Mat.SetShaderParameter(SolAd, sol);
+			d.Mat.SetShaderParameter(SagAd, sag);
+			d.Mat.SetShaderParameter(KanatAd, kanat);
+			d.Mat.SetShaderParameter(DalgaAd, dalga);
+			d.Mat.SetShaderParameter(FazAd, faz);
+		}
+		if (d.Hareket is "suzul" or "yuzen")
+			s.SelfModulate = new Color(1, 1, 1, d.T.Zirh == "Hayalet" ? 0.62f + 0.22f * Mathf.Sin(d.Zaman * 2f) : 0.88f + 0.12f * Mathf.Sin(d.Zaman * 2f));
+	}
+
 	void DusmaniSil(Dus d, bool animasyon)
 	{
 		d.Olu = true;
 		_dusmanlar.Remove(d);
+		// son boss da düştüyse bölümün savaş müziğine dön
+		if (d.T.Boss && _calan == "boss" && !_dusmanlar.Any(e => e.T.Boss)) MuzikCal(SavasParcasi);
 		if (d.Ates != null) { Efekt.Sondur(d.Ates); d.Ates = null; }
 		if (!animasyon) { d.Kok.QueueFree(); return; }
 		d.CanArka.Visible = d.CanOn.Visible = false;
@@ -1610,18 +1714,22 @@ void fragment() {
 			await Kare(klasor + $"/8_yol_{i}.png");
 		}
 		// yürüme yakın çekimi: kulesiz bölümde birkaç düşman, kamera 3x
-		var yuruyen = TdVeri.Dusmanlar.Where(t => t.Yuru != null && !t.Ucan && !t.Boss && t.Zirh != "Hayalet").Take(3)
-			.Concat(TdVeri.Dusmanlar.Where(t => t.Yuru == null && t.Doku != null && !t.Ucan && !t.Boss && t.Zirh != "Hayalet").Take(1)).ToList();
-		var ucan = TdVeri.Dusmanlar.FirstOrDefault(t => t.Doku != null && t.Ucan && !t.Boss);
-		if (ucan != null) yuruyen.Add(ucan);
-		for (int i = 0; i < yuruyen.Count; i++) { DusmanDogur(yuruyen[i]); _dusmanlar[^1].Mesafe = 260 + i * 45; _dusmanlar[^1].Can = 1e9f; _dusmanlar[^1].CanMax = 1e9f; }
+		// her hareket tipinden birer düşman (gerçek karelilerden iki tane)
+		var yuruyen = new List<DusmanTanim>();
+		foreach (var tip in new[] { "kare", "kare2", "adim", "cuppe", "dortayak", "bocek", "surun", "zipla", "kanat", "suzul" })
+		{
+			var aday = TdVeri.Dusmanlar.Where(t => !t.Boss && t.Doku != null && !yuruyen.Contains(t)
+				&& (tip.StartsWith("kare") ? t.Yuru != null : t.Yuru == null && t.Hareket == tip)).FirstOrDefault();
+			if (aday != null) yuruyen.Add(aday);
+		}
+		for (int i = 0; i < yuruyen.Count; i++) { DusmanDogur(yuruyen[i]); _dusmanlar[^1].Mesafe = 200 + i * 42; _dusmanlar[^1].Can = 1e9f; _dusmanlar[^1].CanMax = 1e9f; }
 		await Bekle(0.15f);
 		var kam = GetViewport().GetCamera2D();
 		for (int f = 0; f < 10; f++)
 		{
 			var hedefD = _dusmanlar.Where(e => !e.Olu).ToList();
 			if (hedefD.Count > 0) kam.Position = hedefD.Aggregate(Vector2.Zero, (a, e) => a + e.Kok.Position) / hedefD.Count + new Vector2(0, -25);
-			kam.Zoom = Vector2.One * 3f;
+			kam.Zoom = Vector2.One * 2f;
 			await Kare(klasor + $"/10_yurume_{f}.png");
 			await Bekle(0.1f);
 		}

@@ -8,4 +8,6 @@
 - Kule/düşman verisi `assets/td/veri.json` (kaynağı `sanat-uretimi` dalında `tasarim/veri.py`); sprite'lar `assets/td/kule_<id>.png`, `d_<id>.png`.
 - Yeni görsel: `sanat-uretimi` dalında `tasarim/promptlar.txt`'e satır ekle → `sanat.yml` bulutta üretir (CPU, görsel başına ~6-12 dk), `sprite/` klasörüne yazar.
 - Kayıt: `user://td_kayit.json` (enUst, xp, para, harcananPuan, kademe).
-- Müzik: `araclar/besteci.py assets/ses` (numpy + ffmpeg) menu.ogg ve savas.ogg üretir.
+- Müzik: `assets/ses/` menu, savas1-3, boss (CC0, OpenGameArt; kaynaklar `assets/ses/KREDILER.md`, indirme `.github/workflows/muzik.yml`). Her bölüm sırayla bir savaş parçası çalar, boss çıkınca boss.ogg. `araclar/besteci.py` sentez parçayı üretir (savas3).
+- Haritalar bölüm numarasından sabit tohumla üretilir (`BolumTohum`): aynı bölüm hep aynı yol.
+- Düşman hareketi: `assets/td/yuru_<id>.png` (4 karelik yürüme şeridi, sanat dalında `araclar/yurume2.py` + `yurume.yml` üretir) ve `assets/td/hareket.json` (tip: kare, adim, kanat, suzul, yuzen, surun, zipla, bocek, dortayak, cuppe; `araclar/hareket.py`). Oyunda `HareketUygula`.

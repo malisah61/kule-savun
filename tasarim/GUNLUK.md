@@ -1,5 +1,33 @@
 # Gece Günlüğü
 
+## 2026-11-09
+**Eklenen düşmanlar (10):**
+| Ad | Zırh | Seviye | Özel |
+|---|---|---|---|
+| Tabut Taşıyıcı | Ölümsüz | 8 | kalkan |
+| Sırtlan Adam | Canavar | 14 | hızlı |
+| Dev Sümüklü | Böcek | 21 | yavaş |
+| Kan Cerrahı | Vampir | 27 | iyileşir |
+| Kemik Vatozu | Uçan | 36 | uçan |
+| Vitray Bekçi | Taş | 47 | kalkan |
+| Sayfa Hayaleti | Hayalet | 47 | hızlı |
+| İblis Davulcu | Şeytan | 47 | hızlı |
+| Ayaz Cellatı | Buz | 48 | – |
+| Çamur Ahtapotu | Bataklık | 48 | iyileşir |
+
+**Boss:** Mezar Fili (Ölümsüz, bölüm 46)
+
+**Kule:** Çürük Mantar — Zehir, zehir, menzil 165, atış 0.7/sn, hasar 22, maliyet 340, oyuncu Sv 34
+
+**Yürüme karesi alanlar (5):** Ayaz Cellatı, İblis Davulcu, Kan Cerrahı, Sırtlan Adam, Mezar Fili. Hepsi kontrol edildi, kopuk/bozuk yok; silinen şerit yok. (Tabut Taşıyıcı ve Vitray Bekçi insan biçimli testine takılmadı → shader yürüyüşü.) Toplam 97 yürüme şeridi.
+
+**Kalite kontrol:**
+- Sırtlan Adam: ilk görsel ayıya benziyordu → prompt netleştirilip yeniden üretildi (sırtlan/çakal başlı); koltuk altındaki beyaz arka plan artıkları silindi.
+- Demir Salyangoz: ilk görsel yeşil tırtıl/sümüklü böcek, ikinci gri biçimsiz taş yığını → ilk görsel kullanıldı, ad "Dev Sümüklü" yapıldı (id dev_sumuklu), prompt görsele uyduruldu.
+- Mezar Fili: arka bacaklar arasındaki açık renkli arka plan artığı silindi. Çamur Ahtapotu: kenarlardaki beyaz benekler silindi.
+- Çıkarılan yok. Not: yurume.yml'in workflow_run tetiği varsayılan dal dışında çalışmadığı için elle başlatıldı; ikinci sanat çalıştırmasının "topla" adımı çizilecek görsel olmadığından ('ham' klasörü yok) hata verdi, zararsız.
+- Toplam: 33 kule, 233 düşman.
+
 ## 2026-11-08 (ikinci parti)
 **Eklenen düşmanlar (10):**
 | Ad | Zırh | Seviye | Özel |

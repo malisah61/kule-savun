@@ -7,14 +7,13 @@
 3. EbSynth bükülmüş kareyi orijinalin kendi parçalarıyla yeniden örer (gerilen
    pikselleri onarır), sonra paleti orijinal sprite'a kilitlenir.
 Çıktı: anim2/W (sadece bükme), anim2/E (bükme + EbSynth) — <ad>.png şerit + .gif
-Kullanım: python araclar/yurume2.py d_curuk_zombi ...
+Kullanım: python araclar/yurume2.py [d_ad ...]  (ad verilmezse: insan biçimli, karesi olmayan tüm düşmanlar)
 """
-import json, os, subprocess, sys, time
+import json, os, re, subprocess, sys, time
 import numpy as np
 from PIL import Image
 from scipy import ndimage
 
-sys.path.insert(0, os.path.dirname(__file__))
 S = 512
 EBSYNTH = os.environ.get("EBSYNTH", "ebsynth/bin/ebsynth")
 boylar = json.load(open("tasarim/boylar.json"))
@@ -63,6 +62,41 @@ def maske(img):
         if xx.min() >= x0 - 10 and xx.max() <= x1 + 10 and yy.min() >= y0 - 10 and yy.max() <= y1 + 10:
             tut |= lab == i
     return tut
+
+
+YASAK = (r"\b(flying|bats?|wings?|winged|ghosts?|ghostly|spirits?|wraiths?|phantoms?|slimes?|ooze|blob|spiders?|"
+         r"scorpions?|worms?|serpents?|snakes?|beetles?|insects?|crows?|ravens?|vultures?|owls?|harpy|harpies|griffin|"
+         r"gryphon|birds?|eagles?|swarm|hounds?|wolf|wolves|werewolf|rats?|eyeballs?|tentacles?|jellyfish|centipedes?|"
+         r"horses?|rider|mounted|dragons?|wyverns?|drakes?|hydra|crawler|larva|maggots?|floating|hovering|clouds?|storm|"
+         r"orbs?|wisps?|flies|moths?|wasps?|leech|toads?|frogs?|crabs?|boar|bears?|cats?|dogs?|spectres?|specters?|"
+         r"banshees?|shades?|mammoth|deer|stag|elk|fish|squid|octopus|cerberus|chimera|mantis)\b")
+
+
+def kare_tuval(ad):
+    kaynak = Image.open(f"ham_jpg/{ad}.jpg").convert("RGB")
+    kw, kh = kaynak.size
+    tuval = Image.new("RGB", (max(kw, kh),) * 2, kaynak.getpixel((2, 2)))
+    tuval.paste(kaynak, ((max(kw, kh) - kw) // 2, (max(kw, kh) - kh) // 2))
+    return tuval.resize((S, S), Image.LANCZOS)
+
+
+def insansi(ad, prompt):
+    """İki bacak üstünde duran, uçmayan/süzülmeyen karakter mi? (kelime + alttaki bacak arası boşluk)"""
+    if re.search(YASAK, prompt.lower()):
+        return False
+    m = maske(kare_tuval(ad))
+    ys, xs = np.where(m)
+    if len(ys) < 500:
+        return False
+    h, w = ys.max() - ys.min(), xs.max() - xs.min()
+    if h < w:
+        return False
+    iyi = n = 0
+    for y in range(int(ys.max() - 0.18 * h), int(ys.max() - 0.03 * h)):
+        x = np.where(m[y])[0]; n += 1
+        if len(x) >= 2 and (np.diff(x) > max(3, 0.03 * w)).any():
+            iyi += 1
+    return iyi >= n * 0.35
 
 
 # ------------------------------------------------------------------ iskelet
@@ -201,11 +235,7 @@ def paket(kareler, ad, klasor):
 
 def isle(ad, eb=True):
     t = time.time()
-    kaynak = Image.open(f"ham_jpg/{ad}.jpg").convert("RGB")
-    kw, kh = kaynak.size
-    tuval = Image.new("RGB", (max(kw, kh),) * 2, kaynak.getpixel((2, 2)))
-    tuval.paste(kaynak, ((max(kw, kh) - kw) // 2, (max(kw, kh) - kh) // 2))
-    orj = tuval.resize((S, S), Image.LANCZOS)
+    orj = kare_tuval(ad)
     m = maske(orj)
     a = np.asarray(orj).astype(np.uint8)
     bgc = arka_renk(a.astype(np.int32)).astype(np.uint8)
@@ -239,7 +269,14 @@ def isle(ad, eb=True):
 
 if __name__ == "__main__":
     eb = os.path.exists(EBSYNTH)
-    for ad in sys.argv[1:]:
+    adlar = sys.argv[1:]
+    if not adlar:
+        pr = dict(l.strip().split("|", 1) for l in open("tasarim/promptlar.txt", encoding="utf-8") if "|" in l)
+        aday = sorted(a for a in pr if a.startswith("d_") and os.path.exists(f"ham_jpg/{a}.jpg") and os.path.exists(f"sprite/{a}.png"))
+        yeniden = os.environ.get("YENIDEN") == "1"
+        adlar = [a for a in aday if (yeniden or not os.path.exists(f"anim2/E/{a}.png")) and insansi(a, pr[a])]
+        print(f"{len(adlar)} düşman karelendirilecek (aday {len(aday)})", flush=True)
+    for ad in adlar:
         try:
             isle(ad, eb)
         except Exception as e:

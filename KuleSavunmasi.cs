@@ -191,7 +191,7 @@ void fragment() {
 		var kamera = new Camera2D { Position = new Vector2(640, 360) };
 		AddChild(kamera);
 		kamera.MakeCurrent();
-		HaritaUret((ulong)_rng.Randi());
+		HaritaUret(BolumTohum(Math.Max(1, Ilerleme.EnUstBolum)));
 		_harita = new TdHarita { ZIndex = -10 };
 		AddChild(_harita);
 		_dunya = new Node2D { YSortEnabled = true };
@@ -252,6 +252,9 @@ void fragment() {
 	// ================================================================ KAYIT
 	float EkranGen => GetViewportRect().Size.X;
 
+	/// <summary>Bölüm numarasından sabit harita tohumu: tekrar oynayınca/menüden dönünce yol değişmez.</summary>
+	static ulong BolumTohum(int bolum) => (ulong)bolum * 2654435761UL + 0x5EED_1234UL;
+
 	void HaritaUret(ulong tohum)
 	{
 		float g = Mathf.Max(1280f, EkranGen);
@@ -272,7 +275,7 @@ void fragment() {
 		_sonucPanel.Position = new Vector2((g - 600) / 2, 170);
 		if (_ekran == Ekran.Menu && Mathf.Abs(TdHarita.Sag - TdHarita.Sol - g) > 1)
 		{
-			ulong t = (ulong)_rng.Randi();
+			ulong t = BolumTohum(_bolum > 0 ? _bolum : Math.Max(1, Ilerleme.EnUstBolum));
 			HaritaUret(t);
 			_harita?.Yenile(t);
 		}
@@ -312,7 +315,7 @@ void fragment() {
 		Temizle();
 		_bolum = bolum;
 		_dalga = 0;
-		ulong tohum = (ulong)_rng.Randi();
+		ulong tohum = BolumTohum(bolum);   // aynı bölüm her zaman aynı harita
 		HaritaUret(tohum);
 		_harita.Yenile(tohum);
 		_dalgaSayisi = Math.Min(13, 5 + bolum / 5);

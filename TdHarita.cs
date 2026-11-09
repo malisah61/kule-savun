@@ -266,7 +266,7 @@ public partial class TdHarita : Node2D
 		AddChild(_vp);
 		_cizim = new HaritaCizim();
 		_vp.AddChild(_cizim);
-		_goruntu = new Sprite2D { Centered = false };
+		_goruntu = new Sprite2D { Centered = false, Modulate = new Color(1.5f, 1.5f, 1.42f) }; // ay ışığı: harita daha aydınlık
 		AddChild(_goruntu);
 		_canli = new HaritaCanli();
 		AddChild(_canli);
@@ -293,7 +293,7 @@ public partial class HaritaCizim : Node2D
 		static readonly Color Koyu = new(0.05f, 0.04f, 0.06f);
 		public override void _Draw()
 		{
-			DrawRect(new Rect2(Sol - 20, 0, Sag - Sol + 40, 740), new Color(0.1f, 0.12f, 0.09f));
+			DrawRect(new Rect2(Sol - 20, 0, Sag - Sol + 40, 740), new Color(0.12f, 0.145f, 0.105f));
 			foreach (var (lp, lr, lc) in Lekeler) DrawCircle(lp, lr, lc);
 			var rng = new RandomNumberGenerator { Seed = 5 };
 			for (int i = 0; i < 500; i++)

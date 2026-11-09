@@ -1,0 +1,35 @@
+name: Muzik indir (CC0)
+# OpenGameArt'tan CC0 (telifsiz, atıf zorunlu değil) korku/gerilim müziklerini indirip
+# ogg'a çevirir, assets/ses/ altına yazar. Elle çalıştırılır.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  indir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg unzip > /dev/null
+      - name: Indir ve cevir
+        run: |
+          set -u
+          mkdir -p ham && cd ham
+          al() { # $1 = hedef ad, $2 = url
+            if curl -fsSL -A "Mozilla/5.0" -o "$1.in" "$2"; then
+              ffmpeg -loglevel error -y -i "$1.in" -ac 2 -ar 44100 -c:a libvorbis -q:a 3 "../assets/ses/$1.ogg" && echo "OK $1 $(du -h ../assets/ses/$1.ogg | cut -f1)"
+            else echo "YOK $1 $2"; fi
+          }
+          B=https://opengameart.org/sites/default/files
+          al menu    "$B/Insistent.ogg"
+          al savas1  "$B/dark_cavern_ambient_002.ogg"
+          al savas2  "$B/freezer.ogg"
+          al boss    "$B/Juhani%20Junkala%20-%20Epic%20Boss%20Battle%20%5BSeamlessly%20Looping%5D.wav"
+          ls -la ../assets/ses
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add assets/ses
+          git commit -qm "CC0 gerilim müzikleri (OpenGameArt)" || echo yok
+          git pull -q --rebase origin main && git push origin HEAD:main

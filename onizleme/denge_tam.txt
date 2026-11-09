@@ -4,143 +4,105 @@ WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by 
 OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)
 
 DENGE oyun=1 bölüm=1 deneme=1 KAZANDI dalga=5/5 can=20 sv=2 kalıcı=3 uyum=1.37
-DENGE oyun=2 bölüm=2 deneme=1 KAZANDI dalga=5/5 can=10 sv=4 kalıcı=5 uyum=1.32
-DENGE oyun=3 bölüm=3 deneme=1 KAZANDI dalga=5/5 can=20 sv=5 kalıcı=7 uyum=1.32
-DENGE oyun=4 bölüm=4 deneme=1 KAZANDI dalga=5/5 can=10 sv=6 kalıcı=9 uyum=1.27
-DENGE oyun=5 bölüm=5 deneme=1 KAZANDI dalga=6/6 can=20 sv=7 kalıcı=11 uyum=1.41
-DENGE oyun=6 bölüm=6 deneme=1 KAZANDI dalga=6/6 can=4 sv=8 kalıcı=13 uyum=1.41
-DENGE oyun=7 bölüm=7 deneme=1 KAZANDI dalga=6/6 can=20 sv=9 kalıcı=15 uyum=1.41
-DENGE oyun=8 bölüm=8 deneme=1 KAZANDI dalga=6/6 can=10 sv=10 kalıcı=17 uyum=1.41
-DENGE oyun=9 bölüm=9 deneme=1 KAZANDI dalga=6/6 can=20 sv=11 kalıcı=18 uyum=1.36
-DENGE oyun=10 bölüm=10 deneme=1 KAZANDI dalga=7/7 can=8 sv=12 kalıcı=21 uyum=1.36
-DENGE oyun=11 bölüm=11 deneme=1 KAZANDI dalga=7/7 can=20 sv=13 kalıcı=23 uyum=1.45
-DENGE oyun=12 bölüm=12 deneme=1 KAZANDI dalga=7/7 can=10 sv=14 kalıcı=24 uyum=1.29
-DENGE oyun=13 bölüm=13 deneme=1 KAZANDI dalga=7/7 can=20 sv=15 kalıcı=25 uyum=1.45
-DENGE oyun=14 bölüm=14 deneme=1 KAZANDI dalga=7/7 can=10 sv=16 kalıcı=26 uyum=1.51
-DENGE oyun=15 bölüm=15 deneme=1 KAZANDI dalga=8/8 can=4 sv=17 kalıcı=28 uyum=1.37
-DENGE oyun=16 bölüm=16 deneme=1 KAZANDI dalga=8/8 can=8 sv=18 kalıcı=29 uyum=1.51
-DENGE oyun=17 bölüm=17 deneme=1 KAZANDI dalga=8/8 can=8 sv=19 kalıcı=30 uyum=1.36
-DENGE oyun=18 bölüm=18 deneme=1 KAZANDI dalga=8/8 can=9 sv=20 kalıcı=31 uyum=1.45
-DENGE oyun=19 bölüm=19 deneme=1 KAZANDI dalga=8/8 can=20 sv=21 kalıcı=33 uyum=1.38
-DENGE oyun=20 bölüm=20 deneme=1 KAZANDI dalga=9/9 can=8 sv=22 kalıcı=35 uyum=1.45
-DENGE oyun=21 bölüm=21 deneme=1 KAZANDI dalga=9/9 can=18 sv=23 kalıcı=37 uyum=1.56
-DENGE oyun=22 bölüm=22 deneme=1 KAZANDI dalga=9/9 can=8 sv=23 kalıcı=37 uyum=1.51
-DENGE oyun=23 bölüm=23 deneme=1 KAZANDI dalga=9/9 can=19 sv=24 kalıcı=38 uyum=1.56
-DENGE oyun=24 bölüm=24 deneme=1 KAZANDI dalga=9/9 can=5 sv=25 kalıcı=39 uyum=1.45
-DENGE oyun=25 bölüm=25 deneme=1 KAZANDI dalga=10/10 can=18 sv=26 kalıcı=40 uyum=1.60
-DENGE oyun=26 bölüm=26 deneme=1 KAZANDI dalga=10/10 can=8 sv=27 kalıcı=42 uyum=1.67
-DENGE oyun=27 bölüm=27 deneme=1 KAZANDI dalga=10/10 can=17 sv=28 kalıcı=44 uyum=1.56
-DENGE oyun=28 bölüm=28 deneme=1 kaybetti dalga=10/10 can=0 sv=29 kalıcı=46 uyum=1.57
-DENGE   kaçan: Kimera×10, Ayna Şövalye×3, Cellat×2, Çürük Ent×1   kuleler[15/15]: Tatar Yayı×3(444), Taş Atar×2(44), İlahi Işık×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×1(4)   altın=2196
-DENGE oyun=29 bölüm=28 deneme=2 KAZANDI dalga=10/10 can=3 sv=30 kalıcı=48 uyum=1.42
-DENGE oyun=30 bölüm=29 deneme=1 KAZANDI dalga=10/10 can=11 sv=31 kalıcı=49 uyum=1.40
-DENGE oyun=31 bölüm=30 deneme=1 KAZANDI dalga=11/11 can=9 sv=32 kalıcı=50 uyum=1.73
-DENGE oyun=32 bölüm=31 deneme=1 KAZANDI dalga=11/11 can=20 sv=33 kalıcı=51 uyum=1.68
-DENGE oyun=33 bölüm=32 deneme=1 KAZANDI dalga=11/11 can=10 sv=34 kalıcı=53 uyum=1.67
-DENGE oyun=34 bölüm=33 deneme=1 KAZANDI dalga=11/11 can=19 sv=35 kalıcı=55 uyum=1.44
-DENGE oyun=35 bölüm=34 deneme=1 KAZANDI dalga=11/11 can=3 sv=36 kalıcı=57 uyum=1.56
-DENGE oyun=36 bölüm=35 deneme=1 KAZANDI dalga=12/12 can=12 sv=37 kalıcı=58 uyum=1.54
-DENGE oyun=37 bölüm=36 deneme=1 kaybetti dalga=12/12 can=0 sv=38 kalıcı=59 uyum=1.62
-DENGE   kaçan: Golem Kral×10, Kuşatma Devi×3, Demir Golem×2, Ork Şef×2   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Kutsal Çan×2(44), Ejder Ağzı×1(4), Okçu Kulesi×7(4444444)   altın=6850
-DENGE oyun=38 bölüm=36 deneme=2 KAZANDI dalga=12/12 can=2 sv=39 kalıcı=60 uyum=1.56
-DENGE oyun=39 bölüm=37 deneme=1 KAZANDI dalga=12/12 can=12 sv=40 kalıcı=62 uyum=1.62
-DENGE oyun=40 bölüm=38 deneme=1 kaybetti dalga=12/12 can=0 sv=41 kalıcı=64 uyum=1.51
-DENGE   kaçan: Eski Tanrı×10, Demir Golem×3, Kara Paladin×1, Cellat×1   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×7(4444444)   altın=7658
-DENGE oyun=41 bölüm=38 deneme=2 KAZANDI dalga=12/12 can=6 sv=42 kalıcı=66 uyum=1.56
-DENGE oyun=42 bölüm=39 deneme=1 KAZANDI dalga=12/12 can=19 sv=43 kalıcı=68 uyum=1.63
-DENGE oyun=43 bölüm=40 deneme=1 KAZANDI dalga=13/13 can=5 sv=44 kalıcı=69 uyum=1.75
-DENGE oyun=44 bölüm=41 deneme=1 KAZANDI dalga=13/13 can=17 sv=45 kalıcı=70 uyum=1.62
-DENGE oyun=45 bölüm=42 deneme=1 kaybetti dalga=13/13 can=0 sv=46 kalıcı=71 uyum=1.83
-DENGE   kaçan: Lav Kaplumbağası×4, Vampir Gelin×2, Zehirli Balçık×1, Hidra×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×1(4)   altın=11369
-DENGE oyun=46 bölüm=42 deneme=2 KAZANDI dalga=13/13 can=7 sv=47 kalıcı=73 uyum=1.51
-DENGE oyun=47 bölüm=43 deneme=1 kaybetti dalga=12/13 can=0 sv=48 kalıcı=75 uyum=1.47
-DENGE   kaçan: Lav Kaplumbağası×5, Ayna Şövalye×2, Çan Kafalı×2, Zırhlı Gulyabani×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×9(444444444)   altın=9408
-DENGE oyun=48 bölüm=43 deneme=2 KAZANDI dalga=13/13 can=6 sv=49 kalıcı=77 uyum=1.72
-DENGE oyun=49 bölüm=44 deneme=1 kaybetti dalga=13/13 can=0 sv=50 kalıcı=78 uyum=1.71
-DENGE   kaçan: Lav Kaplumbağası×5, Kuşatma Devi×2, Genç Vampir×1, Sis Kontu×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×6(444444), Ateş Kazanı×2(44)   altın=12760
-DENGE oyun=50 bölüm=44 deneme=2 kaybetti dalga=13/13 can=0 sv=51 kalıcı=79 uyum=1.76
-DENGE   kaçan: Lav Kaplumbağası×4, Kuşatma Devi×3, Çan Kafalı×2, Zırhlı Kurt×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×7(4444444)   altın=13150
-DENGE oyun=51 bölüm=44 deneme=3 KAZANDI dalga=13/13 can=2 sv=52 kalıcı=80 uyum=1.77
-DENGE oyun=52 bölüm=45 deneme=1 KAZANDI dalga=13/13 can=12 sv=53 kalıcı=80 uyum=1.53
-DENGE oyun=53 bölüm=46 deneme=1 kaybetti dalga=13/13 can=0 sv=53 kalıcı=80 uyum=1.59
-DENGE   kaçan: Ay Kurt×10, Sis Kontu×2, Kara Lord×2, Lav Kaplumbağası×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4), Ateş Kazanı×1(4)   altın=13343
-DENGE oyun=54 bölüm=46 deneme=2 kaybetti dalga=13/13 can=0 sv=54 kalıcı=80 uyum=1.53
-DENGE   kaçan: Ay Kurt×10, Kan Şövalyesi×1, Sis Kontu×1, Demirci İblis×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444), Yıldırım Kulesi×1(4)   altın=12927
-DENGE oyun=55 bölüm=46 deneme=3 kaybetti dalga=13/13 can=0 sv=55 kalıcı=80 uyum=1.65
-DENGE   kaçan: Buz Golemi×2, Zırhlı Kurt×2, Strigoi×2, Sülük×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×7(4444444), Yıldırım Kulesi×1(4)   altın=13245
-DENGE oyun=56 bölüm=46 deneme=4 kaybetti dalga=13/13 can=0 sv=56 kalıcı=80 uyum=1.78
-DENGE   kaçan: Demir Golem×2, Çürük Ent×2, Zehirli Balçık×1, Kalkan Taşıyıcı×1   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×1(4), Kutsal Çan×3(444), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4), Ateş Kazanı×1(4)   altın=13791
-DENGE oyun=57 bölüm=46 deneme=5 kaybetti dalga=13/13 can=0 sv=56 kalıcı=80 uyum=1.72
-DENGE   kaçan: Ay Kurt×10, Demir Golem×2, Zırhlı Kurt×2, Çan Kafalı×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4), Ateş Kazanı×1(4)   altın=14240
-DENGE oyun=58 bölüm=46 deneme=6 KAZANDI dalga=13/13 can=9 sv=57 kalıcı=80 uyum=1.78
-DENGE oyun=59 bölüm=47 deneme=1 KAZANDI dalga=13/13 can=19 sv=58 kalıcı=80 uyum=1.84
-DENGE oyun=60 bölüm=48 deneme=1 kaybetti dalga=13/13 can=0 sv=59 kalıcı=80 uyum=1.78
-DENGE   kaçan: Hayalet Kraliçe×10, Fener Balığı Adam×3, Bataklık Zombisi×1, Gladyatör×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4)   altın=15612
-DENGE oyun=61 bölüm=48 deneme=2 kaybetti dalga=12/13 can=0 sv=59 kalıcı=80 uyum=1.65
-DENGE   kaçan: Demir Golem×3, Ork Şef×2, Bataklık Kralı×2, Zırhlı Kurt×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4), Ateş Kazanı×2(44)   altın=12806
-DENGE oyun=62 bölüm=48 deneme=3 kaybetti dalga=13/13 can=0 sv=60 kalıcı=90 uyum=1.84
-DENGE   kaçan: Mantar Adam×2, Timsah Adam×2, Balçık×2, Bataklık Kralı×2   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4), Arkan Kule×1(4)   altın=14821
-DENGE oyun=63 bölüm=48 deneme=4 kaybetti dalga=13/13 can=0 sv=61 kalıcı=90 uyum=1.76
-DENGE   kaçan: Kara Lord×3, Boş Zırh×3, Balçık×2, Ork Savaşçı×2   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×3(444), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4)   altın=14296
-DENGE oyun=64 bölüm=48 deneme=5 kaybetti dalga=13/13 can=0 sv=62 kalıcı=90 uyum=1.84
-DENGE   kaçan: Lav Kaplumbağası×3, Kara Lord×3, Ork Şef×2, Boş Zırh×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=15420
-DENGE oyun=65 bölüm=48 deneme=6 kaybetti dalga=13/13 can=0 sv=62 kalıcı=90 uyum=1.65
-DENGE   kaçan: Hayalet Kraliçe×10, Zırhlı Kurt×2, Ayna Şövalye×2, Zehirli Balçık×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4), Ateş Kazanı×1(4)   altın=14271
-DENGE oyun=66 bölüm=48 deneme=7 kaybetti dalga=13/13 can=0 sv=63 kalıcı=90 uyum=1.84
-DENGE   kaçan: Hayalet Kraliçe×10, Çan Kafalı×2, Cellat×2, Mantar Adam×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4), Ateş Kazanı×2(44)   altın=15381
-DENGE oyun=67 bölüm=48 deneme=8 kaybetti dalga=11/13 can=0 sv=64 kalıcı=90 uyum=1.76
-DENGE   kaçan: Demir Golem×2, Zırhlı Kurt×2, Demir Bekçi×2, Fener Balığı Adam×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=9889
-DENGE oyun=68 bölüm=48 deneme=9 kaybetti dalga=13/13 can=0 sv=64 kalıcı=90 uyum=1.76
-DENGE   kaçan: Zırhlı Kurt×2, Demir Golem×2, Yosun Canavarı×2, Çürük Ent×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4)   altın=14985
-DENGE oyun=69 bölüm=48 deneme=10 kaybetti dalga=13/13 can=0 sv=65 kalıcı=90 uyum=1.65
-DENGE   kaçan: Hayalet Kraliçe×10, Zırhlı Kurt×3, Kara Lord×2, Cellat×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×6(444444), Ateş Kazanı×2(44), Yıldırım Kulesi×1(4)   altın=14439
-DENGE oyun=70 bölüm=48 deneme=11 kaybetti dalga=13/13 can=0 sv=65 kalıcı=90 uyum=1.84
-DENGE   kaçan: Gladyatör×3, Timsah Adam×2, Cellat×2, Çan Kafalı×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×5(44444), Ateş Kazanı×1(4), Yıldırım Kulesi×1(4)   altın=15582
-DENGE oyun=71 bölüm=48 deneme=12 kaybetti dalga=13/13 can=0 sv=66 kalıcı=90 uyum=1.90
-DENGE   kaçan: Hayalet Kraliçe×10, Ayna Şövalye×4, Bataklık Kralı×2, Buzul Mamutu×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×3(444), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4)   altın=15897
-DENGE oyun=72 bölüm=48 deneme=13 kaybetti dalga=13/13 can=0 sv=67 kalıcı=90 uyum=1.84
-DENGE   kaçan: Çürük Ent×2, Kuşatma Devi×2, Zırhlı Gulyabani×2, Kara Paladin×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Ateş Kazanı×1(4), Yıldırım Kulesi×1(4)   altın=15174
-DENGE oyun=73 bölüm=48 deneme=14 KAZANDI dalga=13/13 can=2 sv=67 kalıcı=90 uyum=1.98
-DENGE oyun=74 bölüm=49 deneme=1 KAZANDI dalga=13/13 can=7 sv=68 kalıcı=90 uyum=1.76
-DENGE oyun=75 bölüm=50 deneme=1 kaybetti dalga=12/13 can=0 sv=69 kalıcı=90 uyum=1.71
-DENGE   kaçan: Vampir Gelin×2, Çürük Ent×2, Sülük×2, Vampir Uşak×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=13290
-DENGE oyun=76 bölüm=50 deneme=2 kaybetti dalga=13/13 can=0 sv=69 kalıcı=90 uyum=1.75
-DENGE   kaçan: Cehennem Lordu×10, Ork Şef×2, Mantar Adam×1, Zehirli Balçık×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×2(44), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=15146
-DENGE oyun=77 bölüm=50 deneme=3 kaybetti dalga=13/13 can=0 sv=70 kalıcı=90 uyum=1.71
-DENGE   kaçan: Yosun Canavarı×3, Hidra×2, Cellat×2, Bataklık Kralı×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=16153
-DENGE oyun=78 bölüm=50 deneme=4 kaybetti dalga=12/13 can=0 sv=70 kalıcı=90 uyum=1.85
-DENGE   kaçan: Demir Bekçi×2, Kan Rahibesi×2, Yosun Canavarı×2, Ork Şef×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4)   altın=13189
-DENGE oyun=79 bölüm=50 deneme=5 kaybetti dalga=13/13 can=0 sv=71 kalıcı=90 uyum=1.57
-DENGE   kaçan: Cehennem Lordu×10, Kara Komutan×10, Zehirli Balçık×2, Kuşatma Devi×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=16301
-DENGE oyun=80 bölüm=50 deneme=6 kaybetti dalga=13/13 can=0 sv=71 kalıcı=90 uyum=1.84
-DENGE   kaçan: Cehennem Lordu×10, Ölüm Şövalyesi×2, Kan Şövalyesi×1, Çürük Ent×1   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4)   altın=16035
-DENGE oyun=81 bölüm=50 deneme=7 kaybetti dalga=12/13 can=0 sv=72 kalıcı=90 uyum=1.70
-DENGE   kaçan: Çürük Ent×3, Mantar Adam×2, Yosun Canavarı×1, Kurbağa Adam×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×7(4444444), Yıldırım Kulesi×1(4)   altın=13467
-DENGE oyun=82 bölüm=50 deneme=8 kaybetti dalga=13/13 can=0 sv=72 kalıcı=90 uyum=1.63
-DENGE   kaçan: Cehennem Lordu×10, Zırhlı Kurt×3, Demir Bekçi×2, Boş Zırh×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×1(4), Yıldırım Kulesi×1(4)   altın=15954
-DENGE oyun=83 bölüm=50 deneme=9 kaybetti dalga=13/13 can=0 sv=73 kalıcı=90 uyum=1.91
-DENGE   kaçan: Cehennem Lordu×10, Kara Komutan×10, Zehirli Balçık×1, Çürük Ent×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4)   altın=16534
-DENGE oyun=84 bölüm=50 deneme=10 kaybetti dalga=12/13 can=0 sv=73 kalıcı=90 uyum=1.78
-DENGE   kaçan: Hidra×3, Kuşatma Devi×3, Timsah Adam×2, Gladyatör×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=13542
-DENGE oyun=85 bölüm=50 deneme=11 kaybetti dalga=13/13 can=0 sv=74 kalıcı=90 uyum=1.77
-DENGE   kaçan: Cehennem Lordu×10, Ork Şef×2, Çürük Ent×1, Yosun Canavarı×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×5(44444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4), Ateş Kazanı×1(4)   altın=16318
-DENGE oyun=86 bölüm=50 deneme=12 kaybetti dalga=13/13 can=0 sv=74 kalıcı=90 uyum=1.78
-DENGE   kaçan: Bataklık Kralı×3, Timsah Adam×2, Hidra×2, Demir Golem×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4)   altın=15514
-DENGE oyun=87 bölüm=50 deneme=13 kaybetti dalga=13/13 can=0 sv=75 kalıcı=90 uyum=1.85
-DENGE   kaçan: Hidra×2, Ayna Şövalye×2, Kan Lordu×1, Sülük×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×6(444444), Yıldırım Kulesi×1(4)   altın=15647
-DENGE oyun=88 bölüm=50 deneme=14 kaybetti dalga=13/13 can=0 sv=75 kalıcı=90 uyum=1.82
-DENGE   kaçan: Cehennem Lordu×10, Kara Komutan×10   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×3(444), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4)   altın=16303
-DENGE oyun=89 bölüm=50 deneme=15 kaybetti dalga=13/13 can=0 sv=76 kalıcı=90 uyum=2.04
-DENGE   kaçan: Cehennem Lordu×10, Fener Balığı Adam×2, Hidra×2, Bataklık Kralı×1   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×2(44), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4)   altın=16067
-DENGE oyun=90 bölüm=50 deneme=16 kaybetti dalga=12/13 can=0 sv=76 kalıcı=90 uyum=1.75
-DENGE   kaçan: Yosun Canavarı×2, Zehirli Balçık×2, Demir Bekçi×2, Ork Şef×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×7(4444444), Yıldırım Kulesi×1(4)   altın=13621
-DENGE oyun=91 bölüm=50 deneme=17 kaybetti dalga=13/13 can=0 sv=77 kalıcı=90 uyum=1.84
-DENGE   kaçan: Cehennem Lordu×10, Kara Komutan×10, Timsah Adam×1, Kış Lordu×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×3(444), Okçu Kulesi×4(4444), Yıldırım Kulesi×1(4)   altın=16695
-DENGE oyun=92 bölüm=50 deneme=18 kaybetti dalga=13/13 can=0 sv=77 kalıcı=90 uyum=1.77
-DENGE   kaçan: Kara Paladin×2, Çan Kafalı×2, Ork Savaşçı×2, Bataklık Kralı×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×6(444444), Ateş Kazanı×1(4), Yıldırım Kulesi×1(4)   altın=15918
-DENGE oyun=93 bölüm=50 deneme=19 kaybetti dalga=13/13 can=0 sv=78 kalıcı=90 uyum=1.77
-DENGE   kaçan: Cehennem Lordu×10, Zırhlı Kurt×2, Ölüm Şövalyesi×2, Demir Golem×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×5(44444), Yıldırım Kulesi×1(4), Ateş Kazanı×1(4)   altın=16391
-DENGE oyun=94 bölüm=50 deneme=20 kaybetti dalga=13/13 can=0 sv=78 kalıcı=90 uyum=1.84
-DENGE   kaçan: Cehennem Lordu×10, Kara Komutan×10, Kan Rahibesi×1, Bataklık Kralı×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Ateş Kazanı×1(4), Yıldırım Kulesi×1(4)   altın=16861
-DENGE oyun=95 bölüm=50 deneme=21 kaybetti dalga=13/13 can=0 sv=79 kalıcı=90 uyum=1.75
-DENGE   kaçan: Timsah Adam×3, Ölüm Şövalyesi×2, Ork Savaşçı×2, Bataklık Kralı×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×1(4), Kutsal Çan×3(444), Okçu Kulesi×4(4444), Ateş Kazanı×1(4), Yıldırım Kulesi×1(4)   altın=15536
+DENGE oyun=2 bölüm=2 deneme=1 KAZANDI dalga=5/5 can=20 sv=4 kalıcı=5 uyum=1.37
+DENGE oyun=3 bölüm=3 deneme=1 KAZANDI dalga=5/5 can=20 sv=5 kalıcı=7 uyum=1.27
+DENGE oyun=4 bölüm=4 deneme=1 KAZANDI dalga=5/5 can=10 sv=6 kalıcı=8 uyum=1.27
+DENGE oyun=5 bölüm=5 deneme=1 KAZANDI dalga=6/6 can=20 sv=7 kalıcı=10 uyum=1.30
+DENGE oyun=6 bölüm=6 deneme=1 KAZANDI dalga=6/6 can=8 sv=8 kalıcı=12 uyum=1.22
+DENGE oyun=7 bölüm=7 deneme=1 KAZANDI dalga=6/6 can=20 sv=9 kalıcı=14 uyum=1.41
+DENGE oyun=8 bölüm=8 deneme=1 KAZANDI dalga=6/6 can=10 sv=10 kalıcı=15 uyum=1.41
+DENGE oyun=9 bölüm=9 deneme=1 KAZANDI dalga=6/6 can=20 sv=11 kalıcı=19 uyum=1.41
+DENGE oyun=10 bölüm=10 deneme=1 KAZANDI dalga=7/7 can=17 sv=12 kalıcı=21 uyum=1.22
+DENGE oyun=11 bölüm=11 deneme=1 KAZANDI dalga=7/7 can=20 sv=13 kalıcı=22 uyum=1.45
+DENGE oyun=12 bölüm=12 deneme=1 KAZANDI dalga=7/7 can=20 sv=14 kalıcı=23 uyum=1.29
+DENGE oyun=13 bölüm=13 deneme=1 KAZANDI dalga=7/7 can=16 sv=15 kalıcı=24 uyum=1.27
+DENGE oyun=14 bölüm=14 deneme=1 KAZANDI dalga=7/7 can=20 sv=16 kalıcı=26 uyum=1.51
+DENGE oyun=15 bölüm=15 deneme=1 KAZANDI dalga=8/8 can=20 sv=17 kalıcı=28 uyum=1.56
+DENGE oyun=16 bölüm=16 deneme=1 KAZANDI dalga=8/8 can=9 sv=18 kalıcı=30 uyum=1.45
+DENGE oyun=17 bölüm=17 deneme=1 KAZANDI dalga=8/8 can=17 sv=19 kalıcı=31 uyum=1.30
+DENGE oyun=18 bölüm=18 deneme=1 KAZANDI dalga=8/8 can=20 sv=20 kalıcı=32 uyum=1.56
+DENGE oyun=19 bölüm=19 deneme=1 KAZANDI dalga=8/8 can=13 sv=21 kalıcı=33 uyum=1.32
+DENGE oyun=20 bölüm=20 deneme=1 KAZANDI dalga=9/9 can=20 sv=22 kalıcı=35 uyum=1.67
+DENGE oyun=21 bölüm=21 deneme=1 KAZANDI dalga=9/9 can=19 sv=23 kalıcı=37 uyum=1.38
+DENGE oyun=22 bölüm=22 deneme=1 KAZANDI dalga=9/9 can=3 sv=24 kalıcı=39 uyum=1.40
+DENGE oyun=23 bölüm=23 deneme=1 KAZANDI dalga=9/9 can=18 sv=24 kalıcı=39 uyum=1.50
+DENGE oyun=24 bölüm=24 deneme=1 KAZANDI dalga=9/9 can=2 sv=25 kalıcı=40 uyum=1.41
+DENGE oyun=25 bölüm=25 deneme=1 KAZANDI dalga=10/10 can=17 sv=26 kalıcı=41 uyum=1.54
+DENGE oyun=26 bölüm=26 deneme=1 KAZANDI dalga=10/10 can=15 sv=27 kalıcı=42 uyum=1.50
+DENGE oyun=27 bölüm=27 deneme=1 KAZANDI dalga=10/10 can=13 sv=28 kalıcı=44 uyum=1.50
+DENGE oyun=28 bölüm=28 deneme=1 kaybetti dalga=10/10 can=0 sv=29 kalıcı=46 uyum=1.32
+DENGE   kaçan: Kimera×10, Gladyatör×5, Buz Örümceği×1, Ateş İblisi×1   kuleler[15/15]: Tatar Yayı×3(444), Taş Atar×2(44), İlahi Işık×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×1(4)   altın=1504
+DENGE oyun=29 bölüm=28 deneme=2 KAZANDI dalga=10/10 can=2 sv=30 kalıcı=48 uyum=1.40
+DENGE oyun=30 bölüm=29 deneme=1 KAZANDI dalga=10/10 can=11 sv=31 kalıcı=49 uyum=1.34
+DENGE oyun=31 bölüm=30 deneme=1 KAZANDI dalga=11/11 can=5 sv=32 kalıcı=50 uyum=1.51
+DENGE oyun=32 bölüm=31 deneme=1 KAZANDI dalga=11/11 can=10 sv=33 kalıcı=51 uyum=1.34
+DENGE oyun=33 bölüm=32 deneme=1 KAZANDI dalga=11/11 can=6 sv=34 kalıcı=53 uyum=1.54
+DENGE oyun=34 bölüm=33 deneme=1 kaybetti dalga=11/11 can=0 sv=35 kalıcı=55 uyum=1.21
+DENGE   kaçan: Zırhlı Kurt×4, Bataklık Zombisi×2, Gladyatör×2, Çan Kafalı×2   kuleler[16/16]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Kutsal Çan×2(44), Okçu Kulesi×8(44444444)   altın=3964
+DENGE oyun=35 bölüm=33 deneme=2 KAZANDI dalga=11/11 can=7 sv=36 kalıcı=57 uyum=1.29
+DENGE oyun=36 bölüm=34 deneme=1 KAZANDI dalga=11/11 can=10 sv=37 kalıcı=59 uyum=1.50
+DENGE oyun=37 bölüm=35 deneme=1 KAZANDI dalga=12/12 can=12 sv=38 kalıcı=60 uyum=1.50
+DENGE oyun=38 bölüm=36 deneme=1 kaybetti dalga=12/12 can=0 sv=39 kalıcı=61 uyum=1.38
+DENGE   kaçan: Golem Kral×10, Demir Golem×6, Yosun Canavarı×2, Kuşatma Devi×2   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Kutsal Çan×1(4), Ejder Ağzı×1(4), Okçu Kulesi×9(444444444)   altın=6282
+DENGE oyun=39 bölüm=36 deneme=2 kaybetti dalga=12/12 can=0 sv=39 kalıcı=61 uyum=1.51
+DENGE   kaçan: Golem Kral×10, Kuşatma Devi×3, Ork Şef×3, Demir Golem×2   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Kutsal Çan×2(44), Ejder Ağzı×1(4), Okçu Kulesi×8(44444444)   altın=6390
+DENGE oyun=40 bölüm=36 deneme=3 kaybetti dalga=12/12 can=0 sv=40 kalıcı=62 uyum=1.51
+DENGE   kaçan: Golem Kral×10, Demir Golem×5, Kuşatma Devi×3, Gladyatör×2   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Kutsal Çan×2(44), Ejder Ağzı×1(4), Okçu Kulesi×8(44444444)   altın=6633
+DENGE oyun=41 bölüm=36 deneme=4 KAZANDI dalga=12/12 can=3 sv=41 kalıcı=64 uyum=1.56
+DENGE oyun=42 bölüm=37 deneme=1 KAZANDI dalga=12/12 can=9 sv=42 kalıcı=66 uyum=1.82
+DENGE oyun=43 bölüm=38 deneme=1 kaybetti dalga=12/12 can=0 sv=43 kalıcı=67 uyum=1.41
+DENGE   kaçan: Demir Golem×3, Bataklık Kralı×3, Gladyatör×2, Vampir Yarasa×1   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×8(44444444)   altın=6973
+DENGE oyun=44 bölüm=38 deneme=2 KAZANDI dalga=12/12 can=10 sv=44 kalıcı=68 uyum=1.40
+DENGE oyun=45 bölüm=39 deneme=1 kaybetti dalga=12/12 can=0 sv=45 kalıcı=69 uyum=1.42
+DENGE   kaçan: Kara Lord×3, Bataklık Kralı×2, Boş Zırh×2, Ölüm Şövalyesi×2   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×1(4), Kutsal Çan×1(4), Okçu Kulesi×8(44444444)   altın=7531
+DENGE oyun=46 bölüm=39 deneme=2 kaybetti dalga=12/12 can=0 sv=45 kalıcı=69 uyum=1.48
+DENGE   kaçan: Kalkan Taşıyıcı×2, Boş Zırh×2, Sülük×1, Kan Şövalyesi×1   kuleler[17/17]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444), Ateş Kazanı×1(4)   altın=7050
+DENGE oyun=47 bölüm=39 deneme=3 KAZANDI dalga=12/12 can=12 sv=46 kalıcı=70 uyum=1.47
+DENGE oyun=48 bölüm=40 deneme=1 KAZANDI dalga=13/13 can=7 sv=47 kalıcı=70 uyum=1.56
+DENGE oyun=49 bölüm=41 deneme=1 KAZANDI dalga=13/13 can=5 sv=48 kalıcı=70 uyum=1.70
+DENGE oyun=50 bölüm=42 deneme=1 kaybetti dalga=12/13 can=0 sv=49 kalıcı=70 uyum=1.42
+DENGE   kaçan: Lav Kaplumbağası×5, Zehirli Balçık×2, Zırhlı Kurt×2, Cellat×2   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×2(44), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×7(4444444), Ateş Kazanı×1(4)   altın=8608
+DENGE oyun=51 bölüm=42 deneme=2 kaybetti dalga=13/13 can=0 sv=50 kalıcı=70 uyum=1.53
+DENGE   kaçan: Lav Kaplumbağası×4, Yosun Canavarı×2, Ölüm Şövalyesi×2, Balçık×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Ateş Kazanı×2(44)   altın=10579
+DENGE oyun=52 bölüm=42 deneme=3 kaybetti dalga=12/13 can=0 sv=50 kalıcı=70 uyum=1.53
+DENGE   kaçan: Bataklık Kralı×3, İşkenceci×2, Mantar Adam×2, Kara Lord×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444)   altın=8700
+DENGE oyun=53 bölüm=42 deneme=4 kaybetti dalga=12/13 can=0 sv=51 kalıcı=70 uyum=1.65
+DENGE   kaçan: Kan Şövalyesi×2, Vampir Uşak×1, Strigoi×1, Kan Emici×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444)   altın=9240
+DENGE oyun=54 bölüm=42 deneme=5 kaybetti dalga=13/13 can=0 sv=52 kalıcı=70 uyum=1.59
+DENGE   kaçan: Zehirli Balçık×2, Kara Lord×2, Kuşatma Devi×2, Lav Kaplumbağası×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×1(4)   altın=10375
+DENGE oyun=55 bölüm=42 deneme=6 KAZANDI dalga=13/13 can=3 sv=53 kalıcı=70 uyum=1.50
+DENGE oyun=56 bölüm=43 deneme=1 KAZANDI dalga=13/13 can=2 sv=53 kalıcı=70 uyum=1.67
+DENGE oyun=57 bölüm=44 deneme=1 KAZANDI dalga=13/13 can=9 sv=54 kalıcı=70 uyum=1.59
+DENGE oyun=58 bölüm=45 deneme=1 KAZANDI dalga=13/13 can=10 sv=55 kalıcı=70 uyum=1.44
+DENGE oyun=59 bölüm=46 deneme=1 kaybetti dalga=13/13 can=0 sv=56 kalıcı=70 uyum=1.67
+DENGE   kaçan: Ay Kurt×10, Kukla Ruh×1, Kötü Ruh×1, Hayalet Şövalye×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Ateş Kazanı×2(44)   altın=13402
+DENGE oyun=60 bölüm=46 deneme=2 kaybetti dalga=13/13 can=0 sv=56 kalıcı=70 uyum=1.67
+DENGE   kaçan: Ay Kurt×10, Kuşatma Devi×2, Çürük Ent×1, Kan Lordu×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×1(4)   altın=13291
+DENGE oyun=61 bölüm=46 deneme=3 kaybetti dalga=13/13 can=0 sv=57 kalıcı=70 uyum=1.59
+DENGE   kaçan: Vampir Uşak×2, Demirci İblis×2, Mantar Adam×2, Demir Golem×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444)   altın=13244
+DENGE oyun=62 bölüm=46 deneme=4 kaybetti dalga=13/13 can=0 sv=58 kalıcı=70 uyum=1.67
+DENGE   kaçan: Ay Kurt×10, Ork Savaşçı×2, Saat Hortlağı×1, Balrog×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×5(44444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×5(44444), Ateş Kazanı×1(4)   altın=13278
+DENGE oyun=63 bölüm=46 deneme=5 kaybetti dalga=13/13 can=0 sv=58 kalıcı=70 uyum=1.62
+DENGE   kaçan: Ay Kurt×10, Sis Kontu×5, Hortlak Lordu×1, Çok Gözlü×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×5(44444), Ateş Kazanı×2(44)   altın=12738
+DENGE oyun=64 bölüm=46 deneme=6 kaybetti dalga=13/13 can=0 sv=59 kalıcı=70 uyum=1.53
+DENGE   kaçan: Ay Kurt×10, Çan Kafalı×3, Zırhlı Kurt×2, Hayalet Kaptan×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×6(444444), Ateş Kazanı×2(44)   altın=12790
+DENGE oyun=65 bölüm=46 deneme=7 KAZANDI dalga=13/13 can=1 sv=60 kalıcı=70 uyum=1.73
+DENGE oyun=66 bölüm=47 deneme=1 KAZANDI dalga=13/13 can=8 sv=60 kalıcı=70 uyum=1.70
+DENGE oyun=67 bölüm=48 deneme=1 kaybetti dalga=12/13 can=0 sv=61 kalıcı=70 uyum=1.65
+DENGE   kaçan: Çürük Ent×2, Çan Kafalı×2, Zırhlı Kurt×2, Sis Kontu×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444)   altın=12786
+DENGE oyun=68 bölüm=48 deneme=2 kaybetti dalga=13/13 can=0 sv=62 kalıcı=70 uyum=1.73
+DENGE   kaçan: Ork Şef×2, Ork Savaşçı×2, Ayna Şövalye×2, Gladyatör×2   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Ejder Ağzı×2(44), Kutsal Çan×3(444), Okçu Kulesi×6(444444)   altın=14929
+DENGE oyun=69 bölüm=48 deneme=3 kaybetti dalga=13/13 can=0 sv=62 kalıcı=80 uyum=1.80
+DENGE   kaçan: Hayalet Kraliçe×10, Demir Golem×3, Kuşatma Devi×2, Mum Hayaleti×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×4(4444), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Ateş Kazanı×1(4), Arkan Kule×1(4)   altın=15013
+DENGE oyun=70 bölüm=48 deneme=4 KAZANDI dalga=13/13 can=7 sv=63 kalıcı=80 uyum=1.72
+DENGE oyun=71 bölüm=49 deneme=1 KAZANDI dalga=13/13 can=3 sv=64 kalıcı=80 uyum=1.65
+DENGE oyun=72 bölüm=50 deneme=1 kaybetti dalga=13/13 can=0 sv=64 kalıcı=80 uyum=1.59
+DENGE   kaçan: Bataklık Kralı×3, Demir Bekçi×2, Yüzsüz×1, Kukla Ruh×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444), Ateş Kazanı×1(4)   altın=15025
+DENGE oyun=73 bölüm=50 deneme=2 kaybetti dalga=13/13 can=0 sv=65 kalıcı=80 uyum=1.65
+DENGE   kaçan: Cehennem Lordu×10, Wendigo×1, Kukla Ruh×1, Fısıltı×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×2(44), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×5(44444), Ateş Kazanı×2(44)   altın=14890
+DENGE oyun=74 bölüm=50 deneme=3 kaybetti dalga=13/13 can=0 sv=66 kalıcı=80 uyum=1.65
+DENGE   kaçan: Sis Kontu×1, Cehennem Şövalyesi×1, Çok Gözlü×1, Sülük×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×1(4), Okçu Kulesi×7(4444444)   altın=14882
+DENGE oyun=75 bölüm=50 deneme=4 kaybetti dalga=13/13 can=0 sv=66 kalıcı=80 uyum=1.78
+DENGE   kaçan: Cehennem Lordu×10, Bataklık Kralı×2, Ayna Hayaleti×1, Kan Rahibesi×1   kuleler[18/18]: Tatar Yayı×3(444), İlahi Işık×2(44), Taş Atar×4(4444), Arkan Kule×1(4), Ejder Ağzı×2(44), Kutsal Çan×2(44), Okçu Kulesi×4(4444)   altın=15290
+DENGE oyun=76 bölüm=50 deneme=5 kaybetti dalga=13/13 can=0 sv=67 kalıcı=80 uyum=1.59
+DENGE   kaçan: Cehennem Lordu×10, Zehirli Balçık×1, Demir Bekçi×1, Ork Savaşçı×1   kuleler[18/18]: Tatar Yayı×2(44), İlahi Işık×2(44), Taş Atar×3(444), Arkan Kule×2(44), Ejder Ağzı×1(4), Kutsal Çan×2(44), Okçu Kulesi×6(444444)   altın=14882

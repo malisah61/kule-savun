@@ -41,7 +41,7 @@ jobs:
 
       - name: Bot oynuyor
         run: |
-          timeout 2900 xvfb-run -a -s "-screen 0 1280x720x24" godot --path . --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 -- --denge=$PWD/onizleme/denge.csv --denge-son=${{ inputs.son || '60' }} 2>&1 | grep -E "DENGE|ERROR|Exception|bölüm|Toplam" | tee onizleme/denge_kayit.txt | tail -80
+          timeout 2900 xvfb-run -a -s "-screen 0 1280x720x24" godot --path . --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 -- --denge=$PWD/onizleme/denge.csv --denge-son=${{ inputs.son || '60' }} > /tmp/tam.txt 2>&1; echo "cikis kodu $?"; grep -E "DENGE|bölüm|Toplam" /tmp/tam.txt > onizleme/denge_kayit.txt; tail -60 /tmp/tam.txt
 
       - name: Depoya kaydet
         if: always()

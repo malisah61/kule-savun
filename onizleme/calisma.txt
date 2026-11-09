@@ -6,7 +6,7 @@ ONIZLEME kaydedildi: onizleme/0_yetenek_agaci.png
 ONIZLEME kaydedildi: onizleme/1_menu.png
 ONIZLEME kaydedildi: onizleme/2_harita.png
 ONIZLEME kaydedildi: onizleme/3_savas.png
-ONIZLEME fps=102 dusman=0 yol=3705 muzik=5 calan=savas3
+ONIZLEME fps=85 dusman=0 yol=3705 muzik=5 calan=savas3
 ONIZLEME kaydedildi: onizleme/3b_analiz.png
 ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png

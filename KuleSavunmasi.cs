@@ -214,8 +214,12 @@ void fragment() {
 		MenuyuGoster();
 
 		foreach (var arg in OS.GetCmdlineUserArgs())
+		{
 			if (arg.StartsWith("--onizleme="))
 				_ = OnizlemeCek(arg.Substring("--onizleme=".Length));
+			if (arg.StartsWith("--denge="))
+				_ = DengeBotu(arg.Substring("--denge=".Length));
+		}
 	}
 
 	/// <summary>Her bölümün kendi savaş müziği (bölüm numarasına göre sırayla).</summary>
@@ -566,8 +570,13 @@ void fragment() {
 	{
 		float dt = (float)delta;
 		if (_mesajSure > 0) { _mesajSure -= dt / (float)Engine.TimeScale; if (_mesajSure <= 0) _mesaj.Visible = false; }
-		if (_ekran != Ekran.Oyun) return;
+		if (_ekran != Ekran.Oyun || _botModu) return;
+		Adim(dt);
+	}
 
+	/// <summary>Bir oyun adımı (doğurma, düşman, kule, mermi, dalga sonu). Denge botu bunu hızlı ileri sarar.</summary>
+	void Adim(float dt)
+	{
 		if (_dalgaSuruyor && _dogacak.Count > 0)
 		{
 			_dogmaSayac -= dt;

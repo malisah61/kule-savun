@@ -30,7 +30,7 @@ public partial class TdHarita : Node2D
 	HaritaCanli _canli;
 
 	// ================================================================ YOL ÜRETİMİ
-	public static void Olustur(ulong tohum, float sol, float sag)
+	public static void Olustur(ulong tohum, float sol, float sag, int yerSayisi = 14)
 	{
 		Sol = sol; Sag = sag;
 		var rng = new RandomNumberGenerator { Seed = tohum };
@@ -106,14 +106,37 @@ public partial class TdHarita : Node2D
 				adaylar.Add(p);
 				anahtar[p] = u + rng.RandfRange(0, 40);
 			}
-		adaylar.Sort((a, b) => anahtar[a].CompareTo(anahtar[b]));
-		Yerler.Clear();
+		// Kingdom Rush usulü: az sayıda yer, yolun çok kez geçtiği kıvrım ve kavşaklarda.
+		// Her aday, menzilindeki (≈150 px) yol örneklerine göre puanlanır; zaten kapsanan
+		// yol parçaları azalan getiri verir, böylece yerler kümelenir ama tüm yol unutulmaz.
+		var ornek = new List<Vector2>();
+		for (float d = 0; d < Uzunluk; d += 18) ornek.Add(Konum(d, out _));
+		const float R = 150f;
+		var kapsam = new Dictionary<Vector2, List<int>>();
 		foreach (var p in adaylar)
 		{
-			bool yakin = false;
-			foreach (var q in Yerler) if (q.DistanceTo(p) < 76) { yakin = true; break; }
-			if (!yakin) Yerler.Add(p);
-			if (Yerler.Count >= 26) break;
+			var l = new List<int>();
+			for (int i = 0; i < ornek.Count; i++) if (ornek[i].DistanceSquaredTo(p) < R * R) l.Add(i);
+			kapsam[p] = l;
+		}
+		var sayac = new int[ornek.Count];
+		Yerler.Clear();
+		while (Yerler.Count < yerSayisi)
+		{
+			Vector2 enIyi = default; float enPuan = -1;
+			foreach (var p in adaylar)
+			{
+				bool yakin = false;
+				foreach (var q in Yerler) if (q.DistanceTo(p) < 76) { yakin = true; break; }
+				if (yakin) continue;
+				float puan = 0;
+				foreach (int i in kapsam[p]) puan += 1f / (1f + sayac[i] * 0.7f);
+				puan *= 1f + 0.25f * (anahtar[p] - YolaUzaklik(p)) / 40f; // küçük rastgelelik
+				if (puan > enPuan) { enPuan = puan; enIyi = p; }
+			}
+			if (enPuan < 0) break;
+			Yerler.Add(enIyi);
+			foreach (int i in kapsam[enIyi]) sayac[i]++;
 		}
 		SusleriYerlestir(rng);
 	}

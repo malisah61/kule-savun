@@ -7,6 +7,9 @@ using System.Linq;
 public partial class KuleSavunmasi : Node2D
 {
 	// ------------------------------------------------------------ türler
+	/// <summary>Oyuncu seviyesi başına tüm kulelere +%3 hasar: geri dönüp XP kasmak gerçekten güçlendirir.</summary>
+	public static float OyuncuCarpani => 1f + 0.03f * (Ilerleme.Seviye - 1);
+
 	class Kule
 	{
 		public KuleTanim T;
@@ -20,7 +23,7 @@ public partial class KuleSavunmasi : Node2D
 		public Sprite2D Spr;
 		public Label Yildiz;
 		public float Bekleme;
-		public float Hasar => T.Hasar * HasarC;
+		public float Hasar => T.Hasar * HasarC * OyuncuCarpani;
 		public float Menzil => T.Menzil * MenzilC;
 		public float Hiz => T.AtisHizi * HizC;
 		public int Kademe => Dal[0] + Dal[1];
@@ -322,7 +325,7 @@ void fragment() {
 		if (sonra > once)
 		{
 			var yeni = TdVeri.Kuleler.Where(k => k.Level > once && k.Level <= sonra).Select(k => k.Ad).ToList();
-			Mesaj($"SEVİYE {sonra}!  +{Ilerleme.PuanPerSeviye * (sonra - once)} yetenek puanı" + (yeni.Count > 0 ? $"\nYeni kule açıldı: {string.Join(", ", yeni)}" : ""),
+			Mesaj($"SEVİYE {sonra}!  +{Ilerleme.PuanPerSeviye * (sonra - once)} yetenek puanı  ·  tüm kuleler +%{3 * (sonra - once)} hasar" + (yeni.Count > 0 ? $"\nYeni kule açıldı: {string.Join(", ", yeni)}" : ""),
 				new Color(0.6f, 1f, 0.95f), 3.2f);
 			Ses("altin");
 			Ilerleme.Kaydet();
@@ -342,7 +345,7 @@ void fragment() {
 		_harita.Yenile(tohum);
 		_dalgaSayisi = Math.Min(13, 5 + bolum / 5);
 		_can = 20;
-		_altin = 160 + bolum * 25;
+		_altin = 180 + bolum * 30;
 		_dalgaSuruyor = false;
 		_uyum = 1f;
 		_karsiAgirlik.Clear();
@@ -480,7 +483,7 @@ void fragment() {
 		hiz *= Mathf.Clamp(TdHarita.Uzunluk / 3400f, 1f, 1.6f);
 		d.Can = d.CanMax = can;
 		d.Hiz = hiz * _rng.RandfRange(0.92f, 1.08f);
-		d.Odul = t.Boss ? 25 + _bolum * 4 : (2 + _bolum * 0.35f) * (t.Ozel.Contains("kalabalik") ? 0.5f : 1f);
+		d.Odul = t.Boss ? 25 + _bolum * 4 : (3 + _bolum * 0.5f) * (t.Ozel.Contains("kalabalik") ? 0.5f : 1f);
 		d.Boy = t.Boss ? 96f : t.Ozel.Contains("kalabalik") ? 40f : 56f;
 		d.Faz = _rng.RandfRange(0, 6);
 
@@ -599,7 +602,7 @@ void fragment() {
 			DalgaAnalizi();
 			Kazan(6 + _bolum, 3 + _bolum / 3);
 			Ilerleme.Kaydet();
-			int bonus = 20 + _bolum * 3;
+			int bonus = 25 + _bolum * 4;
 			_altin += bonus;
 			Efekt.Yazi(_dunya, new Vector2(640, 110), $"+{bonus} altın", new Color(1f, 0.85f, 0.3f), 30);
 			_dalgaButon.Text = $"▶ Dalga {_dalga + 1}";

@@ -1,9 +1,9 @@
   Determining projects to restore...
-  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 745 ms).
+  Restored /home/runner/work/kule-savun/kule-savun/KuleSavun.csproj (in 1.37 sec).
   KuleSavun -> /home/runner/work/kule-savun/kule-savun/.godot/mono/temp/bin/Debug/KuleSavun.dll
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:10.78
+Time Elapsed 00:00:07.89

@@ -6,7 +6,7 @@ ONIZLEME kaydedildi: onizleme/0_yetenek_agaci.png
 ONIZLEME kaydedildi: onizleme/1_menu.png
 ONIZLEME kaydedildi: onizleme/2_harita.png
 ONIZLEME kaydedildi: onizleme/3_savas.png
-ONIZLEME fps=80 dusman=4 yol=4922 muzik=2 calan=savas
+ONIZLEME fps=83 dusman=2 yol=3800 muzik=2 calan=savas
 ONIZLEME kaydedildi: onizleme/3b_analiz.png
 ONIZLEME kaydedildi: onizleme/4_kule_panel.png
 ONIZLEME kaydedildi: onizleme/5_insa.png
@@ -32,5 +32,9 @@ ONIZLEME yer bölüm 45: 18
 ONIZLEME kaydedildi: onizleme/11_yerler_45.png
 ONIZLEME kaydedildi: onizleme/9_menu_sonsuz.png
 ONIZLEME ekran=(1280, 720) yer=18
-ONIZLEME bölüm=45 dalga=0/13 can=20 düşman=0 kule=0 doku_kule=32 doku_dusman=222
+ONIZLEME bölüm=45 dalga=0/13 can=20 düşman=0 kule=0 doku_kule=32 doku_dusman=222 yuru=92
 ONIZLEME bitti
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2284)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:604)

@@ -1,8 +1,8 @@
-name: Yurume kareleri (SD + ControlNet + EbSynth)
+name: Yurume kareleri (iskelet bukme + EbSynth)
 on:
   push:
     branches: [sanat-uretimi]
-    paths: ['araclar/yurume.py', 'tasarim/yurume_liste.txt', '.github/workflows/yurume.yml']
+    paths: ['araclar/yurume.py', 'araclar/yurume2.py', 'tasarim/yurume_liste.txt', '.github/workflows/yurume.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -29,16 +29,15 @@ jobs:
           cd ebsynth && sh build-linux-cpu_only.sh && ls -la bin
       - name: Paketler
         run: |
-          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
-          pip install -q diffusers transformers accelerate peft safetensors opencv-python-headless scipy pillow numpy
+          pip install -q opencv-python-headless scipy pillow numpy
       - name: Uret
-        run: python araclar/yurume.py $(grep -v '^#' tasarim/yurume_liste.txt | xargs)
+        run: python araclar/yurume2.py $(grep -v '^#' tasarim/yurume_liste.txt | xargs)
       - name: Kaydet
         if: always()
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git pull -q --rebase origin sanat-uretimi || true
-          git add anim
+          git add anim anim2
           git commit -qm "Yürüme kareleri (deneme)" || echo yok
           git push
